@@ -1,5 +1,6 @@
 import { execa } from 'execa';
 import { join } from 'node:path';
+import { getConfig } from '../helper/config.js';
 import {
   esbuildHelper,
   getRootDir,
@@ -33,6 +34,7 @@ export async function runTypecheck() {
 }
 
 export async function runSdkGeneration(options: { directory: string }) {
+  const { sdk } = await getConfig();
   const logFunction = console.log;
 
   let warning = [''] as string[];
@@ -45,17 +47,9 @@ export async function runSdkGeneration(options: { directory: string }) {
     error.push(message.join(' '));
   };
 
-  const output = join(process.cwd(), options.directory);
   try {
     const generator = await import('swagger-typescript-api');
-    await generator.default.generateApi({
-      name: 'GeneratedApi.ts',
-      input: join(process.cwd(), '/dist/openapi.json'),
-      output,
-      templates: join(getRootDir(), '/sdk-templates/'),
-      httpClientType: 'axios',
-      moduleNameIndex: 0,
-    });
+    await generator.default.generateApi(sdk);
   } catch (err: any) {
     console.error(err.message);
   }
@@ -73,6 +67,6 @@ export async function runSdkGeneration(options: { directory: string }) {
   if (error.length > 1) {
     log({ component: 'cli', error: 'SDK error', details: error.join('\n') });
   } else {
-    log({ component: 'cli', success: 'SDK written to', details: output });
+    log({ component: 'cli', success: 'SDK written to', details: sdk.output });
   }
 }

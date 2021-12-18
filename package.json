@@ -12,7 +12,7 @@
   "author": "Jakob Niggel <jakobniggel@gmail.com>",
   "license": "ISC",
   "private": true,
-  "repository": "git@github.com:Jnig/chili-api.git",
+  "repository": "git@github.com:fluxapi/fluxapi.git",
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
