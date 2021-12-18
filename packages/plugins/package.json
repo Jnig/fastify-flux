@@ -1,0 +1,30 @@
+{
+  "name": "@fluxapi/plugins",
+  "version": "2.1.38",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "test": "exit 0",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "release:minor": "yarn build && yarn publish --access public"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fluxapi/common": "workspace:*"
+  },
+  "devDependencies": {
+    "fastify": "~3.24.1",
+    "fastify-swagger": "4.x",
+    "typescript": "4.5.2"
+  },
+  "peerDependencies": {
+    "fastify": "3.x",
+    "fastify-swagger": "4.x"
+  },
+  "files": [
+    "dist/"
+  ]
+}
