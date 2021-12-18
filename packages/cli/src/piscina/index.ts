@@ -21,8 +21,8 @@ export function runWorkerControllerGeneration() {
   return piscina.run({}, { name: 'runControllerGeneration' });
 }
 
-export function runWorkerSdkGeneration(options: { directory: string }) {
-  return piscina.run(options, { name: 'runSdkGeneration' });
+export function runWorkerSdkGeneration() {
+  return piscina.run({}, { name: 'runSdkGeneration' });
 }
 
 export function runWorkerTypecheck() {

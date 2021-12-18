@@ -57,7 +57,7 @@ async function handler(options: {
     }
 
     if (options.sdk) {
-      runWorkerSdkGeneration({ directory: options.sdk });
+      runWorkerSdkGeneration();
     }
   };
   chokidar

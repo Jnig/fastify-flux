@@ -6,9 +6,10 @@
   "scripts": {
     "start": "node dist/index",
     "build": "flux build --typecheck",
-    "dev": "flux start --watch",
-    "dev:full": "flux start --watch --typecheck --sdk ./tests-e2e/api/",
-    "debug": "flux start --watch --debug",
+    "dev": "flux start --watch --sdk",
+    "dev:typecheck": "flux start --watch --typecheck",
+    "debug": "flux start --watch --sdk  --debug",
+    "sdk": "flux sdk",
     "jest": "jest",
     "lint": "eslint src/",
     "prisma": "prisma"
