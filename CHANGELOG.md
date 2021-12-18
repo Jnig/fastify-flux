@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.1](https://github.com/fluxapi/fluxapi/compare/v2.4.0...v2.4.1) (2021-12-18)
+
+
+### Bug Fixes
+
+* remove deprecated dir arg ([c752bd8](https://github.com/fluxapi/fluxapi/commit/c752bd86f76404884907111935cafadb972c95bf))
+
 ## [2.4.0](https://github.com/fluxapi/fluxapi/compare/v2.3.0...v2.4.0) (2021-12-18)
 
 
