@@ -123,6 +123,7 @@ importers:
       '@fluxapi/common': '*'
       '@fluxapi/plugins': '*'
       '@prisma/client': ^3.6.0
+      '@types/jest': ^27.0.3
       '@types/node': 16.11.11
       '@typescript-eslint/eslint-plugin': ^5.5.0
       '@typescript-eslint/parser': ^5.5.0
@@ -147,6 +148,7 @@ importers:
       tsconfig-paths: 3.12.0
     devDependencies:
       '@fluxapi/cli': link:../../packages/cli
+      '@types/jest': 27.0.3
       '@types/node': 16.11.11
       '@typescript-eslint/eslint-plugin': 5.5.0_b885794d89d00e0b80d68a1b7275fb2c
       '@typescript-eslint/parser': 5.5.0_eslint@8.4.0+typescript@4.5.2
