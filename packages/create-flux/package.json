@@ -1,6 +1,6 @@
 {
   "name": "create-flux",
-  "version": "2.1.39",
+  "version": "2.2.0",
   "description": "",
   "main": "./dist/index.js",
   "bin": {

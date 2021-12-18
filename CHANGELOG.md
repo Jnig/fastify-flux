@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/Jnig/chili-api/compare/v2.1.39...v2.2.0) (2021-12-18)
+
+
+### Features
+
+* create fastify instance with improved defaults ([a26560c](https://github.com/Jnig/chili-api/commit/a26560c0e9248c8427522b1eb883cd3c81798d40))
+
 ### 2.1.39 (2021-12-18)
 
 ### [2.1.38](https://github.com/Jnig/chili-api/compare/v2.1.37...v2.1.38) (2021-12-18)
