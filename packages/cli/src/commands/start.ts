@@ -76,6 +76,6 @@ export function addStartCommand(program: Command) {
     .option('-w, --watch', 'Automatically restart on file changes.')
     .option('-d, --debug', 'Run node with debug flag.')
     .option('--typecheck', 'Runs a typecheck in a seperate thread.')
-    .option('--sdk <dir>', 'Generate client sdk in provided directory.')
+    .option('--sdk', 'Generate client sdk.')
     .action(handler);
 }
