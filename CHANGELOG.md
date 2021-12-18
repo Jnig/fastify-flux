@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.2](https://github.com/fluxapi/fluxapi/compare/v2.4.1...v2.4.2) (2021-12-18)
+
+
+### Bug Fixes
+
+* missing dist dir on first start ([ebeef95](https://github.com/fluxapi/fluxapi/commit/ebeef9500739f0622a9fb6bc42f10d65f11ea977))
+
 ### [2.4.1](https://github.com/fluxapi/fluxapi/compare/v2.4.0...v2.4.1) (2021-12-18)
 
 
