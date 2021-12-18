@@ -1,4 +1,5 @@
 import fastify, { FastifyInstance } from 'fastify';
+import { createFastifyInstance } from '../fastify';
 import { FluxController, FluxPlugin, FluxConfig } from '../types';
 import { registerController } from './controllers';
 
@@ -27,18 +28,18 @@ class Flux {
 }
 
 export function flux({
-  fastifyInstance,
+  fastify,
   controllers,
   plugins,
   mapping,
 }: {
-  fastifyInstance?: FastifyInstance;
+  fastify?: FastifyInstance;
   controllers?: FluxController[];
   plugins?: FluxPlugin[];
   mapping?: FluxConfig['mapping'];
 }) {
   const instance = new Flux({
-    fastify: fastifyInstance ? fastifyInstance : fastify(),
+    fastify: fastify ? fastify : createFastifyInstance(),
     mapping,
   });
 
