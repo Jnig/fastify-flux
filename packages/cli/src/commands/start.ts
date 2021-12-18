@@ -35,11 +35,12 @@ async function handler(options: {
   sdk: string;
   debug: boolean;
 }) {
+  await runWorkerEsbuild(); //esbuild generated dist dir if not exists
   await Promise.all([
-    runWorkerEsbuild(),
     runWorkerControllerGeneration(),
     runWorkerSchemaGeneration(),
   ]);
+
   let process = runBackend(options);
 
   const changeHandler = async (change: string) => {
