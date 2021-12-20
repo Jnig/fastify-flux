@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0](https://github.com/fluxapi/fluxapi/compare/v2.4.2...v2.5.0) (2021-12-20)
+
+
+### Features
+
+* change default documentation path ([c26f337](https://github.com/fluxapi/fluxapi/commit/c26f337c4ac4970e1c31117dfd56d318f055c041))
+
+
+### Bug Fixes
+
+* show error when start is execute before build ([3ce03f1](https://github.com/fluxapi/fluxapi/commit/3ce03f1198e788ee68f391bc908fc6cc5f7dc4e6))
+
 ### [2.4.2](https://github.com/fluxapi/fluxapi/compare/v2.4.1...v2.4.2) (2021-12-18)
 
 
