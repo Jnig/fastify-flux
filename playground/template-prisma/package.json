@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node dist/index",
+    "start": "node server.js",
     "build": "flux build --typecheck",
     "dev": "flux start --watch --sdk",
     "dev:typecheck": "flux start --watch --typecheck",
