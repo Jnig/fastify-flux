@@ -9,7 +9,7 @@ interface SwaggerOptionsFixed extends FastifyDynamicSwaggerOptions {
 
 export function openapi(additionalOptions?: SwaggerOptionsFixed): FluxPlugin {
   const options: SwaggerOptionsFixed = {
-    routePrefix: '/documentation',
+    routePrefix: '/',
     refResolver: {
       buildLocalReference(json) {
         return json.$id;
