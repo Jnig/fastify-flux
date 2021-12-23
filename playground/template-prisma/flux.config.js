@@ -5,6 +5,9 @@ const config = {
     output: './tests-e2e/api/',
     moduleNameIndex: 0,
   },
+  watch: {
+    exec: [{ command: 'node', args: ['server.js'] }],
+  },
 };
 
 module.exports = config;
