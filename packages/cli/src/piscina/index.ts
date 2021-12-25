@@ -1,6 +1,10 @@
 import Piscina from 'piscina';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  GenerateApiConfiguration,
+  GenerateApiParams,
+} from 'swagger-typescript-api';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -21,8 +25,8 @@ export function runWorkerControllerGeneration() {
   return piscina.run({}, { name: 'runControllerGeneration' });
 }
 
-export function runWorkerSdkGeneration() {
-  return piscina.run({}, { name: 'runSdkGeneration' });
+export function runWorkerSdkGeneration(sdk: GenerateApiParams) {
+  return piscina.run(sdk, { name: 'runSdkGeneration' });
 }
 
 export function runWorkerTypecheck() {

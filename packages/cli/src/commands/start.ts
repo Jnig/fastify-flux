@@ -10,7 +10,7 @@ import {
 } from '../piscina/index.js';
 import { log } from '../log.js';
 import { getConfig } from '../helper/config.js';
-import { FluxCliConfig } from '../types.js';
+import { FluxProjectConfig } from '../types.js';
 
 interface Options {
   watch: boolean;
@@ -19,8 +19,14 @@ interface Options {
   debug: boolean;
 }
 
-function startProcess(command: FluxCliConfig['watch']['exec'][number]) {
-  const subprocess = execa(command.command, command.args);
+function startProcess(
+  command: FluxProjectConfig['exec'],
+  projectIndex: number,
+) {
+  const subprocess = execa(command.command, command.args, {
+    env: { FLUX_PROJECT_INDEX: `${projectIndex}` },
+  });
+
   if (subprocess.stdout) {
     subprocess.stdout.on('data', (line) => {
       log({ component: 'app', details: line.toString().trim() });
@@ -36,7 +42,7 @@ function startProcess(command: FluxCliConfig['watch']['exec'][number]) {
 class ExecHandler {
   private procs: ExecaChildProcess[] = [];
 
-  constructor(private config: FluxCliConfig['watch']) {}
+  constructor(private config: FluxProjectConfig['exec'][]) {}
 
   cancelAll() {
     this.procs.forEach((x) => {
@@ -45,7 +51,7 @@ class ExecHandler {
   }
 
   startAll() {
-    this.procs = this.config.exec.map(startProcess);
+    this.procs = this.config.map(startProcess);
   }
 }
 
@@ -55,19 +61,16 @@ class WatchHandler {
   constructor(private options: Options) {}
 
   async setup() {
-    const config = await getConfig();
+    const { projects } = await getConfig();
+    const commands = projects.map((x) => x.exec);
 
-    if (!config.watch.exec) {
-      throw new Error('Config: Config path watch.exec is missing.');
-    }
-
-    config.watch.exec.forEach((x) => {
+    commands.forEach((x) => {
       if (this.options.debug) {
         x.args.push('--inspect');
       }
     });
 
-    this.excecHandler = new ExecHandler(config.watch);
+    this.excecHandler = new ExecHandler(commands);
     this.excecHandler.startAll();
 
     chokidar
@@ -94,11 +97,27 @@ class WatchHandler {
     if (this.options.typecheck) {
       runWorkerTypecheck();
     }
-
-    if (this.options.sdk) {
-      runWorkerSdkGeneration();
-    }
   }
+}
+
+async function startSdkWatch() {
+  const { projects } = await getConfig();
+  projects.forEach((project) => {
+    if (!project.sdk) {
+      return;
+    }
+
+    const handler = async () => await runWorkerSdkGeneration(project.sdk);
+
+    chokidar
+      .watch(project.sdk.input, {
+        disableGlobbing: true,
+        persistent: true,
+        ignoreInitial: true,
+      })
+      .on('add', handler)
+      .on('change', handler);
+  });
 }
 
 async function handler(options: Options) {
@@ -110,6 +129,10 @@ async function handler(options: Options) {
 
   const instance = new WatchHandler(options);
   await instance.setup();
+
+  if (options.sdk) {
+    startSdkWatch();
+  }
 }
 
 export function addStartCommand(program: Command) {

@@ -38,9 +38,14 @@ export function openapi(additionalOptions?: SwaggerOptionsFixed): FluxPlugin {
     });
 
     fastify.ready(async () => {
+      const { FLUX_PROJECT_INDEX } = process.env;
+      if (!FLUX_PROJECT_INDEX) {
+        return;
+      }
+
       const oas: any = fastify.swagger();
 
-      const file = `${process.cwd()}/dist/openapi.json`;
+      const file = `${process.cwd()}/dist/openapi-${FLUX_PROJECT_INDEX}.json`;
       const schema = JSON.stringify(oas, null, 2);
 
       let old = '';

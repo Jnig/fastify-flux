@@ -1,8 +1,10 @@
 import { GenerateApiParams } from 'swagger-typescript-api';
 
-export interface FluxCliConfig {
+export interface FluxProjectConfig {
   sdk: GenerateApiParams;
-  watch: {
-    exec: { command: string; args: string[] }[];
-  };
+  exec: { command: string; args: string[] };
+}
+
+export interface FluxCliConfig {
+  projects: FluxProjectConfig[];
 }
