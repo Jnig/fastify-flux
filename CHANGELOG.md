@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/fluxapi/fluxapi/compare/v2.5.0...v2.6.0) (2021-12-25)
+
+
+### Features
+
+* allow multiple project definitions ([1973ede](https://github.com/fluxapi/fluxapi/commit/1973ede6d9426ec8170b62e323291e11b12901bc))
+* possibility to specify command/s for watch ([d50e3e1](https://github.com/fluxapi/fluxapi/commit/d50e3e1dbe05b6e7cea8a77bc54e360e14b09e8b))
+* watch for changing openapi definition and allow multiple openapi definitions ([8c2d738](https://github.com/fluxapi/fluxapi/commit/8c2d7389a56a90e730a20219ac637227da802abf))
+
 ## [2.5.0](https://github.com/fluxapi/fluxapi/compare/v2.4.2...v2.5.0) (2021-12-20)
 
 
