@@ -1,8 +1,10 @@
 /** @type {import('@fluxapi/cli').FluxCliConfig} */
 const config = {
-  projects: [
+  entry: './src/',
+  outdir: './dist/',
+  tasks: [
     {
-      exec: { command: 'node', args: ['server.js'] },
+      run: ['node', 'server.js'],
       sdk: {
         name: 'GeneratedApi.ts',
         output: './tests-e2e/api/',

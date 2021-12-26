@@ -1,5 +1,7 @@
 import { build, Plugin } from 'esbuild';
 import fg from 'fast-glob';
+import { join } from 'node:path';
+import { getConfig } from './config.js';
 
 const makeAllPackagesExternalPlugin = (): Plugin => ({
   name: 'make-all-packages-external',
@@ -13,7 +15,9 @@ const makeAllPackagesExternalPlugin = (): Plugin => ({
 });
 
 export async function esbuildHelper() {
-  const files = await fg('./src/**/*.ts', {
+  const config = await getConfig();
+
+  const files = await fg(join(config.entry, '/**/*.ts'), {
     absolute: true,
     markDirectories: true,
   });
@@ -23,8 +27,8 @@ export async function esbuildHelper() {
     target: 'node16',
     format: 'cjs',
     entryPoints: files,
-    outdir: 'dist/',
-    outbase: 'src/',
+    outdir: config.outdir,
+    outbase: config.entry,
     bundle: false,
     sourcemap: true,
     plugins: [makeAllPackagesExternalPlugin()],

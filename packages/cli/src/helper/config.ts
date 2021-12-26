@@ -3,10 +3,10 @@ import { join } from 'node:path';
 import { getRootDir } from './index.js';
 import { FluxCliConfig } from '../types.js';
 
-function getSdkDefaultConfig(projectIndex: number) {
+function getSdkDefaultConfig(projectIndex: number, outdir: string) {
   const sdk = {
     name: 'GeneratedApi.ts',
-    input: join(process.cwd(), `/dist/openapi-${projectIndex}.json`),
+    input: join(outdir, `/openapi-${projectIndex}.json`),
     templates: join(getRootDir(), '/sdk-templates/'),
     httpClientType: 'axios',
     moduleNameIndex: 0,
@@ -15,14 +15,25 @@ function getSdkDefaultConfig(projectIndex: number) {
   return sdk;
 }
 
-export async function getConfig(): Promise<FluxCliConfig> {
+async function readConfig() {
   const config: FluxCliConfig = (
     await import(join(process.cwd(), '/flux.config.js'))
   ).default;
 
-  config.projects.forEach((project, index) => {
+  return _.cloneDeep(config);
+}
+
+export async function getConfig(): Promise<FluxCliConfig> {
+  const config = await readConfig();
+
+  config.outdir = join(process.cwd(), config.outdir);
+
+  config.tasks.forEach((project, index) => {
     if (project.sdk) {
-      project.sdk = _.merge(getSdkDefaultConfig(index), project.sdk);
+      project.sdk = _.merge(
+        getSdkDefaultConfig(index, config.outdir),
+        project.sdk,
+      );
 
       if (project.sdk.output && project.sdk.output.startsWith('.')) {
         project.sdk.output = join(process.cwd(), project.sdk.output);

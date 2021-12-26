@@ -19,11 +19,9 @@ interface Options {
   debug: boolean;
 }
 
-function startProcess(
-  command: FluxProjectConfig['exec'],
-  projectIndex: number,
-) {
-  const subprocess = execa(command.command, command.args, {
+function startProcess(command: string[], projectIndex: number) {
+  const [file, ...args] = command;
+  const subprocess = execa(file, args, {
     env: { FLUX_PROJECT_INDEX: `${projectIndex}` },
   });
 
@@ -42,7 +40,7 @@ function startProcess(
 class ExecHandler {
   private procs: ExecaChildProcess[] = [];
 
-  constructor(private config: FluxProjectConfig['exec'][]) {}
+  constructor(private config: FluxProjectConfig['run'][]) {}
 
   cancelAll() {
     this.procs.forEach((x) => {
@@ -61,12 +59,13 @@ class WatchHandler {
   constructor(private options: Options) {}
 
   async setup() {
-    const { projects } = await getConfig();
-    const commands = projects.map((x) => x.exec);
+    const config = await getConfig();
+    const { tasks } = config;
+    const commands = tasks.map((x) => x.run);
 
     commands.forEach((x) => {
       if (this.options.debug) {
-        x.args.push('--inspect');
+        x.push('--inspect');
       }
     });
 
@@ -74,7 +73,7 @@ class WatchHandler {
     this.excecHandler.startAll();
 
     chokidar
-      .watch('./src/', {
+      .watch(config.entry, {
         disableGlobbing: true,
         persistent: true,
         ignoreInitial: true,
@@ -101,16 +100,18 @@ class WatchHandler {
 }
 
 async function startSdkWatch() {
-  const { projects } = await getConfig();
-  projects.forEach((project) => {
+  const { tasks } = await getConfig();
+  tasks.forEach((project) => {
     if (!project.sdk) {
       return;
     }
 
-    const handler = async () => await runWorkerSdkGeneration(project.sdk);
+    const { sdk } = project;
+
+    const handler = async () => await runWorkerSdkGeneration(sdk);
 
     chokidar
-      .watch(project.sdk.input, {
+      .watch(sdk.input, {
         disableGlobbing: true,
         persistent: true,
         ignoreInitial: true,

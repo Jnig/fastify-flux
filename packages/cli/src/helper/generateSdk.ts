@@ -1,4 +1,3 @@
-import { readFile } from 'node:fs/promises';
 import { GenerateApiParams } from 'swagger-typescript-api';
 import { log } from '../log.js';
 

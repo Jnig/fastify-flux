@@ -6,7 +6,7 @@ import { runWorkerSdkGeneration } from '../piscina/index.js';
 
 async function handler() {
   const config = await getConfig();
-  await pMap(config.projects, async (project) => {
+  await pMap(config.tasks, async (project) => {
     if (!project.sdk) {
       return;
     }

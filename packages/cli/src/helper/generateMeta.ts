@@ -1,9 +1,12 @@
 import fg from 'fast-glob';
+import { join } from 'node:path';
 import pMap from 'p-map';
+import { getConfig } from './config.js';
 import { getControllerFunctions } from './getControllerFunctions.js';
 
 export async function generateMeta() {
-  const controllers = await fg('./src/**/*.controller.ts', {
+  const config = await getConfig();
+  const controllers = await fg(join(config.entry, '/**/*.controller.ts'), {
     absolute: true,
     markDirectories: true,
   });

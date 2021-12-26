@@ -1,21 +1,22 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getConfig } from './config.js';
 import { generateMeta } from './generateMeta.js';
 import { generateSchema } from './generateSchema.js';
 import { writeFile } from './writeFile.js';
 
-const dir = join(process.cwd(), '/dist/');
-
 export async function writeControllerJson() {
+  const config = await getConfig();
   const meta = await generateMeta();
 
-  writeFile(join(dir, 'flux-controller.json'), meta);
+  writeFile(join(config.outdir, 'flux-controller.json'), meta);
 }
 
 export async function writeSchemaJson() {
-  const schema = await generateSchema('./src/', { removeDateTime: false });
+  const config = await getConfig();
+  const schema = await generateSchema(config.entry, { removeDateTime: false });
 
-  writeFile(join(dir, 'flux-schema.json'), schema);
+  writeFile(join(config.outdir, 'flux-schema.json'), schema);
 }
 
 export function getRootDir() {
