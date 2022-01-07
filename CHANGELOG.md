@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/fluxapi/fluxapi/compare/v2.6.0...v2.7.0) (2022-01-07)
+
+
+### Features
+
+* add entry and outdir to config ([1a6885d](https://github.com/fluxapi/fluxapi/commit/1a6885d9916a5d875cd3d566c97d348ad41e3cd5))
+
 ## [2.6.0](https://github.com/fluxapi/fluxapi/compare/v2.5.0...v2.6.0) (2021-12-25)
 
 
