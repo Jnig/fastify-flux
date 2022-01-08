@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.1](https://github.com/fluxapi/fluxapi/compare/v2.9.0...v2.9.1) (2022-01-08)
+
+
+### Bug Fixes
+
+* add esbuild as dependency to template ([8aa0621](https://github.com/fluxapi/fluxapi/commit/8aa0621d57f7b692d9a293b3e58a4b49b0eac563))
+* use provided openapi options ([15b9591](https://github.com/fluxapi/fluxapi/commit/15b9591fddc31fc941e0239841a4317e52575fdd))
+
 ## [2.9.0](https://github.com/fluxapi/fluxapi/compare/v2.8.0...v2.9.0) (2022-01-08)
 
 
