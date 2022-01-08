@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.0](https://github.com/fluxapi/fluxapi/compare/v2.8.0...v2.9.0) (2022-01-08)
+
+
+### Features
+
+* make esbuild a peer dependency ([f73d3dc](https://github.com/fluxapi/fluxapi/commit/f73d3dce2580a751713d52a4d9e4688f02f3b027))
+
 ## [2.8.0](https://github.com/fluxapi/fluxapi/compare/v2.7.0...v2.8.0) (2022-01-08)
 
 
