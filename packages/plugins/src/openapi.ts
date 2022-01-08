@@ -1,4 +1,5 @@
 import { FastifyInstance } from 'fastify';
+import _ from 'lodash';
 import swagger, { FastifyDynamicSwaggerOptions } from 'fastify-swagger';
 import { readFileSync, writeFileSync } from 'fs';
 import { FluxPlugin, getFluxJsonSchema } from '@fluxapi/common';
@@ -30,7 +31,7 @@ export function openapi(additionalOptions?: SwaggerOptionsFixed): FluxPlugin {
   };
 
   return (fastify: FastifyInstance) => {
-    fastify.register(swagger, options);
+    fastify.register(swagger, _.merge(options, additionalOptions));
 
     const schema = getFluxJsonSchema();
     Object.values(schema).forEach((entity: unknown) => {
