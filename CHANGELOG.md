@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.8.0](https://github.com/fluxapi/fluxapi/compare/v2.7.0...v2.8.0) (2022-01-08)
+
+
+### Features
+
+* expose esbuild options ([ca7417b](https://github.com/fluxapi/fluxapi/commit/ca7417b1b36e942327a0e2bcc96d92a3914313af))
+
 ## [2.7.0](https://github.com/fluxapi/fluxapi/compare/v2.6.0...v2.7.0) (2022-01-07)
 
 
