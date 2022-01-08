@@ -1,4 +1,4 @@
-import { build, Plugin } from 'esbuild';
+import { build, BuildOptions, Plugin } from 'esbuild';
 import fg from 'fast-glob';
 import { join } from 'node:path';
 import { getConfig } from './config.js';
@@ -22,7 +22,7 @@ export async function esbuildHelper() {
     markDirectories: true,
   });
 
-  await build({
+  const esbuildConfig: BuildOptions = {
     platform: 'node',
     target: 'node16',
     format: 'cjs',
@@ -32,5 +32,11 @@ export async function esbuildHelper() {
     bundle: false,
     sourcemap: true,
     plugins: [makeAllPackagesExternalPlugin()],
-  });
+  };
+
+  if (config.esbuild) {
+    Object.assign(esbuildConfig, config.esbuild);
+  }
+
+  await build(esbuildConfig);
 }

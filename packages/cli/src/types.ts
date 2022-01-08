@@ -1,3 +1,4 @@
+import { BuildOptions } from 'esbuild';
 import { GenerateApiParams } from 'swagger-typescript-api';
 
 export interface FluxProjectConfig {
@@ -8,5 +9,6 @@ export interface FluxProjectConfig {
 export interface FluxCliConfig {
   entry: string;
   outdir: string;
+  esbuild?: BuildOptions;
   tasks: FluxProjectConfig[];
 }
