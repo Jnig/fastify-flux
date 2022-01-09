@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.9.2](https://github.com/fluxapi/fluxapi/compare/v2.9.1...v2.9.2) (2022-01-09)
+
+
+### Bug Fixes
+
+* add swagger to dependencies ([f2ab73c](https://github.com/fluxapi/fluxapi/commit/f2ab73c870333950219bfe4237770b28cfc0b46f))
+
 ### [2.9.1](https://github.com/fluxapi/fluxapi/compare/v2.9.0...v2.9.1) (2022-01-08)
 
 
