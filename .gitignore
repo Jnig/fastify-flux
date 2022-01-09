@@ -3,3 +3,4 @@ node_modules/
 .yarn/
 yarn-error.log
 *.db
+.pnpm-debug.log
