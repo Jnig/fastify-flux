@@ -6,7 +6,7 @@ import { getControllerFunctions } from './getControllerFunctions.js';
 
 export async function generateMeta() {
   const config = await getConfig();
-  const controllers = await fg(join(config.entry, '/**/*.controller.ts'), {
+  const controllers = await fg(join(config.entry, '/**/*[cC]ontroller.ts'), {
     absolute: true,
     markDirectories: true,
   });
