@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.10.0](https://github.com/fluxapi/fluxapi/compare/v2.9.2...v2.10.0) (2022-01-09)
+
+
+### Features
+
+* allow files ending with Controller.ts ([df3f46c](https://github.com/fluxapi/fluxapi/commit/df3f46c373ba462a82c9a09db2a243bd7b098e95))
+
 ### [2.9.2](https://github.com/fluxapi/fluxapi/compare/v2.9.1...v2.9.2) (2022-01-09)
 
 
