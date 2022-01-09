@@ -13,11 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fluxapi/common": "workspace:*"
+    "@fluxapi/common": "workspace:*",
+    "fastify-swagger": "4.x"
   },
   "devDependencies": {
     "fastify": "~3.24.1",
-    "fastify-swagger": "4.x",
     "typescript": "4.5.2"
   },
   "peerDependencies": {
