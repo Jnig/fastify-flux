@@ -94,9 +94,16 @@ export class HttpClient<SecurityDataType = unknown> {
         const responseFormat = (format && this.format) || void 0;
 
         if (type === ContentType.FormData && body && body !== null && typeof body === "object") {
-
           body = this.createFormData(body as Record<string, unknown>);
         }
+
+	if (!type) {
+	  type = ContentType.Json;
+	}
+
+	if (!body) {
+	    body = {};
+	}
 
         try {
           const result = await this.instance.request({
