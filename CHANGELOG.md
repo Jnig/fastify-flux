@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.0](https://github.com/fluxapi/fluxapi/compare/v2.10.0...v2.11.0) (2022-01-10)
+
+
+### Features
+
+* set sdk default content type to json ([c6011b4](https://github.com/fluxapi/fluxapi/commit/c6011b483f1f7d3bae2fbd9ea82ccfcc36b16817))
+
 ## [2.10.0](https://github.com/fluxapi/fluxapi/compare/v2.9.2...v2.10.0) (2022-01-09)
 
 
