@@ -106,7 +106,7 @@ export class HttpClient<SecurityDataType = unknown> {
 	}
 
         try {
-          const result = await this.instance.request({
+          const result: any = await this.instance.request({
               ...requestParams,
               headers: {
                   ...(type && type !== ContentType.FormData ? { "Content-Type": type } : {}),
