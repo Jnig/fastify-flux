@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.12.0](https://github.com/fluxapi/fluxapi/compare/v2.11.1...v2.12.0) (2022-01-18)
+
+
+### Features
+
+* debounce reload ([a021e0c](https://github.com/fluxapi/fluxapi/commit/a021e0c7c45b44e19c55c829b166272126066c35))
+* kill child processes ([6a5d5e9](https://github.com/fluxapi/fluxapi/commit/6a5d5e9c9c7c05ce72636dc89adb5be68d8b7d00))
+
 ### [2.11.1](https://github.com/fluxapi/fluxapi/compare/v2.11.0...v2.11.1) (2022-01-11)
 
 
