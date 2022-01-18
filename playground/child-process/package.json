@@ -1,0 +1,28 @@
+{
+  "name": "standard",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "build": "flux build --typecheck",
+    "dev": "flux start --watch --sdk",
+    "dev:typecheck": "flux start --watch --typecheck",
+    "debug": "flux start --watch --sdk  --debug",
+    "sdk": "flux sdk",
+    "jest": "jest",
+    "lint": "eslint src/",
+    "prisma": "prisma"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "source-map-support": "0.5.21",
+    "tsconfig-paths": "3.12.0"
+  },
+  "devDependencies": {
+    "@fluxapi/cli": "*",
+    "typescript": "4.5.2",
+    "@types/node": "16.11.11"
+  }
+}
