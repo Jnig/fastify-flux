@@ -31,6 +31,7 @@ importers:
       jest: ^27.4.3
       lodash: ^4.17.21
       p-map: 5.3.0
+      pidtree: ^0.5.0
       piscina: ^3.1.0
       source-map-support: ^0.5.20
       swagger-typescript-api: ^9.3.1
@@ -49,6 +50,7 @@ importers:
       fast-glob: 3.2.7
       lodash: 4.17.21
       p-map: 5.3.0
+      pidtree: 0.5.0
       piscina: 3.1.0
       source-map-support: 0.5.21
       swagger-typescript-api: 9.3.1
@@ -5333,6 +5335,12 @@ packages:
   /picomatch/2.3.0:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
     engines: {node: '>=8.6'}
+
+  /pidtree/0.5.0:
+    resolution: {integrity: sha512-9nxspIM7OpZuhBxPg73Zvyq7j1QMPMPsGKTqRc2XOaFQauDvoNz9fM1Wdkjmeo7l9GXOZiRs97sPkuayl39wjA==}
+    engines: {node: '>=0.10'}
+    hasBin: true
+    dev: false
 
   /pify/2.3.0:
     resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}

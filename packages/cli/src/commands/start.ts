@@ -1,6 +1,8 @@
 import { Command } from 'commander';
-import { execa, ExecaChildProcess } from 'execa';
+import { execa } from 'execa';
 import chokidar from 'chokidar';
+import pMap from 'p-map';
+import _ from 'lodash';
 import {
   runWorkerControllerGeneration,
   runWorkerEsbuild,
@@ -11,6 +13,7 @@ import {
 import { log } from '../log.js';
 import { getConfig } from '../helper/config.js';
 import { FluxProjectConfig } from '../types.js';
+import { killProcess } from '../helper/killProcess.js';
 
 interface Options {
   watch: boolean;
@@ -34,21 +37,22 @@ function startProcess(command: string[], projectIndex: number) {
     subprocess.stderr.pipe(process.stdout);
   }
 
-  return subprocess;
+  return subprocess.pid as number;
 }
 
 class ExecHandler {
-  private procs: ExecaChildProcess[] = [];
+  private procs: number[] = [];
 
   constructor(private config: FluxProjectConfig['run'][]) {}
 
-  cancelAll() {
-    this.procs.forEach((x) => {
-      x.cancel();
+  async cancelAll() {
+    await pMap(this.procs, async (pid) => {
+      await killProcess(pid);
     });
   }
 
   startAll() {
+    this.cancelAll();
     this.procs = this.config.map(startProcess);
   }
 }
@@ -78,8 +82,8 @@ class WatchHandler {
         persistent: true,
         ignoreInitial: true,
       })
-      .on('add', this.handle.bind(this))
-      .on('change', this.handle.bind(this));
+      .on('add', this.handleDebounced.bind(this))
+      .on('change', this.handleDebounced.bind(this));
   }
 
   async handle(change: string) {
@@ -97,6 +101,8 @@ class WatchHandler {
       runWorkerTypecheck();
     }
   }
+
+  handleDebounced = _.debounce(this.handle, 100);
 }
 
 async function startSdkWatch() {
