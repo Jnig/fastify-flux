@@ -1,6 +1,7 @@
 import { build, BuildOptions, Plugin } from 'esbuild';
 import fg from 'fast-glob';
 import { join } from 'node:path';
+import { log } from '../log.js';
 import { getConfig } from './config.js';
 
 const makeAllPackagesExternalPlugin = (): Plugin => ({
@@ -14,7 +15,7 @@ const makeAllPackagesExternalPlugin = (): Plugin => ({
   },
 });
 
-export async function esbuildHelper() {
+export async function esbuildHelper(): Promise<boolean> {
   const config = await getConfig();
 
   const files = await fg(join(config.entry, '/**/*.ts'), {
@@ -37,6 +38,11 @@ export async function esbuildHelper() {
   if (config.esbuild) {
     Object.assign(esbuildConfig, config.esbuild);
   }
+  try {
+    await build(esbuildConfig);
 
-  await build(esbuildConfig);
+    return true;
+  } catch (err: any) {
+    return false;
+  }
 }

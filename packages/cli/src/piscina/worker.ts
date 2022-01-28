@@ -22,7 +22,7 @@ export async function runSchemaGeneration() {
 }
 
 export async function runEsbuild() {
-  await esbuildHelper();
+  return await esbuildHelper();
 }
 
 export async function runTypecheck() {

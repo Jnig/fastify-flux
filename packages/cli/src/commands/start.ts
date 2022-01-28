@@ -14,6 +14,7 @@ import { log } from '../log.js';
 import { getConfig } from '../helper/config.js';
 import { FluxProjectConfig } from '../types.js';
 import { killProcess } from '../helper/killProcess.js';
+import { existsSync, mkdirSync } from 'fs';
 
 interface Options {
   watch: boolean;
@@ -40,6 +41,15 @@ function startProcess(command: string[], projectIndex: number) {
   return subprocess.pid as number;
 }
 
+async function createDistDir() {
+  const distDir = 'dist/';
+  const distExists = existsSync(distDir);
+
+  if (!distExists) {
+    mkdirSync(distDir);
+  }
+}
+
 class ExecHandler {
   private procs: number[] = [];
 
@@ -51,7 +61,7 @@ class ExecHandler {
     });
   }
 
-  startAll() {
+  restartAll() {
     this.cancelAll();
     this.procs = this.config.map(startProcess);
   }
@@ -74,7 +84,6 @@ class WatchHandler {
     });
 
     this.excecHandler = new ExecHandler(commands);
-    this.excecHandler.startAll();
 
     chokidar
       .watch(config.entry, {
@@ -86,16 +95,27 @@ class WatchHandler {
       .on('change', this.handleDebounced.bind(this));
   }
 
-  async handle(change: string) {
-    log({ component: 'cli', success: 'App reload', details: change });
-
+  async build() {
     this.excecHandler.cancelAll();
+
+    const esbuildSuccess = await runWorkerEsbuild();
+    if (!esbuildSuccess) {
+      log({ component: 'cli', warning: 'Skipping restart... esbuild failed.' });
+      return;
+    }
+
     await Promise.all([
-      runWorkerEsbuild(),
       runWorkerControllerGeneration(),
       runWorkerSchemaGeneration(),
     ]);
-    this.excecHandler.startAll();
+
+    this.excecHandler.restartAll();
+  }
+
+  async handle(change: string) {
+    log({ component: 'cli', success: 'App reload', details: change });
+
+    await this.build();
 
     if (this.options.typecheck) {
       runWorkerTypecheck();
@@ -128,14 +148,11 @@ async function startSdkWatch() {
 }
 
 async function handler(options: Options) {
-  await runWorkerEsbuild(); //esbuild generated dist dir if not exists
-  await Promise.all([
-    runWorkerControllerGeneration(),
-    runWorkerSchemaGeneration(),
-  ]);
+  await createDistDir();
 
   const instance = new WatchHandler(options);
   await instance.setup();
+  await instance.build();
 
   if (options.sdk) {
     startSdkWatch();

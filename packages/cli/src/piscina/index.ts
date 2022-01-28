@@ -1,10 +1,7 @@
 import Piscina from 'piscina';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import {
-  GenerateApiConfiguration,
-  GenerateApiParams,
-} from 'swagger-typescript-api';
+import { GenerateApiParams } from 'swagger-typescript-api';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -13,7 +10,7 @@ export const piscina = new Piscina({
   maxThreads: 4,
 });
 
-export function runWorkerEsbuild() {
+export function runWorkerEsbuild(): Promise<boolean> {
   return piscina.run({}, { name: 'runEsbuild' });
 }
 
