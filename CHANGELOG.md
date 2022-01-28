@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.12.1](https://github.com/fluxapi/fluxapi/compare/v2.12.0...v2.12.1) (2022-01-28)
+
+
+### Bug Fixes
+
+* prevent restart if esbuild fails ([45ec175](https://github.com/fluxapi/fluxapi/commit/45ec175a75a9f172dc63757f42cd4385c401cc7d))
+
 ## [2.12.0](https://github.com/fluxapi/fluxapi/compare/v2.11.1...v2.12.0) (2022-01-18)
 
 
