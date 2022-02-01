@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.12.2](https://github.com/fluxapi/fluxapi/compare/v2.12.1...v2.12.2) (2022-02-01)
+
+
+### Bug Fixes
+
+* allow 0 as url parameter ([bb9245f](https://github.com/fluxapi/fluxapi/commit/bb9245f0e4ade914de9b12da89a4f043bb4b8b5c))
+
 ### [2.12.1](https://github.com/fluxapi/fluxapi/compare/v2.12.0...v2.12.1) (2022-01-28)
 
 
