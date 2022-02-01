@@ -30,7 +30,8 @@ const defaultMapping: FluxMapping[] = [
 function getParamMapper(name: string): FluxMapping['mapper'] {
   return ({ request }) => {
     const { params } = request as any;
-    if (params && params[name]) {
+
+    if (params && params.hasOwnProperty(name)) {
       return params[name];
     }
 
