@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.12.3](https://github.com/fluxapi/fluxapi/compare/v2.12.2...v2.12.3) (2022-02-18)
+
+
+### Bug Fixes
+
+* catch ts-json-schema error and pretty print ([5bdc310](https://github.com/fluxapi/fluxapi/commit/5bdc31057df274a4e33196ec4d1b112240c11372))
+
 ### [2.12.2](https://github.com/fluxapi/fluxapi/compare/v2.12.1...v2.12.2) (2022-02-01)
 
 
