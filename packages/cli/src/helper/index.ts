@@ -14,7 +14,10 @@ export async function writeControllerJson() {
 
 export async function writeSchemaJson() {
   const config = await getConfig();
-  const schema = await generateSchema(config.entry, { removeDateTime: false });
+  let schema = await generateSchema(config.entry, { removeDateTime: false });
+  if (!schema) {
+    schema = '{}';
+  }
 
   writeFile(join(config.outdir, 'flux-schema.json'), schema);
 }

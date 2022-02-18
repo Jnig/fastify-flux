@@ -1,5 +1,6 @@
 import $RefParser from '@apidevtools/json-schema-ref-parser';
 import * as ts from 'ts-json-schema-generator';
+import { log } from '../log.js';
 interface GenerateSchemaOptions {
   removeDateTime: boolean;
 }
@@ -36,6 +37,19 @@ export class GenerateGlobalSchema {
       if (e.message.includes('NoRootNamesError')) {
         console.warn(
           `\nMissing interfaces for path: ${this.base}/controllers/*/interfaces.ts\n`,
+        );
+        return '';
+      }
+
+      if (e.diagnostics) {
+        e.diagnostics.forEach(
+          (element: { messageText: string; file: { fileName: string } }) => {
+            log({
+              component: 'cli',
+              warning: element.messageText,
+              details: element.file.fileName,
+            });
+          },
         );
         return '';
       }
