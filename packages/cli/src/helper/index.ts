@@ -2,7 +2,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getConfig } from './config.js';
 import { generateMeta } from './generateMeta.js';
-import { generateSchema } from './generateSchema.js';
+import { generateSchema } from '../schema/generateSchema.js';
 import { writeFile } from './writeFile.js';
 
 export async function writeControllerJson() {

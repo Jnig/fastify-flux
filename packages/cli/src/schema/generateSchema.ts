@@ -1,6 +1,8 @@
 import $RefParser from '@apidevtools/json-schema-ref-parser';
 import * as ts from 'ts-json-schema-generator';
 import { log } from '../log.js';
+import { convertNullToNullable } from './convertNullToNullable.js';
+
 interface GenerateSchemaOptions {
   removeDateTime: boolean;
 }
@@ -31,8 +33,9 @@ export class GenerateGlobalSchema {
       }
 
       const withIds = addId(removedReferences.definitions);
+      const nullableConverted = convertNullToNullable(withIds);
 
-      return JSON.stringify(withIds, null, 2);
+      return JSON.stringify(nullableConverted, null, 2);
     } catch (e: any) {
       if (e.message.includes('NoRootNamesError')) {
         console.warn(

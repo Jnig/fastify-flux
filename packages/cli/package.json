@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist/",
-    "test": "exit 0",
+    "test": "jest",
     "dev": "tsc --watch",
     "build": "tsc"
   },
