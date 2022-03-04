@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.12.4](https://github.com/fluxapi/fluxapi/compare/v2.12.3...v2.12.4) (2022-03-04)
+
+
+### Bug Fixes
+
+* convert type: null to nullable: true in json schema ([21c101c](https://github.com/fluxapi/fluxapi/commit/21c101c61fa24f2cb9c47f7ede797ab7533d4bd3))
+
 ### [2.12.3](https://github.com/fluxapi/fluxapi/compare/v2.12.2...v2.12.3) (2022-02-18)
 
 
