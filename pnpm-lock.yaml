@@ -106,6 +106,49 @@ importers:
       ts-jest: 27.0.7_d967a5c71b36617f9eaef12c091f7695
       typescript: 4.5.2
 
+  packages/integration-tests:
+    specifiers:
+      '@fluxapi/cli': 2.12.4
+      '@fluxapi/common': 2.12.4
+      '@fluxapi/plugins': 2.12.4
+      '@types/jest': ^27.0.3
+      '@types/node': 16.11.11
+      '@typescript-eslint/eslint-plugin': ^5.5.0
+      '@typescript-eslint/parser': ^5.5.0
+      axios: ^0.24.0
+      esbuild: ^0.14.10
+      esbuild-jest: ^0.5.0
+      eslint: ^8.4.0
+      fastify: 3.24.1
+      fastify-swagger: 4.12.6
+      jest: ^27.4.3
+      pino-pretty: ^7.3.0
+      prisma: ^3.6.0
+      source-map-support: 0.5.21
+      tsconfig-paths: 3.12.0
+      typescript: 4.5.2
+    dependencies:
+      '@fluxapi/common': link:../common
+      '@fluxapi/plugins': link:../plugins
+      fastify: 3.24.1
+      fastify-swagger: 4.12.6
+      source-map-support: 0.5.21
+      tsconfig-paths: 3.12.0
+    devDependencies:
+      '@fluxapi/cli': link:../cli
+      '@types/jest': 27.0.3
+      '@types/node': 16.11.11
+      '@typescript-eslint/eslint-plugin': 5.5.0_b885794d89d00e0b80d68a1b7275fb2c
+      '@typescript-eslint/parser': 5.5.0_eslint@8.4.0+typescript@4.5.2
+      axios: 0.24.0
+      esbuild: 0.14.10
+      esbuild-jest: 0.5.0_esbuild@0.14.10
+      eslint: 8.4.0
+      jest: 27.4.3
+      pino-pretty: 7.3.0
+      prisma: 3.6.0
+      typescript: 4.5.2
+
   packages/plugins:
     specifiers:
       '@fluxapi/common': workspace:*
@@ -117,6 +160,21 @@ importers:
       fastify-swagger: 4.12.6
     devDependencies:
       fastify: 3.24.1
+      typescript: 4.5.2
+
+  playground/child-process:
+    specifiers:
+      '@fluxapi/cli': '*'
+      '@types/node': 16.11.11
+      source-map-support: 0.5.21
+      tsconfig-paths: 3.12.0
+      typescript: 4.5.2
+    dependencies:
+      source-map-support: 0.5.21
+      tsconfig-paths: 3.12.0
+    devDependencies:
+      '@fluxapi/cli': link:../../packages/cli
+      '@types/node': 16.11.11
       typescript: 4.5.2
 
   playground/template-prisma:
@@ -3128,6 +3186,7 @@ packages:
 
   /fastify-warning/0.2.0:
     resolution: {integrity: sha512-s1EQguBw/9qtc1p/WTY4eq9WMRIACkj+HTcOIK1in4MV5aFaQC9ZCIt0dJ7pr5bIf4lPpHvAtP2ywpTNgs7hqw==}
+    deprecated: This module renamed to process-warning
 
   /fastify/3.24.1:
     resolution: {integrity: sha512-ZL0V6u37d65tAY8lMwVMFtFvnEeJcG80QBNSdChqCm4i4x+is/38OU14gzJuRXhpenTL+pTJzNcu5Kn1ouzM3Q==}

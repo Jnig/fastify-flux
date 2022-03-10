@@ -1,7 +1,9 @@
 import $RefParser from '@apidevtools/json-schema-ref-parser';
 import * as ts from 'ts-json-schema-generator';
+import { Config } from 'ts-json-schema-generator';
 import { log } from '../log.js';
-import { convertNullToNullable } from './convertNullToNullable.js';
+import { convertEmptyObject } from './helper/convertEmptyObject.js';
+import { convertNullToNullable } from './helper/convertNullToNullable.js';
 
 interface GenerateSchemaOptions {
   removeDateTime: boolean;
@@ -19,7 +21,7 @@ export class GenerateGlobalSchema {
   constructor(private base: string, private params: GenerateSchemaOptions) {}
 
   async getSchema() {
-    const config = {
+    const config: Config = {
       path: `${this.base}/**/*schema.ts`,
       tsconfig: './tsconfig.json',
     };
@@ -33,7 +35,9 @@ export class GenerateGlobalSchema {
       }
 
       const withIds = addId(removedReferences.definitions);
-      const nullableConverted = convertNullToNullable(withIds);
+      const nullableConverted = convertEmptyObject(
+        convertNullToNullable(withIds),
+      );
 
       return JSON.stringify(nullableConverted, null, 2);
     } catch (e: any) {

@@ -1,4 +1,4 @@
-import { convertNullToNullable } from './convertNullToNullable';
+import { convertNullToNullable } from '../helper/convertNullToNullable';
 
 const input = {
   UpdateTodo: {
