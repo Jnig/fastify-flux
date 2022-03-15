@@ -33,11 +33,6 @@ export function openapi(additionalOptions?: SwaggerOptionsFixed): FluxPlugin {
   return (fastify: FastifyInstance) => {
     fastify.register(swagger, _.merge(options, additionalOptions));
 
-    const schema = getFluxJsonSchema();
-    Object.values(schema).forEach((entity: unknown) => {
-      fastify.addSchema(entity);
-    });
-
     fastify.ready(async () => {
       const { FLUX_PROJECT_INDEX } = process.env;
       if (!FLUX_PROJECT_INDEX) {

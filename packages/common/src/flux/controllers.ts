@@ -31,9 +31,9 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
       operationId: f.name,
       tags,
       params: getSchemaParams(route),
-      querystring: getSchemaQuerystring(route, schema),
-      body: getSchemaBody(route, schema),
-      response: getSchemaResponse(route, schema),
+      querystring: getSchemaQuerystring(config, route, schema),
+      body: getSchemaBody(config, route, schema),
+      response: getSchemaResponse(config, route, schema),
     } as any,
     config: route,
   });
