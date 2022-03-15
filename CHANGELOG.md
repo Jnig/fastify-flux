@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.13.0](https://github.com/fluxapi/fluxapi/compare/v2.12.4...v2.13.0) (2022-03-15)
+
+
+### Features
+
+* add only used schemas ([541d7ca](https://github.com/fluxapi/fluxapi/commit/541d7ca364698a8b905da4ee2e031e06640887f7))
+
+
+### Bug Fixes
+
+* handle objects with additional properties ([8759165](https://github.com/fluxapi/fluxapi/commit/8759165b68fc27e6b8b509849346f8e3dc2a3cd1))
+
 ### [2.12.4](https://github.com/fluxapi/fluxapi/compare/v2.12.3...v2.12.4) (2022-03-04)
 
 
