@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`schema 1`] = `
+Object {
+  "components": Object {
+    "schemas": Object {
+      "V2Response": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "foo": Object {
+            "type": "string",
+          },
+        },
+        "required": Array [
+          "foo",
+        ],
+        "type": "object",
+      },
+    },
+  },
+  "info": Object {
+    "description": "",
+    "title": "Api",
+    "version": "",
+  },
+  "openapi": "3.0.3",
+  "paths": Object {
+    "/v2": Object {
+      "get": Object {
+        "operationId": "string",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "foo": Object {
+                      "type": "string",
+                    },
+                  },
+                  "required": Array [
+                    "foo",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "v2",
+        ],
+      },
+    },
+  },
+}
+`;

@@ -4,15 +4,13 @@ import swagger, { FastifyDynamicSwaggerOptions } from 'fastify-swagger';
 import { readFileSync, writeFileSync } from 'fs';
 import { FluxPlugin, getFluxJsonSchema } from '@fluxapi/common';
 
-interface SwaggerOptionsFixed extends FastifyDynamicSwaggerOptions {
-  refResolver?: { buildLocalReference: (json: { $id: string }) => string };
-}
-
-export function openapi(additionalOptions?: SwaggerOptionsFixed): FluxPlugin {
-  const options: SwaggerOptionsFixed = {
+export function openapi(
+  additionalOptions?: FastifyDynamicSwaggerOptions,
+): FluxPlugin {
+  const options: FastifyDynamicSwaggerOptions = {
     routePrefix: '/',
     refResolver: {
-      buildLocalReference(json) {
+      buildLocalReference(json: any) {
         return json.$id;
       },
     },
