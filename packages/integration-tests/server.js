@@ -12,4 +12,10 @@ if (!fs.existsSync('./dist/index.js')) {
   process.exit(1);
 }
 
-require('./dist/index');
+if (!process.argv[2]) {
+  require('./dist/index');
+}
+
+if (process.argv[2] === 'v2') {
+  require('./dist/index-v2');
+}

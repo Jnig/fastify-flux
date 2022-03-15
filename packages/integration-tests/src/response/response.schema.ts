@@ -25,3 +25,14 @@ export interface AnyResponse {
   multiNumber: null | number | string;
   multiString: null | number | string;
 }
+
+export interface UndefinedResponse {
+  id: number;
+  string?: string;
+  stringUndefined?: string;
+  object?: { id: number; name: string };
+  objectUndefined?: { id: number; name: string };
+  objectNull?: { id: number; name: string } | null;
+  objectNullUndefined?: { id: number; name: string } | null;
+  objectNullUndefined2?: { id: number; name: string } | null;
+}

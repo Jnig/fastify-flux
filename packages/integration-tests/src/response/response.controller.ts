@@ -1,5 +1,5 @@
 import { Controller, Delete, Get, Status } from '@fluxapi/common';
-import { AnyResponse, NullResponse, ObjectResponse, AddionalResponse } from './response.schema';
+import { AnyResponse, NullResponse, ObjectResponse, AddionalResponse, UndefinedResponse } from './response.schema';
 
 @Controller('/responses', { tags: ['responses'] })
 export class ResponseController {
@@ -7,6 +7,21 @@ export class ResponseController {
   @Status(204)
   async voidResponse(): Promise<void> {
     return;
+  }
+
+  @Get('/string')
+  async string(): Promise<string> {
+    return 'foo';
+  }
+
+  @Get('/number')
+  async number(): Promise<number> {
+    return 3;
+  }
+
+  @Get('/any')
+  async any(): Promise<any> {
+    return { foo: 'bar' };
   }
 
   @Get('/remove-additional')
@@ -36,6 +51,18 @@ export class ResponseController {
       multiNull: null,
       multiNumber: 2,
       multiString: 'dsad',
+    };
+  }
+
+  @Get('/undefined-response')
+  async undefinedResponse(): Promise<UndefinedResponse> {
+    return {
+      id: 1,
+      string: 'bar',
+      object: { id: 1, name: 'string', foo: 'bar' } as any,
+      //objectUndefined,
+      objectNull: { id: 1, name: 'string', foo: 'bar' } as any,
+      objectNullUndefined: null,
     };
   }
 }

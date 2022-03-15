@@ -1,4 +1,4 @@
-export interface todos {
+interface todos {
   id: number;
   createdAt: Date;
   text: string;

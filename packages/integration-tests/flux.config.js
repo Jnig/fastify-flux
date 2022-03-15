@@ -11,6 +11,14 @@ const config = {
         moduleNameIndex: 0,
       },
     },
+    {
+      run: ['node', 'server.js', 'v2'],
+      sdk: {
+        name: 'generated-api-v2.ts',
+        output: './tests-e2e/api/',
+        moduleNameIndex: 0,
+      },
+    },
   ],
 };
 

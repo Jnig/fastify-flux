@@ -108,9 +108,9 @@ importers:
 
   packages/integration-tests:
     specifiers:
-      '@fluxapi/cli': 2.12.4
-      '@fluxapi/common': 2.12.4
-      '@fluxapi/plugins': 2.12.4
+      '@fluxapi/cli': '*'
+      '@fluxapi/common': '*'
+      '@fluxapi/plugins': '*'
       '@types/jest': ^27.0.3
       '@types/node': 16.11.11
       '@typescript-eslint/eslint-plugin': ^5.5.0

@@ -1,0 +1,1043 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`schema 1`] = `
+Object {
+  "components": Object {
+    "schemas": Object {
+      "AddionalResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "id": Object {
+            "type": "number",
+          },
+          "user": Object {
+            "additionalProperties": false,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "id",
+          "user",
+        ],
+        "type": "object",
+      },
+      "AnyResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "anyArray": Object {
+            "items": Object {},
+            "type": "array",
+          },
+          "anyObject": Object {},
+          "anyString": Object {},
+          "id": Object {
+            "type": "number",
+          },
+          "multiNull": Object {
+            "type": Array [
+              "null",
+              "number",
+              "string",
+            ],
+          },
+          "multiNumber": Object {
+            "type": Array [
+              "null",
+              "number",
+              "string",
+            ],
+          },
+          "multiString": Object {
+            "type": Array [
+              "null",
+              "number",
+              "string",
+            ],
+          },
+        },
+        "required": Array [
+          "id",
+          "anyString",
+          "anyArray",
+          "anyObject",
+          "multiNull",
+          "multiNumber",
+          "multiString",
+        ],
+        "type": "object",
+      },
+      "CreateTodo": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "priority": Object {
+            "type": "number",
+          },
+          "text": Object {
+            "type": "string",
+          },
+        },
+        "required": Array [
+          "priority",
+          "text",
+        ],
+        "type": "object",
+      },
+      "ListTodoQuery": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "includeDone": Object {
+            "type": "boolean",
+          },
+        },
+        "type": "object",
+      },
+      "NullResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "id": Object {
+            "type": "number",
+          },
+          "user": Object {
+            "additionalProperties": false,
+            "nullable": true,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+          "userNull": Object {
+            "additionalProperties": false,
+            "nullable": true,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "id",
+          "user",
+          "userNull",
+        ],
+        "type": "object",
+      },
+      "ObjectResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "anyObject": Object {
+            "additionalProperties": Object {
+              "type": "string",
+            },
+            "type": "object",
+          },
+          "anyRecord": Object {
+            "additionalProperties": true,
+            "type": "object",
+          },
+          "id": Object {
+            "type": "number",
+          },
+          "stringObject": Object {
+            "additionalProperties": Object {
+              "type": "string",
+            },
+            "type": "object",
+          },
+        },
+        "required": Array [
+          "id",
+          "anyRecord",
+          "anyObject",
+          "stringObject",
+        ],
+        "type": "object",
+      },
+      "TodoResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "createdAt": Object {
+            "format": "date-time",
+            "type": "string",
+          },
+          "done": Object {
+            "type": "boolean",
+          },
+          "id": Object {
+            "type": "number",
+          },
+          "priority": Object {
+            "type": "number",
+          },
+          "text": Object {
+            "type": "string",
+          },
+        },
+        "required": Array [
+          "createdAt",
+          "done",
+          "id",
+          "priority",
+          "text",
+        ],
+        "type": "object",
+      },
+      "UndefinedResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "id": Object {
+            "type": "number",
+          },
+          "object": Object {
+            "additionalProperties": false,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+          "objectNull": Object {
+            "additionalProperties": false,
+            "nullable": true,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+          "objectNullUndefined": Object {
+            "additionalProperties": false,
+            "nullable": true,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+          "objectNullUndefined2": Object {
+            "additionalProperties": false,
+            "nullable": true,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+          "objectUndefined": Object {
+            "additionalProperties": false,
+            "properties": Object {
+              "id": Object {
+                "type": "number",
+              },
+              "name": Object {
+                "type": "string",
+              },
+            },
+            "required": Array [
+              "id",
+              "name",
+            ],
+            "type": "object",
+          },
+          "string": Object {
+            "type": "string",
+          },
+          "stringUndefined": Object {
+            "type": "string",
+          },
+        },
+        "required": Array [
+          "id",
+        ],
+        "type": "object",
+      },
+      "UpdateTodo": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "createdAt": Object {
+            "format": "date-time",
+            "type": "string",
+          },
+          "done": Object {
+            "type": "boolean",
+          },
+          "priority": Object {
+            "type": "number",
+          },
+          "text": Object {
+            "type": "string",
+          },
+        },
+        "type": "object",
+      },
+    },
+  },
+  "info": Object {
+    "description": "",
+    "title": "Api",
+    "version": "",
+  },
+  "openapi": "3.0.3",
+  "paths": Object {
+    "/responses/any": Object {
+      "get": Object {
+        "operationId": "any",
+        "responses": Object {},
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/any-response": Object {
+      "get": Object {
+        "operationId": "anyResponse",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "anyArray": Object {
+                      "items": Object {},
+                      "type": "array",
+                    },
+                    "anyObject": Object {},
+                    "anyString": Object {},
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "multiNull": Object {
+                      "type": Array [
+                        "null",
+                        "number",
+                        "string",
+                      ],
+                    },
+                    "multiNumber": Object {
+                      "type": Array [
+                        "null",
+                        "number",
+                        "string",
+                      ],
+                    },
+                    "multiString": Object {
+                      "type": Array [
+                        "null",
+                        "number",
+                        "string",
+                      ],
+                    },
+                  },
+                  "required": Array [
+                    "id",
+                    "anyString",
+                    "anyArray",
+                    "anyObject",
+                    "multiNull",
+                    "multiNumber",
+                    "multiString",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/null-property": Object {
+      "get": Object {
+        "operationId": "nullProperty",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "user": Object {
+                      "additionalProperties": false,
+                      "nullable": true,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                    "userNull": Object {
+                      "additionalProperties": false,
+                      "nullable": true,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                  },
+                  "required": Array [
+                    "id",
+                    "user",
+                    "userNull",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/number": Object {
+      "get": Object {
+        "operationId": "number",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "type": "number",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/object-response": Object {
+      "get": Object {
+        "operationId": "objectResponse",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "anyObject": Object {
+                      "additionalProperties": Object {
+                        "type": "string",
+                      },
+                      "type": "object",
+                    },
+                    "anyRecord": Object {
+                      "additionalProperties": true,
+                      "type": "object",
+                    },
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "stringObject": Object {
+                      "additionalProperties": Object {
+                        "type": "string",
+                      },
+                      "type": "object",
+                    },
+                  },
+                  "required": Array [
+                    "id",
+                    "anyRecord",
+                    "anyObject",
+                    "stringObject",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/remove-additional": Object {
+      "get": Object {
+        "operationId": "removeAdditional",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "user": Object {
+                      "additionalProperties": false,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                  },
+                  "required": Array [
+                    "id",
+                    "user",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/string": Object {
+      "get": Object {
+        "operationId": "string",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "type": "string",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/undefined-response": Object {
+      "get": Object {
+        "operationId": "undefinedResponse",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "object": Object {
+                      "additionalProperties": false,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                    "objectNull": Object {
+                      "additionalProperties": false,
+                      "nullable": true,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                    "objectNullUndefined": Object {
+                      "additionalProperties": false,
+                      "nullable": true,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                    "objectNullUndefined2": Object {
+                      "additionalProperties": false,
+                      "nullable": true,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                    "objectUndefined": Object {
+                      "additionalProperties": false,
+                      "properties": Object {
+                        "id": Object {
+                          "type": "number",
+                        },
+                        "name": Object {
+                          "type": "string",
+                        },
+                      },
+                      "required": Array [
+                        "id",
+                        "name",
+                      ],
+                      "type": "object",
+                    },
+                    "string": Object {
+                      "type": "string",
+                    },
+                    "stringUndefined": Object {
+                      "type": "string",
+                    },
+                  },
+                  "required": Array [
+                    "id",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/void": Object {
+      "delete": Object {
+        "operationId": "voidResponse",
+        "responses": Object {
+          "204": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "properties": Object {},
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/todos": Object {
+      "get": Object {
+        "operationId": "list",
+        "parameters": Array [
+          Object {
+            "in": "query",
+            "name": "includeDone",
+            "required": false,
+            "schema": Object {
+              "type": "boolean",
+            },
+          },
+        ],
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "items": Object {
+                    "additionalProperties": false,
+                    "properties": Object {
+                      "createdAt": Object {
+                        "format": "date-time",
+                        "type": "string",
+                      },
+                      "done": Object {
+                        "type": "boolean",
+                      },
+                      "id": Object {
+                        "type": "number",
+                      },
+                      "priority": Object {
+                        "type": "number",
+                      },
+                      "text": Object {
+                        "type": "string",
+                      },
+                    },
+                    "required": Array [
+                      "createdAt",
+                      "done",
+                      "id",
+                      "priority",
+                      "text",
+                    ],
+                    "type": "object",
+                  },
+                  "type": "array",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "todos",
+        ],
+      },
+      "post": Object {
+        "operationId": "create",
+        "requestBody": Object {
+          "content": Object {
+            "application/json": Object {
+              "schema": Object {
+                "additionalProperties": false,
+                "properties": Object {
+                  "priority": Object {
+                    "type": "number",
+                  },
+                  "text": Object {
+                    "type": "string",
+                  },
+                },
+                "required": Array [
+                  "priority",
+                  "text",
+                ],
+                "type": "object",
+              },
+            },
+          },
+        },
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "createdAt": Object {
+                      "format": "date-time",
+                      "type": "string",
+                    },
+                    "done": Object {
+                      "type": "boolean",
+                    },
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "priority": Object {
+                      "type": "number",
+                    },
+                    "text": Object {
+                      "type": "string",
+                    },
+                  },
+                  "required": Array [
+                    "createdAt",
+                    "done",
+                    "id",
+                    "priority",
+                    "text",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "todos",
+        ],
+      },
+    },
+    "/todos/{id}": Object {
+      "delete": Object {
+        "operationId": "remove",
+        "parameters": Array [
+          Object {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "responses": Object {
+          "204": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "properties": Object {},
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "todos",
+        ],
+      },
+      "get": Object {
+        "operationId": "get",
+        "parameters": Array [
+          Object {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "createdAt": Object {
+                      "format": "date-time",
+                      "type": "string",
+                    },
+                    "done": Object {
+                      "type": "boolean",
+                    },
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "priority": Object {
+                      "type": "number",
+                    },
+                    "text": Object {
+                      "type": "string",
+                    },
+                  },
+                  "required": Array [
+                    "createdAt",
+                    "done",
+                    "id",
+                    "priority",
+                    "text",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "todos",
+        ],
+      },
+      "post": Object {
+        "operationId": "update",
+        "parameters": Array [
+          Object {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "requestBody": Object {
+          "content": Object {
+            "application/json": Object {
+              "schema": Object {
+                "additionalProperties": false,
+                "properties": Object {
+                  "createdAt": Object {
+                    "format": "date-time",
+                    "type": "string",
+                  },
+                  "done": Object {
+                    "type": "boolean",
+                  },
+                  "priority": Object {
+                    "type": "number",
+                  },
+                  "text": Object {
+                    "type": "string",
+                  },
+                },
+                "type": "object",
+              },
+            },
+          },
+        },
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "createdAt": Object {
+                      "format": "date-time",
+                      "type": "string",
+                    },
+                    "done": Object {
+                      "type": "boolean",
+                    },
+                    "id": Object {
+                      "type": "number",
+                    },
+                    "priority": Object {
+                      "type": "number",
+                    },
+                    "text": Object {
+                      "type": "string",
+                    },
+                  },
+                  "required": Array [
+                    "createdAt",
+                    "done",
+                    "id",
+                    "priority",
+                    "text",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "todos",
+        ],
+      },
+    },
+  },
+}
+`;

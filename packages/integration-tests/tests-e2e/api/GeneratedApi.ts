@@ -9,43 +9,6 @@
  * ---------------------------------------------------------------
  */
 
-export interface Todos {
-  id: number;
-
-  /** @format date-time */
-  createdAt: string;
-  text: string;
-  priority: number;
-  done: boolean;
-}
-
-export interface TodoResponse {
-  id: number;
-
-  /** @format date-time */
-  createdAt: string;
-  text: string;
-  priority: number;
-  done: boolean;
-}
-
-export interface CreateTodo {
-  text: string;
-  priority: number;
-}
-
-export interface UpdateTodo {
-  /** @format date-time */
-  createdAt?: string;
-  text?: string;
-  priority?: number;
-  done?: boolean;
-}
-
-export interface ListTodoQuery {
-  includeDone?: boolean;
-}
-
 export interface AddionalResponse {
   id: number;
   user: { id: number; name: string };
@@ -72,6 +35,44 @@ export interface AnyResponse {
   multiNull: null | number | string;
   multiNumber: null | number | string;
   multiString: null | number | string;
+}
+
+export interface UndefinedResponse {
+  id: number;
+  string?: string;
+  stringUndefined?: string;
+  object?: { id: number; name: string };
+  objectUndefined?: { id: number; name: string };
+  objectNull?: { id: number; name: string };
+  objectNullUndefined?: { id: number; name: string };
+  objectNullUndefined2?: { id: number; name: string };
+}
+
+export interface ListTodoQuery {
+  includeDone?: boolean;
+}
+
+export interface TodoResponse {
+  id: number;
+
+  /** @format date-time */
+  createdAt: string;
+  text: string;
+  priority: number;
+  done: boolean;
+}
+
+export interface CreateTodo {
+  text: string;
+  priority: number;
+}
+
+export interface UpdateTodo {
+  /** @format date-time */
+  createdAt?: string;
+  text?: string;
+  priority?: number;
+  done?: boolean;
 }
 
 import axios, { AxiosInstance, AxiosRequestConfig, ResponseType } from 'axios';
@@ -234,6 +235,50 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * No description
      *
      * @tags responses
+     * @name String
+     * @request GET:/responses/string
+     */
+    string: (params: RequestParams = {}) =>
+      this.request<string, any>({
+        path: `/responses/string`,
+        method: 'GET',
+        format: 'json',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name Number
+     * @request GET:/responses/number
+     */
+    number: (params: RequestParams = {}) =>
+      this.request<number, any>({
+        path: `/responses/number`,
+        method: 'GET',
+        format: 'json',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name Any
+     * @request GET:/responses/any
+     */
+    any: (params: RequestParams = {}) =>
+      this.request<any, any>({
+        path: `/responses/any`,
+        method: 'GET',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags responses
      * @name RemoveAdditional
      * @request GET:/responses/remove-additional
      */
@@ -304,6 +349,33 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         any
       >({
         path: `/responses/any-response`,
+        method: 'GET',
+        format: 'json',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name UndefinedResponse
+     * @request GET:/responses/undefined-response
+     */
+    undefinedResponse: (params: RequestParams = {}) =>
+      this.request<
+        {
+          id: number;
+          string?: string;
+          stringUndefined?: string;
+          object?: { id: number; name: string };
+          objectUndefined?: { id: number; name: string };
+          objectNull?: { id: number; name: string };
+          objectNullUndefined?: { id: number; name: string };
+          objectNullUndefined2?: { id: number; name: string };
+        },
+        any
+      >({
+        path: `/responses/undefined-response`,
         method: 'GET',
         format: 'json',
         ...params,

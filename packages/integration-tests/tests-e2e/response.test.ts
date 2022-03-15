@@ -5,6 +5,21 @@ test('void response', async () => {
   expect(result).toBe('');
 });
 
+test('string response', async () => {
+  const result = await client.responses.string();
+  expect(result).toBe('foo');
+});
+
+test('number response', async () => {
+  const result = await client.responses.number();
+  expect(result).toBe(3);
+});
+
+test('any response', async () => {
+  const result = await client.responses.any();
+  expect(result).toEqual({ foo: 'bar' });
+});
+
 test('remove additional properties', async () => {
   const result = await client.responses.removeAdditional();
   expect(result).toEqual({
@@ -57,5 +72,22 @@ test('any response', async () => {
     multiNull: null,
     multiNumber: 2,
     multiString: 'dsad',
+  });
+});
+
+test('undefined response', async () => {
+  const result = await client.responses.undefinedResponse();
+  expect(result).toEqual({
+    id: 1,
+    string: 'bar',
+    object: {
+      id: 1,
+      name: 'string',
+    },
+    objectNull: {
+      id: 1,
+      name: 'string',
+    },
+    objectNullUndefined: null,
   });
 });
