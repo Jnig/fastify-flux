@@ -830,6 +830,7 @@ Object {
               },
             },
           },
+          "required": true,
         },
         "responses": Object {
           "200": Object {
