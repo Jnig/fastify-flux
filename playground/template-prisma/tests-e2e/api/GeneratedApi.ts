@@ -9,20 +9,11 @@
  * ---------------------------------------------------------------
  */
 
-export interface TodoResponse {
-  id: number;
-
-  /** @format date-time */
-  createdAt: string;
-  text: string;
-  priority: number;
-  done: boolean;
+export interface ListTodoQuery {
+  includeDone?: boolean;
 }
 
-/**
- * Model todos
- */
-export interface Todos {
+export interface TodoResponse {
   id: number;
 
   /** @format date-time */
@@ -43,10 +34,6 @@ export interface UpdateTodo {
   text?: string;
   priority?: number;
   done?: boolean;
-}
-
-export interface ListTodoQuery {
-  includeDone?: boolean;
 }
 
 import axios, { AxiosInstance, AxiosRequestConfig, ResponseType } from 'axios';
@@ -150,8 +137,16 @@ export class HttpClient<SecurityDataType = unknown> {
       body = this.createFormData(body as Record<string, unknown>);
     }
 
+    if (!type) {
+      type = ContentType.Json;
+    }
+
+    if (!body) {
+      body = {};
+    }
+
     try {
-      const result = await this.instance.request({
+      const result: any = await this.instance.request({
         ...requestParams,
         headers: {
           ...(type && type !== ContentType.FormData ? { 'Content-Type': type } : {}),

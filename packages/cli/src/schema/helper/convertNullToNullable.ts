@@ -19,5 +19,18 @@ export function convertNullToNullable(object: any): any {
         return convertNullToNullable(result);
       }
     }
+
+    if (value.type && _.isArray(value.type)) {
+      if (value.type.includes('null')) {
+        value.nullable = true;
+      }
+      value.anyOf = value.type
+        .filter((x: string) => x !== 'null')
+        .map((x: string) => {
+          return { type: x };
+        });
+      delete value.type;
+      return convertNullToNullable(value);
+    }
   });
 }

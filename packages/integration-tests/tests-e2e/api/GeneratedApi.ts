@@ -32,9 +32,9 @@ export interface AnyResponse {
   anyString: any;
   anyArray: any[];
   anyObject: any;
-  multiNull: null | number | string;
-  multiNumber: null | number | string;
-  multiString: null | number | string;
+  multiNull: number | string | null;
+  multiNumber: number | string | null;
+  multiString: number | string | null;
 }
 
 export interface UndefinedResponse {
@@ -342,9 +342,9 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
           anyString: any;
           anyArray: any[];
           anyObject: any;
-          multiNull: null | number | string;
-          multiNumber: null | number | string;
-          multiString: null | number | string;
+          multiNull: number | string | null;
+          multiNumber: number | string | null;
+          multiString: number | string | null;
         },
         any
       >({
