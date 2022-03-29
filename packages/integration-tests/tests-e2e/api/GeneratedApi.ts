@@ -48,6 +48,8 @@ export interface UndefinedResponse {
   objectNullUndefined2?: { id: number; name: string };
 }
 
+export type Foobar = object;
+
 export interface ListTodoQuery {
   includeDone?: boolean;
 }
@@ -74,6 +76,8 @@ export interface UpdateTodo {
   priority?: number;
   done?: boolean;
 }
+
+export type InputEmptyQuery = object;
 
 import axios, { AxiosInstance, AxiosRequestConfig, ResponseType } from 'axios';
 
@@ -224,7 +228,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request DELETE:/responses/void
      */
     voidResponse: (params: RequestParams = {}) =>
-      this.request<object, any>({
+      this.request<Foobar, any>({
         path: `/responses/void`,
         method: 'DELETE',
         format: 'json',
@@ -380,6 +384,21 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         format: 'json',
         ...params,
       }),
+
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name EmptyInterfaceResponse
+     * @request GET:/responses/empty-interface-response
+     */
+    emptyInterfaceResponse: (params: RequestParams = {}) =>
+      this.request<Foobar, any>({
+        path: `/responses/empty-interface-response`,
+        method: 'GET',
+        format: 'json',
+        ...params,
+      }),
   };
   todos = {
     /**
@@ -459,9 +478,25 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request DELETE:/todos/{id}
      */
     remove: (id: number, params: RequestParams = {}) =>
-      this.request<object, any>({
+      this.request<Foobar, any>({
         path: `/todos/${id}`,
         method: 'DELETE',
+        format: 'json',
+        ...params,
+      }),
+  };
+  inputs = {
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name EmptyQuery
+     * @request GET:/inputs/empty-query
+     */
+    emptyQuery: (params: RequestParams = {}) =>
+      this.request<Foobar, any>({
+        path: `/inputs/empty-query`,
+        method: 'GET',
         format: 'json',
         ...params,
       }),

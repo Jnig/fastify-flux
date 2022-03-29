@@ -1,5 +1,12 @@
 import { Controller, Delete, Get, Status } from '@fluxapi/common';
-import { AnyResponse, NullResponse, ObjectResponse, AddionalResponse, UndefinedResponse } from './response.schema';
+import {
+  AnyResponse,
+  NullResponse,
+  ObjectResponse,
+  AddionalResponse,
+  UndefinedResponse,
+  Foobar,
+} from './response.schema';
 
 @Controller('/responses', { tags: ['responses'] })
 export class ResponseController {
@@ -64,5 +71,10 @@ export class ResponseController {
       objectNull: { id: 1, name: 'string', foo: 'bar' } as any,
       objectNullUndefined: null,
     };
+  }
+
+  @Get('/empty-interface-response')
+  async emptyInterfaceResponse(): Promise<Foobar> {
+    return { foo: 'bar' };
   }
 }

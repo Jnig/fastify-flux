@@ -91,3 +91,8 @@ test('undefined response', async () => {
     objectNullUndefined: null,
   });
 });
+
+test('empty interface response', async () => {
+  const result = await client.responses.emptyInterfaceResponse();
+  expect(result).toEqual({});
+});

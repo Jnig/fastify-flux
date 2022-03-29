@@ -2,6 +2,7 @@ import $RefParser from '@apidevtools/json-schema-ref-parser';
 import * as ts from 'ts-json-schema-generator';
 import { Config } from 'ts-json-schema-generator';
 import { log } from '../log.js';
+import { addProperties } from './helper/add-properties.js';
 import { convertEmptyObject } from './helper/convertEmptyObject.js';
 import { convertNullToNullable } from './helper/convertNullToNullable.js';
 
@@ -30,10 +31,10 @@ export class GenerateGlobalSchema {
       let schema = ts.createGenerator(config).createSchema() as any;
 
       schema = addId(schema.definitions);
-
       schema = convertNullToNullable(schema);
-
       schema = convertEmptyObject(schema);
+      schema = addProperties(schema);
+
       return JSON.stringify(schema, null, 2);
     } catch (e: any) {
       if (e.message.includes('NoRootNamesError')) {

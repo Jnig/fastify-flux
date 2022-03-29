@@ -36,3 +36,5 @@ export interface UndefinedResponse {
   objectNullUndefined?: { id: number; name: string } | null;
   objectNullUndefined2?: { id: number; name: string } | null;
 }
+
+export interface Foobar {}
