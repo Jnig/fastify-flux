@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.17.0](https://github.com/fluxapi/fluxapi/compare/v2.16.0...v2.17.0) (2022-03-29)
+
+
+### Features
+
+* improve anyOf handling ([0a3b4d2](https://github.com/fluxapi/fluxapi/commit/0a3b4d298924203a30951e7e43ef9a743271b98f))
+
 ## [2.16.0](https://github.com/fluxapi/fluxapi/compare/v2.15.2...v2.16.0) (2022-03-29)
 
 
