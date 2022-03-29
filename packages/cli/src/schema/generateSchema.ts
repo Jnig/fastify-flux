@@ -29,6 +29,7 @@ export class GenerateGlobalSchema {
 
     try {
       let schema = ts.createGenerator(config).createSchema() as any;
+      schema = await $RefParser.dereference(schema);
 
       schema = addId(schema.definitions);
       schema = convertNullToNullable(schema);
