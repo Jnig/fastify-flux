@@ -96,3 +96,8 @@ test('empty interface response', async () => {
   const result = await client.responses.emptyInterfaceResponse();
   expect(result).toEqual({});
 });
+
+test('nested interface response', async () => {
+  const result = await client.responses.nestedInterfaceResponse();
+  expect(result).toEqual({ ids: [{ id: 0 }, { id: 1 }] });
+});

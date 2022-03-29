@@ -48,7 +48,11 @@ export interface UndefinedResponse {
   objectNullUndefined2?: { id: number; name: string };
 }
 
-export type Foobar = object;
+export type EmptyInterfaceResponse = object;
+
+export interface NestedInterfaceResponse {
+  ids: { id: number }[];
+}
 
 export interface ListTodoQuery {
   includeDone?: boolean;
@@ -228,7 +232,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request DELETE:/responses/void
      */
     voidResponse: (params: RequestParams = {}) =>
-      this.request<Foobar, any>({
+      this.request<EmptyInterfaceResponse, any>({
         path: `/responses/void`,
         method: 'DELETE',
         format: 'json',
@@ -393,8 +397,23 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/responses/empty-interface-response
      */
     emptyInterfaceResponse: (params: RequestParams = {}) =>
-      this.request<Foobar, any>({
+      this.request<EmptyInterfaceResponse, any>({
         path: `/responses/empty-interface-response`,
+        method: 'GET',
+        format: 'json',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name NestedInterfaceResponse
+     * @request GET:/responses/nested-interface-response
+     */
+    nestedInterfaceResponse: (params: RequestParams = {}) =>
+      this.request<{ ids: { id: number }[] }, any>({
+        path: `/responses/nested-interface-response`,
         method: 'GET',
         format: 'json',
         ...params,
@@ -478,7 +497,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request DELETE:/todos/{id}
      */
     remove: (id: number, params: RequestParams = {}) =>
-      this.request<Foobar, any>({
+      this.request<EmptyInterfaceResponse, any>({
         path: `/todos/${id}`,
         method: 'DELETE',
         format: 'json',
@@ -494,7 +513,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/inputs/empty-query
      */
     emptyQuery: (params: RequestParams = {}) =>
-      this.request<Foobar, any>({
+      this.request<EmptyInterfaceResponse, any>({
         path: `/inputs/empty-query`,
         method: 'GET',
         format: 'json',

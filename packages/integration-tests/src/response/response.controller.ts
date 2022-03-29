@@ -5,7 +5,8 @@ import {
   ObjectResponse,
   AddionalResponse,
   UndefinedResponse,
-  Foobar,
+  NestedInterfaceResponse,
+  EmptyInterfaceResponse,
 } from './response.schema';
 
 @Controller('/responses', { tags: ['responses'] })
@@ -74,7 +75,12 @@ export class ResponseController {
   }
 
   @Get('/empty-interface-response')
-  async emptyInterfaceResponse(): Promise<Foobar> {
+  async emptyInterfaceResponse(): Promise<EmptyInterfaceResponse> {
     return { foo: 'bar' };
+  }
+
+  @Get('/nested-interface-response')
+  async nestedInterfaceResponse(): Promise<NestedInterfaceResponse> {
+    return { ids: [{ id: 0 }, { id: 1 }] };
   }
 }

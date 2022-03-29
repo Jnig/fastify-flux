@@ -37,4 +37,12 @@ export interface UndefinedResponse {
   objectNullUndefined2?: { id: number; name: string } | null;
 }
 
-export interface Foobar {}
+export interface NestedInterfaceResponseChild {
+  id: number;
+}
+
+export interface EmptyInterfaceResponse {}
+
+export interface NestedInterfaceResponse {
+  ids: NestedInterfaceResponseChild[];
+}
