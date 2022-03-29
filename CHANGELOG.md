@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.14.0](https://github.com/fluxapi/fluxapi/compare/v2.13.5...v2.14.0) (2022-03-29)
+
+
+### Features
+
+* extend nullable handling ([b9e7291](https://github.com/fluxapi/fluxapi/commit/b9e7291727d3592baa1d19ec1b465baa24c3e0af))
+
 ### [2.13.5](https://github.com/fluxapi/fluxapi/compare/v2.13.3...v2.13.5) (2022-03-16)
 
 ### [2.13.3](https://github.com/fluxapi/fluxapi/compare/v2.13.2...v2.13.3) (2022-03-16)

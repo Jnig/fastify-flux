@@ -1,6 +1,6 @@
 {
   "name": "@fluxapi/plugins",
-  "version": "2.13.5",
+  "version": "2.14.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
