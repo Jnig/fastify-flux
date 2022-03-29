@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@fluxapi/common": "workspace:*",
-    "fastify-swagger": "~5.0.0"
+    "fastify-swagger": "~5.1.0"
   },
   "devDependencies": {
     "fastify": "~3.27.4",
@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "fastify": "3.x",
-    "fastify-swagger": "4.x"
+    "fastify-swagger": "5.x"
   },
   "files": [
     "dist/"
