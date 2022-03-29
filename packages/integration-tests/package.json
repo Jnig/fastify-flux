@@ -19,7 +19,7 @@
     "@fluxapi/common": "*",
     "@fluxapi/plugins": "*",
     "fastify": "3.27.4",
-    "fastify-swagger": "5.0.0",
+    "fastify-swagger": "5.1.0",
     "source-map-support": "0.5.21",
     "tsconfig-paths": "3.14.0"
   },
