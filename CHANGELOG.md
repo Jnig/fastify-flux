@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.16.0](https://github.com/fluxapi/fluxapi/compare/v2.15.2...v2.16.0) (2022-03-29)
+
+
+### Features
+
+* upgrade fastify-swagger ([bfd4066](https://github.com/fluxapi/fluxapi/commit/bfd40666d5bd9cf1617e2033b0ee17c0b72b5844))
+
 ### [2.15.2](https://github.com/fluxapi/fluxapi/compare/v2.15.1...v2.15.2) (2022-03-29)
 
 
