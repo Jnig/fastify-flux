@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.15.1](https://github.com/fluxapi/fluxapi/compare/v2.15.0...v2.15.1) (2022-03-29)
+
+
+### Bug Fixes
+
+* fix fastify swagger error when properties attribute is missing ([3052609](https://github.com/fluxapi/fluxapi/commit/3052609e50314b6803790866ba95c87319ac9b5d))
+
 ## [2.15.0](https://github.com/fluxapi/fluxapi/compare/v2.14.0...v2.15.0) (2022-03-29)
 
 
