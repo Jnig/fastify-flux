@@ -27,19 +27,14 @@ export class GenerateGlobalSchema {
     };
 
     try {
-      const schema = ts.createGenerator(config).createSchema();
+      let schema = ts.createGenerator(config).createSchema() as any;
 
-      const removedReferences = await $RefParser.dereference(schema);
-      if (!removedReferences.definitions) {
-        throw new Error('definitions are missing');
-      }
+      schema = addId(schema.definitions);
 
-      const withIds = addId(removedReferences.definitions);
-      const nullableConverted = convertEmptyObject(
-        convertNullToNullable(withIds),
-      );
+      schema = convertNullToNullable(schema);
 
-      return JSON.stringify(nullableConverted, null, 2);
+      schema = convertEmptyObject(schema);
+      return JSON.stringify(schema, null, 2);
     } catch (e: any) {
       if (e.message.includes('NoRootNamesError')) {
         console.warn(
