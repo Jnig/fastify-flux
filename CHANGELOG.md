@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.15.2](https://github.com/fluxapi/fluxapi/compare/v2.15.1...v2.15.2) (2022-03-29)
+
+
+### Bug Fixes
+
+* revert 201d7f3 ([d1e896a](https://github.com/fluxapi/fluxapi/commit/d1e896aed4c4a4790ac16145928bb8ddf3697755))
+
 ### [2.15.1](https://github.com/fluxapi/fluxapi/compare/v2.15.0...v2.15.1) (2022-03-29)
 
 
