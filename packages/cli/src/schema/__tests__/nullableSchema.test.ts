@@ -103,6 +103,9 @@ const input2 = {
       multiNull2: {
         type: ['number', 'string'],
       },
+      multiNull3: {
+        type: ['null', 'string'],
+      },
     },
     additionalProperties: false,
     $id: 'AnyResponse',
@@ -136,6 +139,10 @@ test('convert anyOf to nullable', () => {
                 "type": "string",
               },
             ],
+          },
+          "multiNull3": Object {
+            "nullable": true,
+            "type": "string",
           },
         },
         "type": "object",

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`schema 1`] = `
+exports[`schema2 1`] = `
 Object {
   "components": Object {
     "schemas": Object {

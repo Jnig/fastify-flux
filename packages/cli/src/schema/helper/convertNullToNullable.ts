@@ -24,12 +24,16 @@ export function convertNullToNullable(object: any): any {
       if (value.type.includes('null')) {
         value.nullable = true;
       }
-      value.anyOf = value.type
-        .filter((x: string) => x !== 'null')
-        .map((x: string) => {
+      const notNullTypes = value.type.filter((x: string) => x !== 'null');
+      if (notNullTypes.length === 1) {
+        value.type = notNullTypes[0];
+      } else {
+        value.anyOf = notNullTypes.map((x: string) => {
           return { type: x };
         });
-      delete value.type;
+        delete value.type;
+      }
+
       return convertNullToNullable(value);
     }
   });
