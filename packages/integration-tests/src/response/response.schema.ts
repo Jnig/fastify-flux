@@ -46,3 +46,7 @@ export interface EmptyInterfaceResponse {}
 export interface NestedInterfaceResponse {
   ids: NestedInterfaceResponseChild[];
 }
+
+export interface NullConvertResponse {
+  id: string;
+}

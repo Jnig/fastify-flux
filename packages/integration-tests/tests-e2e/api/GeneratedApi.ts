@@ -54,6 +54,10 @@ export interface NestedInterfaceResponse {
   ids: { id: number }[];
 }
 
+export interface NullConvertResponse {
+  id: string;
+}
+
 export interface ListTodoQuery {
   includeDone?: boolean;
 }
@@ -414,6 +418,21 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     nestedInterfaceResponse: (params: RequestParams = {}) =>
       this.request<{ ids: { id: number }[] }, any>({
         path: `/responses/nested-interface-response`,
+        method: 'GET',
+        format: 'json',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags responses
+     * @name NullConvertResponse
+     * @request GET:/responses/null-convert-response
+     */
+    nullConvertResponse: (params: RequestParams = {}) =>
+      this.request<{ id: string }, any>({
+        path: `/responses/null-convert-response`,
         method: 'GET',
         format: 'json',
         ...params,

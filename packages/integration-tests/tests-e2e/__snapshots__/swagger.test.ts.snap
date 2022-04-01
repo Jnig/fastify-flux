@@ -149,6 +149,18 @@ Object {
         ],
         "type": "object",
       },
+      "NullConvertResponse": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "id": Object {
+            "type": "string",
+          },
+        },
+        "required": Array [
+          "id",
+        ],
+        "type": "object",
+      },
       "NullResponse": Object {
         "additionalProperties": false,
         "properties": Object {
@@ -540,6 +552,35 @@ Object {
                   },
                   "required": Array [
                     "ids",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Default Response",
+          },
+        },
+        "tags": Array [
+          "responses",
+        ],
+      },
+    },
+    "/responses/null-convert-response": Object {
+      "get": Object {
+        "operationId": "nullConvertResponse",
+        "responses": Object {
+          "200": Object {
+            "content": Object {
+              "application/json": Object {
+                "schema": Object {
+                  "additionalProperties": false,
+                  "properties": Object {
+                    "id": Object {
+                      "type": "string",
+                    },
+                  },
+                  "required": Array [
+                    "id",
                   ],
                   "type": "object",
                 },

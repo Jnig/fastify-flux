@@ -7,6 +7,7 @@ import {
   UndefinedResponse,
   NestedInterfaceResponse,
   EmptyInterfaceResponse,
+  NullConvertResponse,
 } from './response.schema';
 
 @Controller('/responses', { tags: ['responses'] })
@@ -82,5 +83,10 @@ export class ResponseController {
   @Get('/nested-interface-response')
   async nestedInterfaceResponse(): Promise<NestedInterfaceResponse> {
     return { ids: [{ id: 0 }, { id: 1 }] };
+  }
+
+  @Get('/null-convert-response')
+  async nullConvertResponse(): Promise<NullConvertResponse> {
+    return { id: null as any };
   }
 }

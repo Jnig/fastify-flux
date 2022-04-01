@@ -101,3 +101,9 @@ test('nested interface response', async () => {
   const result = await client.responses.nestedInterfaceResponse();
   expect(result).toEqual({ ids: [{ id: 0 }, { id: 1 }] });
 });
+
+test('null convert response', async () => {
+  // seems strang. bug report: https://github.com/fastify/fast-json-stringify/issues/401
+  const result = await client.responses.nullConvertResponse();
+  expect(result).toEqual({ id: '' });
+});
