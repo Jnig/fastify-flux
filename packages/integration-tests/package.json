@@ -10,7 +10,7 @@
     "dev:typecheck": "flux start --watch --typecheck",
     "debug": "flux start --watch --sdk  --debug",
     "sdk": "flux sdk",
-    "jest": "jest",
+    "test": "jest",
     "lint": "eslint src/"
   },
   "author": "",

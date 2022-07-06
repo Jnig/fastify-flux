@@ -1,4 +1,5 @@
 import { Project, SyntaxKind } from 'ts-morph';
+import { log } from '../log.js';
 
 export function cleanInterfaceName(name: string | undefined) {
   if (!name) {
@@ -18,16 +19,31 @@ export function getControllerFunctions(file: string) {
   project.addSourceFileAtPath(file);
   const parsed = project.getSourceFile(file);
   if (!parsed) {
-    throw new Error(`${file} could not be parsed`);
+    log({
+      component: 'cli',
+      error: 'File could not be parsed',
+      details: `${file}`,
+    });
+    throw new Error();
   }
 
   const classes = parsed.getDescendantsOfKind(SyntaxKind.ClassDeclaration);
   if (!classes.length) {
-    throw new Error('Controller must contain a class declaration');
+    log({
+      component: 'cli',
+      error: 'Controller file does not contain a class declaration',
+      details: `${file}`,
+    });
+    throw new Error();
   }
 
   if (classes.length > 1) {
-    throw new Error('Controller must contain only one class declaration');
+    log({
+      component: 'cli',
+      error: 'Controller must contain only one class declaration',
+      details: `${file}`,
+    });
+    throw new Error();
   }
 
   const className = classes[0].getName();

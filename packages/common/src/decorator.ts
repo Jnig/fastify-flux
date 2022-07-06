@@ -68,3 +68,9 @@ export function Custom(key: string, value: unknown): MethodDecorator {
     addProperty(target, functionName, key, value);
   };
 }
+
+export function Description(key: string, value: unknown): MethodDecorator {
+  return function (target: Object, functionName: string | symbol) {
+    addProperty(target, functionName, key, value);
+  };
+}
