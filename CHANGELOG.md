@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.18.0](https://github.com/fluxapi/fluxapi/compare/v2.17.0...v2.18.0) (2022-07-06)
+
+
+### Features
+
+* improve error messages ([7b6ad03](https://github.com/fluxapi/fluxapi/commit/7b6ad03c7b832bb54f451499a97520c2d61f57a0))
+
 ## [2.17.0](https://github.com/fluxapi/fluxapi/compare/v2.16.0...v2.17.0) (2022-03-29)
 
 
