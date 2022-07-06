@@ -120,24 +120,16 @@ test('convert anyOf to nullable', () => {
         "additionalProperties": false,
         "properties": Object {
           "multiNull": Object {
-            "anyOf": Array [
-              Object {
-                "type": "number",
-              },
-              Object {
-                "type": "string",
-              },
-            ],
             "nullable": true,
+            "type": Array [
+              "number",
+              "string",
+            ],
           },
           "multiNull2": Object {
-            "anyOf": Array [
-              Object {
-                "type": "number",
-              },
-              Object {
-                "type": "string",
-              },
+            "type": Array [
+              "number",
+              "string",
             ],
           },
           "multiNull3": Object {

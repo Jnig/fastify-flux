@@ -20,7 +20,7 @@ export function convertNullToNullable(object: any): any {
       }
     }
 
-    if (value.type && _.isArray(value.type)) {
+    if (value.type && _.isArray(value.type) && value.type.includes('null')) {
       if (value.type.includes('null')) {
         value.nullable = true;
       }
@@ -28,10 +28,7 @@ export function convertNullToNullable(object: any): any {
       if (notNullTypes.length === 1) {
         value.type = notNullTypes[0];
       } else {
-        value.anyOf = notNullTypes.map((x: string) => {
-          return { type: x };
-        });
-        delete value.type;
+        value.type = notNullTypes;
       }
 
       return convertNullToNullable(value);

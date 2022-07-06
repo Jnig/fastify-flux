@@ -12,4 +12,4 @@ if (!fs.existsSync('./dist/index.js')) {
   process.exit(1);
 }
 
-require('./dist/index');
+require('./dist/index').default();

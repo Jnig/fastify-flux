@@ -8,11 +8,12 @@ class Flux {
 
   constructor(private config: FluxConfig) {}
 
-  plugins(...plugins: FluxPlugin[]) {
+  async plugins(...plugins: FluxPlugin[]) {
     if (this.controllersRegistered) {
       throw new Error('Plugins must be registered before Controllers.');
     }
-    plugins.forEach((plugin) => plugin(this.config.fastify));
+
+    await Promise.all(plugins.map((plugin) => plugin(this.config.fastify)));
   }
 
   controllers(...controllers: FluxController[]) {
@@ -27,7 +28,7 @@ class Flux {
   }
 }
 
-export function flux({
+export async function flux({
   fastify,
   controllers,
   plugins,
@@ -44,7 +45,7 @@ export function flux({
   });
 
   if (plugins) {
-    instance.plugins(...plugins);
+    await instance.plugins(...plugins);
   }
 
   if (controllers) {

@@ -13,15 +13,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^28.1.4",
     "esbuild-jest": "^0.5.0",
-    "fastify": "~3.27.4",
-    "fastify-swagger": "~5.1.0",
-    "jest": "^27.5.1",
-    "typescript": "4.6.2"
+    "fastify": "~4.2.0",
+    "@fastify/swagger": "7.4.1",
+    "jest": "^28.1.2",
+    "typescript": "4.7.4"
   },
   "peerDependencies": {
     "fastify": "3.x",
-    "fastify-swagger": "5.x"
+    "@fastify/swagger": "7.x"
   },
   "files": [
     "dist/"

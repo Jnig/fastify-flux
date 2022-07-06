@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
 import _ from 'lodash';
-import swagger, { FastifyDynamicSwaggerOptions } from 'fastify-swagger';
+import swagger, { FastifyDynamicSwaggerOptions } from '@fastify/swagger';
 import { readFileSync, writeFileSync } from 'fs';
 import { FluxPlugin, getFluxJsonSchema } from '@fluxapi/common';
 
@@ -28,8 +28,8 @@ export function openapi(
     exposeRoute: true,
   };
 
-  return (fastify: FastifyInstance) => {
-    fastify.register(swagger, _.merge(options, additionalOptions));
+  return async (fastify: FastifyInstance) => {
+    await fastify.register(swagger, _.merge(options, additionalOptions));
 
     fastify.ready(async () => {
       const { FLUX_PROJECT_INDEX } = process.env;

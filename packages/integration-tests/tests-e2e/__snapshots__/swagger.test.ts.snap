@@ -46,37 +46,25 @@ Object {
             "type": "number",
           },
           "multiNull": Object {
-            "anyOf": Array [
-              Object {
-                "type": "number",
-              },
-              Object {
-                "type": "string",
-              },
-            ],
             "nullable": true,
+            "type": Array [
+              "number",
+              "string",
+            ],
           },
           "multiNumber": Object {
-            "anyOf": Array [
-              Object {
-                "type": "number",
-              },
-              Object {
-                "type": "string",
-              },
-            ],
             "nullable": true,
+            "type": Array [
+              "number",
+              "string",
+            ],
           },
           "multiString": Object {
-            "anyOf": Array [
-              Object {
-                "type": "number",
-              },
-              Object {
-                "type": "string",
-              },
-            ],
             "nullable": true,
+            "type": Array [
+              "number",
+              "string",
+            ],
           },
         },
         "required": Array [
@@ -448,37 +436,25 @@ Object {
                       "type": "number",
                     },
                     "multiNull": Object {
-                      "anyOf": Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
                       "nullable": true,
+                      "type": Array [
+                        "number",
+                        "string",
+                      ],
                     },
                     "multiNumber": Object {
-                      "anyOf": Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
                       "nullable": true,
+                      "type": Array [
+                        "number",
+                        "string",
+                      ],
                     },
                     "multiString": Object {
-                      "anyOf": Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
                       "nullable": true,
+                      "type": Array [
+                        "number",
+                        "string",
+                      ],
                     },
                   },
                   "required": Array [
