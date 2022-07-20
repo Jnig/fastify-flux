@@ -6,7 +6,7 @@ interface schemas {
 
 function getSchemaOrThrow(config: FluxConfig, name: string, s: schemas) {
   if (!s[name]) {
-    throw new Error(`Schema ${name}  not found.`);
+    throw new Error(`Schema ${name} not found.`);
   }
 
   const schema = s[name] as { $id: string };

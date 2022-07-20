@@ -1,5 +1,5 @@
 {
-  "name": "@fluxapi/cli",
+  "name": "fastify-flux-cli",
   "version": "2.18.0",
   "description": "",
   "main": "./dist/index.js",

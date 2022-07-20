@@ -1,10 +1,10 @@
 {
-  "name": "create-flux",
+  "name": "create-fastify-flux",
   "version": "2.18.0",
   "description": "",
   "main": "./dist/index.js",
   "bin": {
-    "create-flux": "./cli.js"
+    "create--fastify-flux": "./cli.js"
   },
   "scripts": {
     "clean": "rm -rf dist/",

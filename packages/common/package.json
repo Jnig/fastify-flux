@@ -1,5 +1,5 @@
 {
-  "name": "@fluxapi/common",
+  "name": "fastify-flux",
   "version": "2.18.0",
   "description": "",
   "main": "dist/index.js",
@@ -29,7 +29,6 @@
     "dist/"
   ],
   "dependencies": {
-    "fastify-plugin": "^4.0.0",
     "lodash": "^4.17.21"
   }
 }
