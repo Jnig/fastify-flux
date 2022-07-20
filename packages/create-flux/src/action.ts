@@ -9,9 +9,8 @@ async function updatePackageJson(file: string, options: { name: string }) {
   }
 
   const version = process.env.version;
-  content.dependencies['@fluxapi/common'] = version;
-  content.dependencies['@fluxapi/plugins'] = version;
-  content.devDependencies['@fluxapi/cli'] = version;
+  content.dependencies['fastify-flux'] = version;
+  content.devDependencies['fastify-flux-cli'] = version;
 
   await fs.writeJSON(file, content, { spaces: 2 });
 }

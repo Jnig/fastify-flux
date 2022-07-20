@@ -28,7 +28,7 @@ FluxAPI is a new API build tool that significantly improves the development expe
 ## Quickstart
 
 ```sh
-npm create flux
+npm create fastify-flux
 ```
 
 Run the command and follow the instructions. Afterwards you will have an OpenAPI documentation at http://localhost:8080/ and a client SDK generated in the file `GeneratedApi.ts`.
@@ -154,15 +154,13 @@ export interface ListTodoQuery {
 
 ```ts
 import Fastify from 'fastify';
-import { flux } from '@fluxapi/common';
-import { openapi } from '@fluxapi/plugins';
+import { FluxController, FluxOpenapi } from 'fastify-flux';
 import { TodoController } from '~/Todo.controller';
 
 const fastify = Fastify();
 
-flux({
-  fastify,
-  plugins: [openapi()],
+fastify.register(FluxOpenapi);
+fastify.register(FluxController, {
   controllers: [TodoController],
 });
 
@@ -200,20 +198,15 @@ export interface MyObject {
 The openapi function accepts all options from [fastify-swagger](https://github.com/fastify/fastify-swagger).
 
 ```ts
-const fastify = flux({
-  plugins: [
-    openapi({
-      routePrefix: '/documentation',
-      swagger: {
-        info: {
-          title: 'Test swagger',
-          description: 'Testing the Fastify swagger API',
-          version: '0.1.0',
-        },
-      },
-    }),
-  ],
-  controllers: [TodoController],
+fastify.register(FluxOpenapi, {
+  routePrefix: '/documentation',
+  swagger: {
+    info: {
+      title: 'Test swagger',
+      description: 'Testing the Fastify swagger API',
+      version: '0.1.0',
+    },
+  },
 });
 ```
 

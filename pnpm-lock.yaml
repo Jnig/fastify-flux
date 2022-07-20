@@ -17,7 +17,6 @@ importers:
   packages/cli:
     specifiers:
       '@apidevtools/json-schema-ref-parser': ^9.0.9
-      '@fluxapi/common': workspace:*
       '@types/fs-extra': ^9.0.13
       '@types/jest': ^28.1.6
       '@types/lodash': ^4.14.182
@@ -58,7 +57,6 @@ importers:
       ts-morph: 15.1.0
       typescript: 4.7.4
     devDependencies:
-      '@fluxapi/common': link:../common
       '@types/fs-extra': 9.0.13
       '@types/jest': 28.1.6
       '@types/node': 18.0.6
@@ -118,9 +116,6 @@ importers:
   packages/integration-tests:
     specifiers:
       '@fastify/swagger': 7.4.1
-      '@fluxapi/cli': '*'
-      '@fluxapi/common': '*'
-      '@fluxapi/plugins': '*'
       '@types/jest': ^28.1.6
       '@types/node': 18.0.6
       '@typescript-eslint/eslint-plugin': ^5.30.7
@@ -130,6 +125,8 @@ importers:
       esbuild-jest: ^0.5.0
       eslint: ^8.20.0
       fastify: 4.2.1
+      fastify-flux: '*'
+      fastify-flux-cli: '*'
       jest: ^28.1.3
       pino-pretty: ^8.1.0
       prisma: ^4.1.0
@@ -138,13 +135,11 @@ importers:
       typescript: 4.7.4
     dependencies:
       '@fastify/swagger': 7.4.1
-      '@fluxapi/common': link:../common
-      '@fluxapi/plugins': link:../plugins
       fastify: 4.2.1
+      fastify-flux: link:../common
       source-map-support: 0.5.21
       tsconfig-paths: 4.0.0
     devDependencies:
-      '@fluxapi/cli': link:../cli
       '@types/jest': 28.1.6
       '@types/node': 18.0.6
       '@typescript-eslint/eslint-plugin': 5.30.7_6wltbjakwuqm7awqswigmiuhd4
@@ -153,32 +148,16 @@ importers:
       esbuild: 0.14.49
       esbuild-jest: 0.5.0_esbuild@0.14.49
       eslint: 8.20.0
+      fastify-flux-cli: link:../cli
       jest: 28.1.3_@types+node@18.0.6
       pino-pretty: 8.1.0
       prisma: 4.1.0
       typescript: 4.7.4
 
-  packages/plugins:
-    specifiers:
-      '@fastify/swagger': ~7.4.1
-      '@fluxapi/common': workspace:*
-      '@types/lodash': ^4.14.182
-      fastify: ~4.2.0
-      lodash: ^4.17.21
-      typescript: 4.7.4
-    dependencies:
-      '@fastify/swagger': 7.4.1
-      '@fluxapi/common': link:../common
-      lodash: 4.17.21
-    devDependencies:
-      '@types/lodash': 4.14.182
-      fastify: 4.2.0
-      typescript: 4.7.4
-
   playground/child-process:
     specifiers:
-      '@fluxapi/cli': '*'
       '@types/node': 18.0.6
+      fastify-flux-cli: '*'
       source-map-support: 0.5.21
       tsconfig-paths: 4.0.0
       typescript: 4.7.4
@@ -186,15 +165,12 @@ importers:
       source-map-support: 0.5.21
       tsconfig-paths: 4.0.0
     devDependencies:
-      '@fluxapi/cli': link:../../packages/cli
       '@types/node': 18.0.6
+      fastify-flux-cli: link:../../packages/cli
       typescript: 4.7.4
 
   playground/template-prisma:
     specifiers:
-      '@fluxapi/cli': '*'
-      '@fluxapi/common': '*'
-      '@fluxapi/plugins': '*'
       '@prisma/client': ^4.1.0
       '@types/jest': ^28.1.6
       '@types/node': 18.0.6
@@ -205,6 +181,8 @@ importers:
       esbuild-jest: ^0.5.0
       eslint: ^8.20.0
       fastify: 4.2.1
+      fastify-flux: '*'
+      fastify-flux-cli: '*'
       fastify-swagger: 5.2.0
       jest: ^28.1.3
       pino-pretty: ^8.1.0
@@ -213,15 +191,13 @@ importers:
       tsconfig-paths: 4.0.0
       typescript: 4.7.4
     dependencies:
-      '@fluxapi/common': link:../../packages/common
-      '@fluxapi/plugins': link:../../packages/plugins
       '@prisma/client': 4.1.0_prisma@4.1.0
       fastify: 4.2.1
+      fastify-flux: link:../../packages/common
       fastify-swagger: 5.2.0
       source-map-support: 0.5.21
       tsconfig-paths: 4.0.0
     devDependencies:
-      '@fluxapi/cli': link:../../packages/cli
       '@types/jest': 28.1.6
       '@types/node': 18.0.6
       '@typescript-eslint/eslint-plugin': 5.30.7_6wltbjakwuqm7awqswigmiuhd4
@@ -230,6 +206,7 @@ importers:
       esbuild: 0.14.49
       esbuild-jest: 0.5.0_esbuild@0.14.49
       eslint: 8.20.0
+      fastify-flux-cli: link:../../packages/cli
       jest: 28.1.3_@types+node@18.0.6
       pino-pretty: 8.1.0
       prisma: 4.1.0
@@ -1911,17 +1888,6 @@ packages:
     resolution: {integrity: sha512-kNOjDqAh7px0XWNI+4QbzoiR/nTkHAWNud2uvnJquD1/x5a7EQZMJT0AczqK0Qn67oY/TTQ1LbUKajZpp3I9tQ==}
     engines: {node: '>=8.0.0'}
 
-  /avvio/8.1.3:
-    resolution: {integrity: sha512-tl9TC0yDRKzP6gFLkrInqPyx8AkfBC/0QRnwkE9Jo31+OJjLrE/73GJuE0QgSB0Vpv38CTJJZGqU9hczowclWw==}
-    dependencies:
-      archy: 1.0.0
-      debug: 4.3.4
-      fastq: 1.13.0
-      queue-microtask: 1.2.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /avvio/8.2.0:
     resolution: {integrity: sha512-bbCQdg7bpEv6kGH41RO/3B2/GMMmJSo2iBK+X8AWN9mujtfUipMDfIjsgHCfpnKqoGEQrrmCDKSa5OQ19+fDmg==}
     dependencies:
@@ -3455,27 +3421,6 @@ packages:
       - supports-color
     dev: false
 
-  /fastify/4.2.0:
-    resolution: {integrity: sha512-0QXEp+8ceKc0fwVakeBLM/1Ss/+fc7a3auuygT+1GjbSAgHfwqxSucUuu0rYjziu32UgEZXfjItYN/a89HWKhw==}
-    dependencies:
-      '@fastify/ajv-compiler': 3.1.2
-      '@fastify/error': 3.0.0
-      '@fastify/fast-json-stringify-compiler': 4.0.0
-      abstract-logging: 2.0.1
-      avvio: 8.1.3
-      find-my-way: 7.0.0
-      light-my-request: 5.0.0
-      pino: 8.1.0
-      process-warning: 2.0.0
-      proxy-addr: 2.0.7
-      rfdc: 1.3.0
-      secure-json-parse: 2.4.0
-      semver: 7.3.7
-      tiny-lru: 8.0.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /fastify/4.2.1:
     resolution: {integrity: sha512-eyAWHN9+8IPTnhvGz+leseASGV/JZ75Y+jXXV7tid4awUjCMInY1gazZXuTD95xUW+Ve5vfgLjQ2i1i0/XJjdw==}
     dependencies:
@@ -4901,15 +4846,6 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /light-my-request/5.0.0:
-    resolution: {integrity: sha512-0OPHKV+uHgBOnRokzL1LqeMCnSAo5l/rZS7kyB6G1I8qxGCvhXpq1M6WK565Y9A5CSn50l3DVaHnJ5FCdpguZQ==}
-    dependencies:
-      ajv: 8.11.0
-      cookie: 0.5.0
-      process-warning: 1.0.0
-      set-cookie-parser: 2.5.0
-    dev: true
-
   /light-my-request/5.2.0:
     resolution: {integrity: sha512-U5Dga8U59VKydIAnHt2XvPVyDfaHsDIpoO+/FPrm4Qnn1tHeczNnLrGjI1bko6BFWgFwTXjTiQN6PkohWiwwcA==}
     dependencies:
@@ -5643,29 +5579,8 @@ packages:
       strip-json-comments: 3.1.1
     dev: true
 
-  /pino-std-serializers/5.6.0:
-    resolution: {integrity: sha512-VdUXCw8gO+xhir7sFuoYSjTnzB+TMDGxhAC/ph3YS3sdHnXNdsK0wMtADNUltfeGkn2KDxEM21fnjF3RwXyC8A==}
-    dev: true
-
   /pino-std-serializers/6.0.0:
     resolution: {integrity: sha512-mMMOwSKrmyl+Y12Ri2xhH1lbzQxwwpuru9VjyJpgFIH4asSj88F2csdMwN6+M5g1Ll4rmsYghHLQJw81tgZ7LQ==}
-
-  /pino/8.1.0:
-    resolution: {integrity: sha512-53jlxs+02UNTtF1XwVWfa0dHipBiM5GK73XhkHn8M2hUl9y3L94dNwB8BwQhpd5WdHjBkyJiO7v0LRt4SGgsPg==}
-    hasBin: true
-    dependencies:
-      atomic-sleep: 1.0.0
-      fast-redact: 3.1.1
-      on-exit-leak-free: 2.1.0
-      pino-abstract-transport: 1.0.0
-      pino-std-serializers: 5.6.0
-      process-warning: 2.0.0
-      quick-format-unescaped: 4.0.4
-      real-require: 0.1.0
-      safe-stable-stringify: 2.3.1
-      sonic-boom: 3.0.0
-      thread-stream: 1.0.1
-    dev: true
 
   /pino/8.2.0:
     resolution: {integrity: sha512-HS7+vUpOYEJcNZkyb2ujN2sSayXLyz5XEvDZw4vrxlxHDe34qIDiNf2s+0dD/q/eqEubfxwAItYhY6zCNVZBVw==}
@@ -5745,6 +5660,7 @@ packages:
 
   /process-warning/1.0.0:
     resolution: {integrity: sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==}
+    dev: false
 
   /process-warning/2.0.0:
     resolution: {integrity: sha512-+MmoAXoUX+VTHAlwns0h+kFUWFs/3FZy+ZuchkgjyOu3oioLAo2LB5aCfKPh2+P9O18i3m43tUEv3YqttSy0Ww==}
@@ -6536,12 +6452,6 @@ packages:
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
-    dev: true
-
-  /thread-stream/1.0.1:
-    resolution: {integrity: sha512-JuZyfzx81e5MBk8uIr8ZH76bXyjEQvbRDEkSdlV1JFBdq/rbby2RuvzBYlTBd/xCljxy6lPxrTLXzB9Jl1bNrw==}
-    dependencies:
-      real-require: 0.1.0
     dev: true
 
   /thread-stream/2.0.0:

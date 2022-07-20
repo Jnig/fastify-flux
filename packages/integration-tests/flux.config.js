@@ -1,4 +1,4 @@
-/** @type {import('@fluxapi/cli').FluxCliConfig} */
+/** @type {import('fastify-flux-cli').FluxCliConfig} */
 const config = {
   entry: './src/',
   outdir: './dist/',

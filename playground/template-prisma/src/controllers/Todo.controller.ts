@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Status } from '@fluxapi/common';
+import { Controller, Delete, Get, Post, Status } from 'fastify-flux';
 import { CreateTodo, ListTodoQuery, TodoResponse, UpdateTodo } from './Todo.schema';
 import { HttpException } from '~/helper/exceptions';
 import { PrismaClient } from '@prisma/client';

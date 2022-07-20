@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Status } from '@fluxapi/common';
+import { Controller, Delete, Get, Status } from 'fastify-flux';
 import {
   AnyResponse,
   NullResponse,

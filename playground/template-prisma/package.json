@@ -17,8 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fluxapi/common": "*",
-    "@fluxapi/plugins": "*",
+    "fastify-flux": "*",
     "@prisma/client": "^4.1.0",
     "fastify": "4.2.1",
     "fastify-swagger": "5.2.0",
@@ -26,7 +25,7 @@
     "tsconfig-paths": "4.0.0"
   },
   "devDependencies": {
-    "@fluxapi/cli": "*",
+    "fastify-flux-cli": "*",
     "@types/jest": "^28.1.6",
     "@types/node": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.30.7",

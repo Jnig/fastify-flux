@@ -17,14 +17,13 @@
   "license": "ISC",
   "dependencies": {
     "@fastify/swagger": "7.4.1",
-    "@fluxapi/common": "*",
-    "@fluxapi/plugins": "*",
+    "fastify-flux": "*",
     "fastify": "4.2.1",
     "source-map-support": "0.5.21",
     "tsconfig-paths": "4.0.0"
   },
   "devDependencies": {
-    "@fluxapi/cli": "*",
+    "fastify-flux-cli": "*",
     "@types/jest": "^28.1.6",
     "@types/node": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.30.7",

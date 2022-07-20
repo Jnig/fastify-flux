@@ -1,4 +1,4 @@
-import { createFastifyInstance, FluxController, FluxOpenapi } from '@fluxapi/common';
+import { createFastifyInstance, FluxController, FluxOpenapi } from 'fastify-flux';
 import { CrudController } from './crud/crud.controller';
 import { InputController } from './input/input.controller';
 import { ResponseController } from './response/response.controller';

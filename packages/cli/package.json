@@ -35,7 +35,6 @@
     "typescript": "4.7.4"
   },
   "devDependencies": {
-    "@fluxapi/common": "workspace:*",
     "@types/fs-extra": "^9.0.13",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.0.6",

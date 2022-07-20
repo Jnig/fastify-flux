@@ -1,4 +1,4 @@
-import { Controller, Get } from '@fluxapi/common';
+import { Controller, Get } from 'fastify-flux';
 import { InputEmptyQuery, InputEmptyStringNull } from './input.schema';
 
 @Controller('/inputs', { tags: ['input'] })

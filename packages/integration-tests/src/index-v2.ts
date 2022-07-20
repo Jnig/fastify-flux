@@ -1,4 +1,4 @@
-import { createFastifyInstance, FluxController, FluxOpenapi } from '@fluxapi/common';
+import { createFastifyInstance, FluxController, FluxOpenapi } from 'fastify-flux';
 import { V2Controller } from './v2/v2.controller';
 
 const fastify = createFastifyInstance();

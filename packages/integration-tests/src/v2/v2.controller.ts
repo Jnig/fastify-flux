@@ -1,4 +1,4 @@
-import { Controller, Get } from '@fluxapi/common';
+import { Controller, Get } from 'fastify-flux';
 import { V2Response } from './v2.schema';
 
 @Controller('/v2', { tags: ['v2'] })
