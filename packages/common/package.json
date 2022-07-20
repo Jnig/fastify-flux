@@ -2,7 +2,9 @@
   "name": "fastify-flux",
   "version": "2.19.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
   "scripts": {
     "clean": "rm -rf dist/",
     "build": "tsc",
@@ -26,7 +28,7 @@
     "fastify": "4.x"
   },
   "files": [
-    "dist/"
+    "dist"
   ],
   "dependencies": {
     "fastify-plugin": "^4.0.0",
