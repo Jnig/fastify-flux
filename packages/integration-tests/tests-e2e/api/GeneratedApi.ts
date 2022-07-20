@@ -87,6 +87,11 @@ export interface UpdateTodo {
 
 export type InputEmptyQuery = object;
 
+export interface InputEmptyStringNull {
+  n: number | null;
+  n2?: number | null;
+}
+
 import axios, { AxiosInstance, AxiosRequestConfig, ResponseType } from 'axios';
 
 export type QueryParamsType = Record<string | number, any>;
@@ -527,7 +532,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     /**
      * No description
      *
-     * @tags responses
+     * @tags input
      * @name EmptyQuery
      * @request GET:/inputs/empty-query
      */
@@ -536,6 +541,21 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         path: `/inputs/empty-query`,
         method: 'GET',
         format: 'json',
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags input
+     * @name EmptyStringNull
+     * @request GET:/inputs/empty-string-null
+     */
+    emptyStringNull: (query: { n: number | null; n2?: number | null }, params: RequestParams = {}) =>
+      this.request<any, any>({
+        path: `/inputs/empty-string-null`,
+        method: 'GET',
+        query: query,
         ...params,
       }),
   };

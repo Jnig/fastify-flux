@@ -104,6 +104,23 @@ Object {
         "properties": Object {},
         "type": "object",
       },
+      "InputEmptyStringNull": Object {
+        "additionalProperties": false,
+        "properties": Object {
+          "n": Object {
+            "nullable": true,
+            "type": "number",
+          },
+          "n2": Object {
+            "nullable": true,
+            "type": "number",
+          },
+        },
+        "required": Array [
+          "n",
+        ],
+        "type": "object",
+      },
       "ListTodoQuery": Object {
         "additionalProperties": false,
         "properties": Object {
@@ -403,7 +420,36 @@ Object {
           },
         },
         "tags": Array [
-          "responses",
+          "input",
+        ],
+      },
+    },
+    "/inputs/empty-string-null": Object {
+      "get": Object {
+        "operationId": "emptyStringNull",
+        "parameters": Array [
+          Object {
+            "in": "query",
+            "name": "n",
+            "required": true,
+            "schema": Object {
+              "nullable": true,
+              "type": "number",
+            },
+          },
+          Object {
+            "in": "query",
+            "name": "n2",
+            "required": false,
+            "schema": Object {
+              "nullable": true,
+              "type": "number",
+            },
+          },
+        ],
+        "responses": Object {},
+        "tags": Array [
+          "input",
         ],
       },
     },
