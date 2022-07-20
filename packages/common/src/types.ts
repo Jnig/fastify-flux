@@ -38,7 +38,6 @@ export interface FluxConfig {
 }
 
 export type FluxController = new () => any;
-export type FluxPlugin = (fastify: FastifyInstance) => void;
 
 declare module 'fastify' {
   interface FastifyContextConfig extends FluxRoute {}

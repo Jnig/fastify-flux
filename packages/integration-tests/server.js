@@ -13,9 +13,9 @@ if (!fs.existsSync('./dist/index.js')) {
 }
 
 if (!process.argv[2]) {
-  require('./dist/index').default();
+  require('./dist/index');
 }
 
 if (process.argv[2] === 'v2') {
-  require('./dist/index-v2').default();
+  require('./dist/index-v2');
 }

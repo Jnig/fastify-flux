@@ -7,7 +7,10 @@ function getLoggerConfig() {
         target: 'pino-pretty',
         options: {
           colorize: true,
-          ignore: 'pid,hostname,time',
+          ignore:
+            'req.hostname,req.remotePort,req.remoteAddress,time,hostname,pid',
+          singleLine: true,
+          sync: true,
         },
       },
     };
