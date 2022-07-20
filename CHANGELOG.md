@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.19.0](https://github.com/fluxapi/fluxapi/compare/v2.18.0...v2.19.0) (2022-07-20)
+
+
+### Features
+
+* use fastify.register ([9fc0a2e](https://github.com/fluxapi/fluxapi/commit/9fc0a2eef5b0bae4173f2d7309c9898afe736d52))
+
 ## [2.18.0](https://github.com/fluxapi/fluxapi/compare/v2.17.0...v2.18.0) (2022-07-06)
 
 
