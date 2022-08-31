@@ -1,45 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`schema2 1`] = `
-Object {
-  "components": Object {
-    "schemas": Object {
-      "V2Response": Object {
+{
+  "components": {
+    "schemas": {
+      "V2Response": {
         "additionalProperties": false,
-        "properties": Object {
-          "foo": Object {
+        "properties": {
+          "foo": {
             "type": "string",
           },
         },
-        "required": Array [
+        "required": [
           "foo",
         ],
         "type": "object",
       },
     },
   },
-  "info": Object {
+  "info": {
     "description": "",
     "title": "Api",
     "version": "",
   },
   "openapi": "3.0.3",
-  "paths": Object {
-    "/v2": Object {
-      "get": Object {
+  "paths": {
+    "/v2": {
+      "get": {
         "operationId": "string",
-        "responses": Object {
-          "200": Object {
-            "content": Object {
-              "application/json": Object {
-                "schema": Object {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
                   "additionalProperties": false,
-                  "properties": Object {
-                    "foo": Object {
+                  "properties": {
+                    "foo": {
                       "type": "string",
                     },
                   },
-                  "required": Array [
+                  "required": [
                     "foo",
                   ],
                   "type": "object",
@@ -49,7 +49,7 @@ Object {
             "description": "Default Response",
           },
         },
-        "tags": Array [
+        "tags": [
           "v2",
         ],
       },
