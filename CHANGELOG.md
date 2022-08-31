@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.19.6](https://github.com/fluxapi/fluxapi/compare/v2.19.5...v2.19.6) (2022-08-31)
+
+
+### Bug Fixes
+
+* downgrade typescriptt because of issue with swagger-typescript-api ([6eaa42f](https://github.com/fluxapi/fluxapi/commit/6eaa42f7970a1a774abf89e2ad4685bd1ee535e1))
+
 ### [2.19.5](https://github.com/fluxapi/fluxapi/compare/v2.19.4...v2.19.5) (2022-08-31)
 
 
