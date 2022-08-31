@@ -54,31 +54,31 @@ const input = {
 
 test('convert anyOf to nullable', () => {
   expect(convertNullToNullable(input)).toMatchInlineSnapshot(`
-    Object {
-      "UpdateTodo": Object {
-        "properties": Object {
-          "foo": Object {
-            "anyOf": Array [
-              Object {
+    {
+      "UpdateTodo": {
+        "properties": {
+          "foo": {
+            "anyOf": [
+              {
                 "type": "null",
               },
-              Object {
+              {
                 "type": "string",
               },
-              Object {
+              {
                 "type": "number",
               },
             ],
           },
-          "text": Object {
+          "text": {
             "type": "string",
           },
-          "user": Object {
+          "user": {
             "nullable": true,
-            "properties": Object {
+            "properties": {
               "nullable": true,
-              "properties": Object {
-                "id": Object {
+              "properties": {
+                "id": {
                   "type": "number",
                 },
               },
@@ -114,25 +114,25 @@ const input2 = {
 
 test('convert anyOf to nullable', () => {
   expect(convertNullToNullable(input2)).toMatchInlineSnapshot(`
-    Object {
-      "AnyResponse": Object {
+    {
+      "AnyResponse": {
         "$id": "AnyResponse",
         "additionalProperties": false,
-        "properties": Object {
-          "multiNull": Object {
+        "properties": {
+          "multiNull": {
             "nullable": true,
-            "type": Array [
+            "type": [
               "number",
               "string",
             ],
           },
-          "multiNull2": Object {
-            "type": Array [
+          "multiNull2": {
+            "type": [
               "number",
               "string",
             ],
           },
-          "multiNull3": Object {
+          "multiNull3": {
             "nullable": true,
             "type": "string",
           },
