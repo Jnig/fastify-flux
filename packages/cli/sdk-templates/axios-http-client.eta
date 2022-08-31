@@ -119,7 +119,7 @@ export class HttpClient<SecurityDataType = unknown> {
           });
 
           return result.data;
-        } catch(err) {
+        } catch(err: any) {
           if (axios.isAxiosError(err)) {
             err.message += ` [${err.config.method}] ${err.config.url}`;
             if (err.response) {
