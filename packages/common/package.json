@@ -26,7 +26,7 @@
   },
   "peerDependencies": {
     "@fastify/swagger": "8.x",
-    "@fastify/swagger-ui": "^1.",
+    "@fastify/swagger-ui": "^1.x",
     "fastify": "4.x"
   },
   "files": [
