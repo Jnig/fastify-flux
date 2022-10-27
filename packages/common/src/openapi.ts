@@ -1,14 +1,31 @@
 import { FastifyInstance } from 'fastify';
 import _ from 'lodash';
 import swagger, { FastifyDynamicSwaggerOptions } from '@fastify/swagger';
+import swaggerUi, { FastifySwaggerUiOptions } from '@fastify/swagger-ui';
 import { readFileSync, writeFileSync } from 'fs';
+
+
+export function openapiUi(
+  fastify: FastifyInstance,
+  additionalOptions?: FastifySwaggerUiOptions,
+) {
+  const options: FastifySwaggerUiOptions = {
+    routePrefix: '/',
+    uiConfig: {
+      docExpansion: 'list',
+      deepLinking: false,
+    },
+  };
+
+  fastify.register(swaggerUi, _.merge(options, additionalOptions));
+}
+
 
 export function openapi(
   fastify: FastifyInstance,
   additionalOptions?: FastifyDynamicSwaggerOptions,
 ) {
   const options: FastifyDynamicSwaggerOptions = {
-    routePrefix: '/',
     refResolver: {
       buildLocalReference(json: any) {
         return json.$id;
@@ -21,11 +38,6 @@ export function openapi(
         version: '',
       },
     },
-    uiConfig: {
-      docExpansion: 'list',
-      deepLinking: false,
-    },
-    exposeRoute: true,
   };
 
   fastify.register(swagger, _.merge(options, additionalOptions));
@@ -45,7 +57,7 @@ export function openapi(
     try {
       old = readFileSync(file, 'utf-8');
       // eslint-disable-next-line no-empty
-    } catch (err) {}
+    } catch (err) { }
 
     if (old !== schema) {
       writeFileSync(file, schema);

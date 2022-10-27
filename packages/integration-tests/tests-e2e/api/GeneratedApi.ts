@@ -11,13 +11,22 @@
 
 export interface AddionalResponse {
   id: number;
-  user: { id: number; name: string };
+  user: {
+    id: number;
+    name: string;
+  };
 }
 
 export interface NullResponse {
   id: number;
-  user: { id: number; name: string };
-  userNull: { id: number; name: string };
+  user: {
+    id: number;
+    name: string;
+  } | null;
+  userNull: {
+    id: number;
+    name: string;
+  } | null;
 }
 
 export interface ObjectResponse {
@@ -41,17 +50,34 @@ export interface UndefinedResponse {
   id: number;
   string?: string;
   stringUndefined?: string;
-  object?: { id: number; name: string };
-  objectUndefined?: { id: number; name: string };
-  objectNull?: { id: number; name: string };
-  objectNullUndefined?: { id: number; name: string };
-  objectNullUndefined2?: { id: number; name: string };
+  object?: {
+    id: number;
+    name: string;
+  };
+  objectUndefined?: {
+    id: number;
+    name: string;
+  };
+  objectNull?: {
+    id: number;
+    name: string;
+  } | null;
+  objectNullUndefined?: {
+    id: number;
+    name: string;
+  } | null;
+  objectNullUndefined2?: {
+    id: number;
+    name: string;
+  } | null;
 }
 
 export type EmptyInterfaceResponse = object;
 
 export interface NestedInterfaceResponse {
-  ids: { id: number }[];
+  ids: {
+    id: number;
+  }[];
 }
 
 export interface NullConvertResponse {
@@ -64,7 +90,6 @@ export interface ListTodoQuery {
 
 export interface TodoResponse {
   id: number;
-
   /** @format date-time */
   createdAt: string;
   text: string;
@@ -165,8 +190,8 @@ export class HttpClient<SecurityDataType = unknown> {
         property instanceof Blob
           ? property
           : typeof property === 'object' && property !== null
-          ? JSON.stringify(property)
-          : `${property}`,
+            ? JSON.stringify(property)
+            : `${property}`,
       );
       return formData;
     }, new FormData());
@@ -215,8 +240,8 @@ export class HttpClient<SecurityDataType = unknown> {
       });
 
       return result.data;
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
+    } catch (err: any) {
+      if (axios.isAxiosError(err) && err.config) {
         err.message += ` [${err.config.method}] ${err.config.url}`;
         if (err.response) {
           (err as any).data = err.response.data;
@@ -300,7 +325,16 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/responses/remove-additional
      */
     removeAdditional: (params: RequestParams = {}) =>
-      this.request<{ id: number; user: { id: number; name: string } }, any>({
+      this.request<
+        {
+          id: number;
+          user: {
+            id: number;
+            name: string;
+          };
+        },
+        any
+      >({
         path: `/responses/remove-additional`,
         method: 'GET',
         format: 'json',
@@ -315,7 +349,20 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/responses/null-property
      */
     nullProperty: (params: RequestParams = {}) =>
-      this.request<{ id: number; user: { id: number; name: string }; userNull: { id: number; name: string } }, any>({
+      this.request<
+        {
+          id: number;
+          user: {
+            id: number;
+            name: string;
+          } | null;
+          userNull: {
+            id: number;
+            name: string;
+          } | null;
+        },
+        any
+      >({
         path: `/responses/null-property`,
         method: 'GET',
         format: 'json',
@@ -384,11 +431,26 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
           id: number;
           string?: string;
           stringUndefined?: string;
-          object?: { id: number; name: string };
-          objectUndefined?: { id: number; name: string };
-          objectNull?: { id: number; name: string };
-          objectNullUndefined?: { id: number; name: string };
-          objectNullUndefined2?: { id: number; name: string };
+          object?: {
+            id: number;
+            name: string;
+          };
+          objectUndefined?: {
+            id: number;
+            name: string;
+          };
+          objectNull?: {
+            id: number;
+            name: string;
+          } | null;
+          objectNullUndefined?: {
+            id: number;
+            name: string;
+          } | null;
+          objectNullUndefined2?: {
+            id: number;
+            name: string;
+          } | null;
         },
         any
       >({
@@ -421,7 +483,14 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/responses/nested-interface-response
      */
     nestedInterfaceResponse: (params: RequestParams = {}) =>
-      this.request<{ ids: { id: number }[] }, any>({
+      this.request<
+        {
+          ids: {
+            id: number;
+          }[];
+        },
+        any
+      >({
         path: `/responses/nested-interface-response`,
         method: 'GET',
         format: 'json',
@@ -436,7 +505,12 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/responses/null-convert-response
      */
     nullConvertResponse: (params: RequestParams = {}) =>
-      this.request<{ id: string }, any>({
+      this.request<
+        {
+          id: string;
+        },
+        any
+      >({
         path: `/responses/null-convert-response`,
         method: 'GET',
         format: 'json',
@@ -451,8 +525,23 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @name List
      * @request GET:/todos
      */
-    list: (query?: { includeDone?: boolean }, params: RequestParams = {}) =>
-      this.request<{ id: number; createdAt: string; text: string; priority: number; done: boolean }[], any>({
+    list: (
+      query?: {
+        includeDone?: boolean;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<
+        {
+          id: number;
+          /** @format date-time */
+          createdAt: string;
+          text: string;
+          priority: number;
+          done: boolean;
+        }[],
+        any
+      >({
         path: `/todos`,
         method: 'GET',
         query: query,
@@ -467,8 +556,24 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @name Create
      * @request POST:/todos
      */
-    create: (data: { text: string; priority: number }, params: RequestParams = {}) =>
-      this.request<{ id: number; createdAt: string; text: string; priority: number; done: boolean }, any>({
+    create: (
+      data: {
+        text: string;
+        priority: number;
+      },
+      params: RequestParams = {},
+    ) =>
+      this.request<
+        {
+          id: number;
+          /** @format date-time */
+          createdAt: string;
+          text: string;
+          priority: number;
+          done: boolean;
+        },
+        any
+      >({
         path: `/todos`,
         method: 'POST',
         body: data,
@@ -485,7 +590,17 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/todos/{id}
      */
     get: (id: number, params: RequestParams = {}) =>
-      this.request<{ id: number; createdAt: string; text: string; priority: number; done: boolean }, any>({
+      this.request<
+        {
+          id: number;
+          /** @format date-time */
+          createdAt: string;
+          text: string;
+          priority: number;
+          done: boolean;
+        },
+        any
+      >({
         path: `/todos/${id}`,
         method: 'GET',
         format: 'json',
@@ -501,10 +616,26 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      */
     update: (
       id: number,
-      data: { createdAt?: string; text?: string; priority?: number; done?: boolean },
+      data: {
+        /** @format date-time */
+        createdAt?: string;
+        text?: string;
+        priority?: number;
+        done?: boolean;
+      },
       params: RequestParams = {},
     ) =>
-      this.request<{ id: number; createdAt: string; text: string; priority: number; done: boolean }, any>({
+      this.request<
+        {
+          id: number;
+          /** @format date-time */
+          createdAt: string;
+          text: string;
+          priority: number;
+          done: boolean;
+        },
+        any
+      >({
         path: `/todos/${id}`,
         method: 'POST',
         body: data,
@@ -551,7 +682,13 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @name EmptyStringNull
      * @request GET:/inputs/empty-string-null
      */
-    emptyStringNull: (query: { n: number | null; n2?: number | null }, params: RequestParams = {}) =>
+    emptyStringNull: (
+      query: {
+        n: number | null;
+        n2?: number | null;
+      },
+      params: RequestParams = {},
+    ) =>
       this.request<any, any>({
         path: `/inputs/empty-string-null`,
         method: 'GET',

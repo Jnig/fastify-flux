@@ -2,9 +2,10 @@ import fp from 'fastify-plugin';
 
 import { FastifyInstance, FastifyPluginAsync } from 'fastify';
 import { registerController } from './flux/controllers';
-import { openapi } from './openapi';
+import { openapi, openapiUi } from './openapi';
 import { FluxConfig } from './types';
 import { FastifyDynamicSwaggerOptions } from '@fastify/swagger';
+import { FastifySwaggerUiOptions } from '@fastify/swagger-ui';
 
 export * from './decorator';
 export * from './flux';
@@ -18,8 +19,14 @@ const FluxOpenapiHelper: FastifyPluginAsync<
   openapi(fastify, options);
 };
 
+const FluxOpenapiUiHelper: FastifyPluginAsync<
+  FastifySwaggerUiOptions
+> = async (fastify: FastifyInstance, options) => {
+  openapiUi(fastify, options);
+};
+
 interface ControllerOptions {
-  controllers: { new (): any }[];
+  controllers: { new(): any }[];
   mapping?: FluxConfig['mapping'];
 }
 
@@ -33,4 +40,5 @@ const FluxControllerHelper: FastifyPluginAsync<ControllerOptions> = async (
 };
 
 export const FluxOpenapi = fp(FluxOpenapiHelper);
+export const FluxOpenapiUi = fp(FluxOpenapiUiHelper);
 export const FluxController = fp(FluxControllerHelper);

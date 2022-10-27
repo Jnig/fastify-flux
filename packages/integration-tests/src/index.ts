@@ -1,4 +1,4 @@
-import { createFastifyInstance, FluxController, FluxOpenapi } from 'fastify-flux';
+import { createFastifyInstance, FluxController, FluxOpenapi, FluxOpenapiUi } from 'fastify-flux';
 import { CrudController } from './crud/crud.controller';
 import { InputController } from './input/input.controller';
 import { ResponseController } from './response/response.controller';
@@ -6,6 +6,7 @@ import { ResponseController } from './response/response.controller';
 const fastify = createFastifyInstance();
 
 fastify.register(FluxOpenapi);
+fastify.register(FluxOpenapiUi);
 fastify.register(FluxController, {
   controllers: [ResponseController, CrudController, InputController],
 });

@@ -136,8 +136,8 @@ export class HttpClient<SecurityDataType = unknown> {
       });
 
       return result.data;
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
+    } catch (err: any) {
+      if (axios.isAxiosError(err) && err.config) {
         err.message += ` [${err.config.method}] ${err.config.url}`;
         if (err.response) {
           (err as any).data = err.response.data;
@@ -162,7 +162,12 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request GET:/v2
      */
     string: (params: RequestParams = {}) =>
-      this.request<{ foo: string }, any>({
+      this.request<
+        {
+          foo: string;
+        },
+        any
+      >({
         path: `/v2`,
         method: 'GET',
         format: 'json',

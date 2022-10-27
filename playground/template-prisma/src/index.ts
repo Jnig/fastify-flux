@@ -1,9 +1,11 @@
-import { createFastifyInstance, FluxController, FluxOpenapi } from 'fastify-flux';
+import { createFastifyInstance, FluxController, FluxOpenapi, FluxOpenapiUi } from 'fastify-flux';
 import { TodoController } from '~/controllers/Todo.controller';
 
 const fastify = createFastifyInstance();
 
 fastify.register(FluxOpenapi);
+fastify.register(FluxOpenapiUi);
+
 fastify.register(FluxController, {
   controllers: [TodoController],
 });

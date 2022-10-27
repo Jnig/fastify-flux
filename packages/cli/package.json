@@ -17,29 +17,29 @@
   "license": "ISC",
   "dependencies": {
     "@apidevtools/json-schema-ref-parser": "^9.0.9",
-    "@types/lodash": "^4.14.184",
-    "chalk": "^5.0.1",
+    "@types/lodash": "^4.14.186",
+    "chalk": "^5.1.2",
     "chokidar": "^3.5.3",
-    "commander": "^9.4.0",
-    "esbuild": "^0.15.6",
+    "commander": "^9.4.1",
+    "esbuild": "^0.15.12",
     "execa": "^6.1.0",
-    "fast-glob": "^3.2.11",
+    "fast-glob": "^3.2.12",
     "lodash": "^4.17.21",
     "p-map": "5.5.0",
     "pidtree": "^0.6.0",
     "piscina": "^3.2.0",
     "source-map-support": "^0.5.21",
-    "swagger-typescript-api": "^9.3.1",
-    "ts-json-schema-generator": "^1.0.0",
-    "ts-morph": "^15.1.0",
-    "typescript": "4.7.4"
+    "swagger-typescript-api": "^10.0.3",
+    "ts-json-schema-generator": "^1.1.2",
+    "ts-morph": "^16.0.0",
+    "typescript": "4.8.4"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/jest": "^29.0.0",
-    "@types/node": "^18.7.14",
-    "jest": "^29.0.1",
-    "ts-jest": "^28.0.8"
+    "@types/jest": "^29.2.0",
+    "@types/node": "^18.11.6",
+    "jest": "^29.2.2",
+    "ts-jest": "^29.0.3"
   },
   "peerDependencies": {
     "esbuild": "0.x"
