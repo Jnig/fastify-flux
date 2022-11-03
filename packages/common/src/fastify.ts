@@ -1,7 +1,17 @@
 import fastify from 'fastify';
 
-function getLoggerConfig() {
-  if (process.env.NODE_ENV !== 'production') {
+function isPinoPrettyInstalled() {
+  let installed = true
+  try {
+    require('pino-pretty')
+  } catch (_) {
+    installed = false
+  }
+  return installed
+}
+
+export function getFastifyLoggerConfig() {
+  if (isPinoPrettyInstalled()) {
     return {
       transport: {
         target: 'pino-pretty',
@@ -21,7 +31,7 @@ function getLoggerConfig() {
 
 export function createFastifyInstance() {
   return fastify({
-    logger: getLoggerConfig(),
+    logger: getFastifyLoggerConfig(),
     ajv: {
       customOptions: {
         removeAdditional: false, //throw error instead
