@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.20.0](https://github.com/fluxapi/fluxapi/compare/v2.19.8...v2.20.0) (2022-11-03)
+
+
+### Features
+
+* check if pino-pretty is installed ([9fd1ec9](https://github.com/fluxapi/fluxapi/commit/9fd1ec93f7683b3e7851b1aad816d620baab058a))
+
 ### [2.19.8](https://github.com/fluxapi/fluxapi/compare/v2.19.7...v2.19.8) (2022-10-27)
 
 
