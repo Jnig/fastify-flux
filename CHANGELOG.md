@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.22.0](https://github.com/fluxapi/fluxapi/compare/v2.21.0...v2.22.0) (2022-11-10)
+
+
+### Features
+
+* ignore try catch in coverage report ([e37d38e](https://github.com/fluxapi/fluxapi/commit/e37d38e6bcb2924473658b78d5a0589d8374da58))
+
 ## [2.21.0](https://github.com/fluxapi/fluxapi/compare/v2.20.0...v2.21.0) (2022-11-10)
 
 
