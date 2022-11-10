@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.21.0](https://github.com/fluxapi/fluxapi/compare/v2.20.0...v2.21.0) (2022-11-10)
+
+
+### Features
+
+* slim axios client ([eac00a9](https://github.com/fluxapi/fluxapi/commit/eac00a9dc072c1ee0c3f5f732af8057ce6bb4b8a))
+
 ## [2.20.0](https://github.com/fluxapi/fluxapi/compare/v2.19.8...v2.20.0) (2022-11-03)
 
 
