@@ -1,6 +1,6 @@
 {
   "name": "fluxapi",
-  "version": "2.22.7",
+  "version": "2.22.8",
   "description": "",
   "main": "index.js",
   "scripts": {
