@@ -27,7 +27,12 @@ function addProperty(
     target.routes[functionName] = { statusCode: 200 };
   }
 
-  target.routes[functionName][key] = value;
+  const path = target.routes[functionName][key];
+  if (path && Array.isArray(path)) {
+    path.push(...value);
+  } else {
+    target.routes[functionName][key] = value;
+  }
 }
 
 export function Delete(url: string = ''): MethodDecorator {
@@ -59,7 +64,11 @@ export function Status(code: number): MethodDecorator {
 
 export function Auth(value: unknown): MethodDecorator {
   return function (target: Object, functionName: string | symbol) {
-    addProperty(target, functionName, 'auth', value);
+    if (Array.isArray(value)) {
+      addProperty(target, functionName, 'auth', value);
+    } else {
+      addProperty(target, functionName, 'auth', [value]);
+    }
   };
 }
 
