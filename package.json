@@ -1,6 +1,6 @@
 {
   "name": "fluxapi",
-  "version": "2.22.0",
+  "version": "2.22.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
   },
   "author": "Jakob Niggel <jakobniggel@gmail.com>",
   "license": "ISC",
+  "private": true,
   "repository": "git@github.com:fluxapi/fluxapi.git",
   "devDependencies": {
     "@commitlint/cli": "17.3.0",
@@ -24,7 +25,7 @@
   "standard-version": {
     "scripts": {
       "prerelease": "pnpm -r test && pnpm -r build && ./bin/copy-templates.sh",
-      "postbump": "npm version -ws $(npm pkg get version  | sed 's/\"//g') && git add .",
+      "postbump": "pnpm pkg set version=$(pnpm pkg get version  | jq -r) -ws",
       "posttag": "npm run publish"
     }
   }

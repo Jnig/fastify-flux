@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.22.6](https://github.com/fluxapi/fluxapi/compare/v2.22.0...v2.22.6) (2022-12-29)
+
+
+### Bug Fixes
+
+* remove private propery ([d29b88b](https://github.com/fluxapi/fluxapi/commit/d29b88b8e58ca0b474329ebf92a7c73aac607b2c))
+
 ## [2.22.0](https://github.com/fluxapi/fluxapi/compare/v2.21.0...v2.22.0) (2022-11-10)
 
 
