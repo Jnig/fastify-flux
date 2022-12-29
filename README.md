@@ -28,7 +28,7 @@ FluxAPI is a new API build tool that significantly improves the development expe
 ## Quickstart
 
 ```sh
-npm create fastify-flux
+npx create-fastify-flux
 ```
 
 Run the command and follow the instructions. Afterwards you will have an OpenAPI documentation at http://localhost:8080/ and a client SDK generated in the file `GeneratedApi.ts`.

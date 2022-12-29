@@ -42,6 +42,7 @@ Done. Now run:
   cd ${options.name}
   npm install
   npm run prisma migrate deploy
+  npm run prisma generate 
   npm run dev
 `);
 }
