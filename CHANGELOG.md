@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.22.7](https://github.com/fluxapi/fluxapi/compare/v2.22.6...v2.22.7) (2022-12-29)
+
 ### [2.22.6](https://github.com/fluxapi/fluxapi/compare/v2.22.0...v2.22.6) (2022-12-29)
 
 
