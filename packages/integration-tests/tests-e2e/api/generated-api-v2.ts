@@ -78,7 +78,7 @@ export class HttpClient<SecurityDataType = unknown> {
         headers: {
           ...(type && type !== ContentType.FormData ? { 'Content-Type': type } : {}),
           ...(requestParams.headers || {}),
-        },
+        } as any,
         params: query,
         responseType: responseFormat,
         data: body,
@@ -86,7 +86,7 @@ export class HttpClient<SecurityDataType = unknown> {
       });
 
       return result.data;
-    } catch (err: any) {
+    } catch (err: any) /* istanbul ignore next */ {
       if (axios.isAxiosError(err) && err.config) {
         err.message += ` [${err.config.method}] ${err.config.url}`;
         if (err.response) {

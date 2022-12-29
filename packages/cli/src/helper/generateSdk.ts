@@ -34,6 +34,6 @@ export async function generateSdk(sdk: GenerateApiParams) {
   if (error.length > 1) {
     log({ component: 'cli', error: 'SDK error', details: error.join('\n') });
   } else {
-    log({ component: 'cli', success: 'SDK written to', details: sdk.output });
+    log({ component: 'cli', success: 'SDK written to', details: sdk.output as string });
   }
 }
