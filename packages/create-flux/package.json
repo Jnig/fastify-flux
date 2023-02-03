@@ -1,6 +1,6 @@
 {
   "name": "create-fastify-flux",
-  "version": "2.22.8",
+  "version": "2.23.0",
   "description": "",
   "main": "./dist/index.js",
   "bin": {

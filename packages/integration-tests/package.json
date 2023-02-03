@@ -1,6 +1,6 @@
 {
   "name": "integration-tests",
-  "version": "2.22.8",
+  "version": "2.23.0",
   "description": "",
   "private": true,
   "scripts": {

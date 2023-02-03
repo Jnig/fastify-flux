@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.23.0](https://github.com/fluxapi/fluxapi/compare/v2.22.8...v2.23.0) (2023-02-03)
+
+
+### Features
+
+* allow array for auth decorator ([b5ad710](https://github.com/fluxapi/fluxapi/commit/b5ad710b6ad68fc7ced76b20d9e491fc5243f94e))
+
 ### [2.22.8](https://github.com/fluxapi/fluxapi/compare/v2.22.7...v2.22.8) (2022-12-29)
 
 ### [2.22.7](https://github.com/fluxapi/fluxapi/compare/v2.22.6...v2.22.7) (2022-12-29)
