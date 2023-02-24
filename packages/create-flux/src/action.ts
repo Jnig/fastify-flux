@@ -28,9 +28,7 @@ export async function actionHandler(options: {
   }
 
   const target = path.join(process.cwd(), options.name);
-  await fs.copy(source, target, {
-    recursive: true,
-  });
+  await fs.copy(source, target);
 
   await updatePackageJson(path.join(target, 'package.json'), options);
 
