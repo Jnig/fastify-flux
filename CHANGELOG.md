@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.26.3](https://github.com/Jnig/fastify-flux/compare/v2.26.2...v2.26.3) (2023-03-19)
+
+
+### Bug Fixes
+
+* publish command ([4292ea4](https://github.com/Jnig/fastify-flux/commit/4292ea4e31ec0ee6294cc40c793ba76ffcfb009c))
+
 ## [2.26.2](https://github.com/Jnig/fastify-flux/compare/v2.26.1...v2.26.2) (2023-03-19)
 
 
