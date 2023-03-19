@@ -6,7 +6,6 @@
   "scripts": {
     "test": "pnpm -r test",
     "update-packages": "pnpm --recursive -i -L update",
-    "standard-version": "standard-version -a",
     "publish": "pnpm -r publish --access public --no-git-checks"
   },
   "author": "Jakob Niggel <jakobniggel@gmail.com>",
@@ -16,17 +15,9 @@
   "devDependencies": {
     "@commitlint/cli": "17.4.4",
     "@commitlint/config-conventional": "17.4.4",
-    "husky": "^8.0.3",
-    "standard-version": "^9.5.0"
+    "husky": "^8.0.3"
   },
   "workspaces": [
     "packages/*"
-  ],
-  "standard-version": {
-    "scripts": {
-      "prerelease": "pnpm -r test && pnpm -r build && ./bin/copy-templates.sh",
-      "postbump": "pnpm pkg set version=$(pnpm pkg get version  | jq -r) -ws && git add .",
-      "posttag": "npm run publish"
-    }
-  }
+  ]
 }
