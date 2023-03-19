@@ -3,7 +3,9 @@
   "extends": [
     "config:base"
   ],
-  "engines": {
-    "npm": "18.x"
+  "force": {
+    "constraints": {
+      "node": "> 18.0.0"
+    }
   }
 }
