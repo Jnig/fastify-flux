@@ -32,7 +32,7 @@ jobs:
           ./bin/copy-templates.sh
           pnpm pkg set version=$(pnpm pkg get version  | jq -r) -ws
         if: ${{ steps.release.outputs.release_created }}
-      - run: pnpm publish
+      - run: pnpm run publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
