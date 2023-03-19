@@ -25,7 +25,12 @@ jobs:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm install -g pnpm && pnpm -r build && ./bin/copy-templates.sh
+      - run: |
+          npm install -g pnpm
+          pnpm install
+          pnpm -r --filter='./packages/*' build
+          ./bin/copy-templates.sh
+          pnpm pkg set version=$(pnpm pkg get version  | jq -r) -ws
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         env:
