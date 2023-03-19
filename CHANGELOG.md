@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.25.0](https://github.com/Jnig/fastify-flux/compare/v2.24.0...v2.25.0) (2023-03-19)
+
+
+### Features
+
+* install pnpm ([acf9b49](https://github.com/Jnig/fastify-flux/commit/acf9b4975eecf8e9e5475933617304a59ba41e2b))
+
 ## [2.24.0](https://github.com/Jnig/fastify-flux/compare/v2.23.4...v2.24.0) (2023-03-19)
 
 
