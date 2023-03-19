@@ -21,8 +21,8 @@
     "chalk": "^5.2.0",
     "chokidar": "^3.5.3",
     "commander": "^10.0.0",
-    "esbuild": "0.x",
-    "execa": "^7.0.0",
+    "esbuild": "~0.17.12",
+    "execa": "^7.1.1",
     "fast-glob": "^3.2.12",
     "lodash": "^4.17.21",
     "p-map": "5.5.0",
@@ -32,13 +32,13 @@
     "swagger-typescript-api": "^12.0.3",
     "ts-json-schema-generator": "^1.2.0",
     "ts-morph": "^17.0.1",
-    "typescript": "4.9.5"
+    "typescript": "5.0.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.14.1",
-    "jest": "^29.4.3",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.3",
+    "jest": "^29.5.0",
     "ts-jest": "^29.0.5"
   },
   "peerDependencies": {

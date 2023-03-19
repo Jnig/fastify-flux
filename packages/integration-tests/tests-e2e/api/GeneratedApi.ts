@@ -168,10 +168,6 @@ export class HttpClient<SecurityDataType = unknown> {
     const requestParams = params;
     const responseFormat = (format && this.format) || void 0;
 
-    if (!type) {
-      type = ContentType.Json;
-    }
-
     if (!body) {
       body = {};
     }
@@ -179,10 +175,6 @@ export class HttpClient<SecurityDataType = unknown> {
     try {
       const result: any = await this.instance.request({
         ...requestParams,
-        headers: {
-          ...(type && type !== ContentType.FormData ? { 'Content-Type': type } : {}),
-          ...(requestParams.headers || {}),
-        } as any,
         params: query,
         responseType: responseFormat,
         data: body,
