@@ -109,8 +109,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0(esbuild@0.17.12)
       fastify:
-        specifier: ~4.14.1
-        version: 4.14.1
+        specifier: ~4.15.0
+        version: 4.15.0
       jest:
         specifier: ^29.5.0
         version: 29.5.0(@types/node@18.15.3)(ts-node@10.9.1)
@@ -161,11 +161,11 @@ importers:
         specifier: 8.3.1
         version: 8.3.1
       fastify:
-        specifier: 4.14.1
-        version: 4.14.1
+        specifier: 4.15.0
+        version: 4.15.0
       fastify-flux:
         specifier: '*'
-        version: 2.26.3(@fastify/swagger-ui@1.5.0)(@fastify/swagger@8.3.1)(fastify@4.14.1)
+        version: 2.26.3(@fastify/swagger-ui@1.5.0)(@fastify/swagger@8.3.1)(fastify@4.15.0)
       source-map-support:
         specifier: 0.5.21
         version: 0.5.21
@@ -244,11 +244,11 @@ importers:
         specifier: ^4.11.0
         version: 4.11.0(prisma@4.11.0)
       fastify:
-        specifier: 4.14.1
-        version: 4.14.1
+        specifier: 4.15.0
+        version: 4.15.0
       fastify-flux:
         specifier: '*'
-        version: 2.26.3(@fastify/swagger-ui@1.5.0)(@fastify/swagger@8.3.1)(fastify@4.14.1)
+        version: 2.26.3(@fastify/swagger-ui@1.5.0)(@fastify/swagger@8.3.1)(fastify@4.15.0)
       source-map-support:
         specifier: 0.5.21
         version: 0.5.21
@@ -1753,7 +1753,7 @@ packages:
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.13.0
+      fastq: 1.15.0
 
   /@prisma/client@4.11.0(prisma@4.11.0):
     resolution: {integrity: sha512-0INHYkQIqgAjrt7NzhYpeDQi8x3Nvylc2uDngKyFDDj1tTRQ4uV1HnVmd1sQEraeVAN63SOK0dgCKQHlvjL0KA==}
@@ -3449,7 +3449,7 @@ packages:
       - encoding
     dev: true
 
-  /fastify-flux@2.26.3(@fastify/swagger-ui@1.5.0)(@fastify/swagger@8.3.1)(fastify@4.14.1):
+  /fastify-flux@2.26.3(@fastify/swagger-ui@1.5.0)(@fastify/swagger@8.3.1)(fastify@4.15.0):
     resolution: {integrity: sha512-O09G35xPF+Mi+PyZxpgGX4VLyPZKdRZoxSErzSRgUufHJzbpEKr3qFvfnSLZvQT0LnhRFKeL+l+PAglz1WXx/g==}
     peerDependencies:
       '@fastify/swagger': 8.x
@@ -3458,7 +3458,7 @@ packages:
     dependencies:
       '@fastify/swagger': 8.3.1
       '@fastify/swagger-ui': 1.5.0
-      fastify: 4.14.1
+      fastify: 4.15.0
       fastify-plugin: 4.5.0
       lodash: 4.17.21
     dev: false
@@ -3466,8 +3466,8 @@ packages:
   /fastify-plugin@4.5.0:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
 
-  /fastify@4.14.1:
-    resolution: {integrity: sha512-yjrDeXe77j9gRlSV2UJry8mcFWbD0NQ5JYjnPi4tkFjHZVaG3/BD5wxOmRzGnHPC0YvaBJ0XWrIfFPl2IHRa1w==}
+  /fastify@4.15.0:
+    resolution: {integrity: sha512-m/CaRN8nf5uyYdrDe2qqq+0z3oGyE+A++qlKQoLJTI4WI0nWK9D6R3FxXQ3MVwt/md977GMR4F43pE9oqrS2zw==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
@@ -3486,11 +3486,6 @@ packages:
       tiny-lru: 10.2.2
     transitivePeerDependencies:
       - supports-color
-
-  /fastq@1.13.0:
-    resolution: {integrity: sha512-YpkpUnK8od0o1hmeSc7UUs/eB/vIPWJYjKck2QKIzAf71Vm1AAQ3EbuZB3g2JIy+pg+ERD0vqI79KyZiB2e2Nw==}
-    dependencies:
-      reusify: 1.0.4
 
   /fastq@1.15.0:
     resolution: {integrity: sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==}
