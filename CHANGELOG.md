@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.26.5](https://github.com/Jnig/fastify-flux/compare/v2.26.4...v2.26.5) (2023-03-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fastify to v4.15.0 ([e1125c1](https://github.com/Jnig/fastify-flux/commit/e1125c13a248e6fa204ddc0284a0a41612f2e7b9))
+
 ## [2.26.4](https://github.com/Jnig/fastify-flux/compare/v2.26.3...v2.26.4) (2023-03-19)
 
 
