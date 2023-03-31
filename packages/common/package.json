@@ -1,6 +1,6 @@
 {
   "name": "fastify-flux",
-  "version": "2.23.1",
+  "version": "2.26.5",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
