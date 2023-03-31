@@ -17,6 +17,22 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
 
   const routeMappers = getRouteMappers(config, route);
 
+  const s = {
+    operationId: f.name,
+    tags,
+    params: getSchemaParams(route),
+    querystring: getSchemaQuerystring(config, route, schema),
+    body: getSchemaBody(config, route, schema),
+    response: getSchemaResponse(config, route, schema),
+  } as any;
+
+  // remove undefined value with stringify and parse
+  Object.keys(s).forEach((key) => {
+    if (s[key] === undefined) {
+      delete s[key];
+    }
+  });
+
   config.fastify.route({
     method,
     handler: async (request: FastifyRequest, reply: FastifyReply) => {
@@ -27,14 +43,7 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
       }
     },
     url,
-    schema: {
-      operationId: f.name,
-      tags,
-      params: getSchemaParams(route),
-      querystring: getSchemaQuerystring(config, route, schema),
-      body: getSchemaBody(config, route, schema),
-      response: getSchemaResponse(config, route, schema),
-    } as any,
+    schema: s,
     config: route,
   });
 }
