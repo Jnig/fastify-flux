@@ -6,6 +6,7 @@
       "node": "> 18.0.0"
     }
   },
+  "platformAutomerge": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
