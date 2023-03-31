@@ -170,8 +170,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       tsconfig-paths:
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
     devDependencies:
       '@types/jest':
         specifier: ^29.5.0
@@ -219,8 +219,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       tsconfig-paths:
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
     devDependencies:
       '@types/node':
         specifier: 18.15.11
@@ -253,8 +253,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       tsconfig-paths:
-        specifier: 4.1.2
-        version: 4.1.2
+        specifier: 4.2.0
+        version: 4.2.0
     devDependencies:
       '@types/jest':
         specifier: ^29.5.0
@@ -352,7 +352,7 @@ packages:
       convert-source-map: 1.8.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
-      json5: 2.2.1
+      json5: 2.2.3
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
@@ -4815,12 +4815,6 @@ packages:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
     dev: true
 
-  /json5@2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
-    engines: {node: '>=6'}
-    hasBin: true
-    dev: true
-
   /json5@2.2.2:
     resolution: {integrity: sha512-46Tk9JiOL2z7ytNQWFLpj99RZkVgeHf87yGQKsIkaPz1qSH9UczKH1rO7K3wgRselo0tYMUNfecYpm/p1vC7tQ==}
     engines: {node: '>=6'}
@@ -6437,8 +6431,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /tsconfig-paths@4.1.2:
-    resolution: {integrity: sha512-uhxiMgnXQp1IR622dUXI+9Ehnws7i/y6xvpZB9IbUVOPy0muvdvgXeZOn88UcGPiT98Vp3rJPTa8bFoalZ3Qhw==}
+  /tsconfig-paths@4.2.0:
+    resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
     engines: {node: '>=6'}
     dependencies:
       json5: 2.2.3
