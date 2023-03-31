@@ -6,12 +6,7 @@
       "node": "> 18.0.0"
     }
   },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "automergeType": "pr",
-    "platformAutomerge": true
-  },
+  "automergeType": "branch",
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
