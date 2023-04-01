@@ -8,11 +8,6 @@
   },
   "automergeType": "branch",
   "rangeStrategy": "pin",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "automergeType": "branch"
-  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
