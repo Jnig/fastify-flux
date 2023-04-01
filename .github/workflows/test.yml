@@ -23,7 +23,7 @@ jobs:
           npm install -g pnpm
           pnpm install
           pnpm -r --filter='./packages/*' build
-          cd ./packages/integration-tests
+          cd ./playground/integration-tests
           pnpm run dev &
           sleep 5
           pnpm run test
