@@ -34,5 +34,6 @@
   "dependencies": {
     "fastify-plugin": "^4.5.0",
     "lodash": "^4.17.21"
-  }
+  },
+  "version": "0.0.1"
 }

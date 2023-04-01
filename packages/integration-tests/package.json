@@ -40,5 +40,6 @@
     "transform": {
       "^.+\\.tsx?$": "esbuild-jest"
     }
-  }
+  },
+  "version": "0.0.1"
 }

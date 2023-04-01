@@ -32,5 +32,6 @@
     "cli.js",
     "dist/",
     "templates/"
-  ]
+  ],
+  "version": "0.0.1"
 }
