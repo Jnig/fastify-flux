@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.29.0](https://github.com/Jnig/fastify-flux/compare/v2.28.0...v2.29.0) (2023-04-01)
+
+
+### Features
+
+* use ts-jest ([344e420](https://github.com/Jnig/fastify-flux/commit/344e420a08ea21569308135e866d9a8dd19a05c3))
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([3dc4286](https://github.com/Jnig/fastify-flux/commit/3dc4286a6579ff20ac6d572b01c4e178665c048e))
+
 ## [2.28.0](https://github.com/Jnig/fastify-flux/compare/v2.27.1...v2.28.0) (2023-04-01)
 
 
