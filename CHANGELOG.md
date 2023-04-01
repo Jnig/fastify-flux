@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.27.0](https://github.com/Jnig/fastify-flux/compare/v2.26.5...v2.27.0) (2023-04-01)
+
+
+### Features
+
+* generate sdk on start ([632b7db](https://github.com/Jnig/fastify-flux/commit/632b7dbfd703d62dd8d3d963611c84da3bd11802))
+
+
+### Bug Fixes
+
+* **deps:** update dependency tsconfig-paths to v4.2.0 ([0b200e6](https://github.com/Jnig/fastify-flux/commit/0b200e68e95a60865342e42eb272591a890125cb))
+
 ## [2.26.5](https://github.com/Jnig/fastify-flux/compare/v2.26.4...v2.26.5) (2023-03-28)
 
 
