@@ -25,5 +25,5 @@ jobs:
           pnpm -r --filter='./packages/*' build
           cd ./playground/integration-tests
           pnpm run dev &
-          sleep 5
+          sleep 10
           pnpm run test
