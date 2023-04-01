@@ -30,7 +30,7 @@ jobs:
           pnpm install
           pnpm -r --filter='./packages/*' build
           ./bin/copy-templates.sh
-          pnpm pkg set version=$(pnpm pkg get version  | jq -r) -ws
+          pnpm pkg set version=${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -ws
         if: ${{ steps.release.outputs.release_created }}
       - run: pnpm run publish
         env:
