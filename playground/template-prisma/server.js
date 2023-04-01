@@ -1,4 +1,3 @@
-require('source-map-support/register');
 require('tsconfig-paths').register({
   baseUrl: '.',
   paths: {
