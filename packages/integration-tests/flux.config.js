@@ -6,7 +6,7 @@ const config = {
     {
       run: ['node', 'server.js'],
       sdk: {
-        name: 'GeneratedApi.ts',
+        name: 'generated-api.ts',
         output: './tests-e2e/api/',
         moduleNameIndex: 0,
       },

@@ -144,6 +144,8 @@ async function startSdkWatch() {
       })
       .on('add', handler)
       .on('change', handler);
+
+    handler();
   });
 }
 

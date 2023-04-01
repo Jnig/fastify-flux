@@ -1,6 +1,5 @@
 {
   "name": "fastify-flux-cli",
-  "version": "2.23.1",
   "description": "",
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
