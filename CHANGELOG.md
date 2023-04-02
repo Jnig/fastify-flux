@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.30.0](https://github.com/Jnig/fastify-flux/compare/v2.29.0...v2.30.0) (2023-04-02)
+
+
+### Features
+
+* enable native source map suport ([439d5b4](https://github.com/Jnig/fastify-flux/commit/439d5b4a180c86245ebf982bc6b2146d4ac6d176))
+
+
+### Bug Fixes
+
+* **deps:** update dependency fastify-flux to v2.29.0 ([0317a95](https://github.com/Jnig/fastify-flux/commit/0317a95c614d31ad13c5d75525b1010cfe7710db))
+
 ## [2.29.0](https://github.com/Jnig/fastify-flux/compare/v2.28.0...v2.29.0) (2023-04-01)
 
 
