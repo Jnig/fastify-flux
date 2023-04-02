@@ -7,7 +7,8 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/@fluxapi/cli"><img src="https://img.shields.io/npm/v/@fluxapi/cli.svg" alt="npm package"></a>
   <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/@fluxapi/cli.svg" alt="node compatibility"></a>
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="license">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="license" />
+  <img src="https://github.com/Jnig/fastify-flux/actions/workflows/test.yml/badge.svg" />
 
 </p>
 <br/>
