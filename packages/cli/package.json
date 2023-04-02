@@ -48,8 +48,5 @@
     "sdk-templates/"
   ],
   "type": "module",
-  "engines": {
-    "node": "19.8.1"
-  },
   "version": "0.0.1"
 }
