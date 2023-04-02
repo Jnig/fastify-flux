@@ -247,8 +247,8 @@ importers:
         specifier: 4.15.0
         version: 4.15.0
       fastify-flux:
-        specifier: 2.28.0
-        version: 2.28.0(@fastify/swagger-ui@1.6.0)(@fastify/swagger@8.3.1)(fastify@4.15.0)
+        specifier: 2.29.0
+        version: 2.29.0(@fastify/swagger-ui@1.6.0)(@fastify/swagger@8.3.1)(fastify@4.15.0)
       tsconfig-paths:
         specifier: 4.2.0
         version: 4.2.0
@@ -3329,12 +3329,12 @@ packages:
       - encoding
     dev: true
 
-  /fastify-flux@2.28.0(@fastify/swagger-ui@1.6.0)(@fastify/swagger@8.3.1)(fastify@4.15.0):
-    resolution: {integrity: sha512-4KM7+X+I3DoayYF7wH4riQ1JCe4y07kDkVTC6TDwLOE68LdTd0pxuMdttJNCV4SNk7qXBfTZAXKuqMjwxgmVEg==}
+  /fastify-flux@2.29.0(@fastify/swagger-ui@1.6.0)(@fastify/swagger@8.3.1)(fastify@4.15.0):
+    resolution: {integrity: sha512-q8cd4M/6p2vnENr2HnKwV45C7NFR0CuJFoOFDAiQCcX8XWZnz6SRhWexcyPXxf0Ne3XBCtlPgIJcOpjGrx4Ufw==}
     peerDependencies:
-      '@fastify/swagger': 8.x
-      '@fastify/swagger-ui': ^1.x
-      fastify: 4.x
+      '@fastify/swagger': 8.3.1
+      '@fastify/swagger-ui': 1.6.0
+      fastify: 4.15.0
     dependencies:
       '@fastify/swagger': 8.3.1
       '@fastify/swagger-ui': 1.6.0
