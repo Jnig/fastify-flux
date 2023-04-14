@@ -20,8 +20,8 @@ importers:
         specifier: 10.1.0
         version: 10.1.0
       '@types/lodash':
-        specifier: 4.14.192
-        version: 4.14.192
+        specifier: 4.14.194
+        version: 4.14.194
       chalk:
         specifier: 5.2.0
         version: 5.2.0
@@ -103,8 +103,8 @@ importers:
         specifier: 29.5.0
         version: 29.5.0
       '@types/lodash':
-        specifier: 4.14.192
-        version: 4.14.192
+        specifier: 4.14.194
+        version: 4.14.194
       esbuild-jest:
         specifier: 0.5.0
         version: 0.5.0(esbuild@0.17.16)
@@ -1617,10 +1617,14 @@ packages:
   /@types/lodash.clonedeep@4.5.7:
     resolution: {integrity: sha512-ccNqkPptFIXrpVqUECi60/DFxjNKsfoQxSQsgcBJCX/fuX1wgyQieojkcWH/KpE3xzLoWN/2k+ZeGqIN3paSvw==}
     dependencies:
-      '@types/lodash': 4.14.192
+      '@types/lodash': 4.14.194
 
   /@types/lodash@4.14.192:
     resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
+    dev: true
+
+  /@types/lodash@4.14.194:
+    resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
 
   /@types/minimist@1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
