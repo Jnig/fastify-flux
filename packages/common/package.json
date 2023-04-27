@@ -19,7 +19,7 @@
     "@types/jest": "29.5.1",
     "@types/lodash": "4.14.194",
     "esbuild-jest": "0.5.0",
-    "fastify": "4.16.3",
+    "fastify": "4.17.0",
     "jest": "29.5.0",
     "ts-jest": "29.1.0",
     "typescript": "5.0.4"
@@ -27,7 +27,7 @@
   "peerDependencies": {
     "@fastify/swagger": "8.3.1",
     "@fastify/swagger-ui": "1.8.0",
-    "fastify": "4.16.3"
+    "fastify": "4.17.0"
   },
   "files": [
     "dist"
