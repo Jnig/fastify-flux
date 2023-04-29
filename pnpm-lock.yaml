@@ -171,8 +171,8 @@ importers:
         specifier: 18.16.3
         version: 18.16.3
       fastify-flux-cli:
-        specifier: 2.30.0
-        version: 2.30.0(esbuild@0.17.18)
+        specifier: 2.30.1
+        version: 2.30.1(esbuild@0.17.18)
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -1619,10 +1619,6 @@ packages:
     dependencies:
       '@types/lodash': 4.14.194
 
-  /@types/lodash@4.14.192:
-    resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
-    dev: true
-
   /@types/lodash@4.14.194:
     resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
 
@@ -2389,15 +2385,9 @@ packages:
       delayed-stream: 1.0.0
     dev: true
 
-  /commander@10.0.0:
-    resolution: {integrity: sha512-zS5PnTI22FIRM6ylNW8G4Ap0IEOyk62fhLSD0+uHRT9McRCLGpkVNvao4bjimpK/GShynyQkFFxHhwMcETmduA==}
-    engines: {node: '>=14'}
-    dev: true
-
   /commander@10.0.1:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
-    dev: false
 
   /commander@9.5.0:
     resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
@@ -3058,17 +3048,17 @@ packages:
   /fast-uri@2.2.0:
     resolution: {integrity: sha512-cIusKBIt/R/oI6z/1nyfe2FvGKVTohVRfvkOhvx0nCEW+xf5NoCXjAHcWp93uOUBchzYcsvPlrapAdX1uW+YGg==}
 
-  /fastify-flux-cli@2.30.0(esbuild@0.17.18):
-    resolution: {integrity: sha512-CAW5Gza4fN7JAMWATcTr4193F7bzE+ZMsGm2HZpZPk/WvZx/glEOfAmpa4Tltdt7StwSgljg/Vub3YPQth18SQ==}
+  /fastify-flux-cli@2.30.1(esbuild@0.17.18):
+    resolution: {integrity: sha512-TFR4dK0ExLxRu77iT6NCArs8zel25jm7ISB2BCJSzafmC9+XdaPPbnR1bHfGRIzJU1QSOFcfQtQMtLPJFQDSkA==}
     hasBin: true
     peerDependencies:
-      esbuild: 0.x
+      esbuild: 0.17.18
     dependencies:
       '@apidevtools/json-schema-ref-parser': 10.1.0
-      '@types/lodash': 4.14.192
+      '@types/lodash': 4.14.194
       chalk: 5.2.0
       chokidar: 3.5.3
-      commander: 10.0.0
+      commander: 10.0.1
       esbuild: 0.17.18
       execa: 7.1.1
       fast-glob: 3.2.12
@@ -3080,7 +3070,7 @@ packages:
       swagger-typescript-api: 12.0.4
       ts-json-schema-generator: 1.2.0
       ts-morph: 18.0.0
-      typescript: 5.0.3
+      typescript: 5.0.4
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -5938,12 +5928,6 @@ packages:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-
-  /typescript@5.0.3:
-    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
-    engines: {node: '>=12.20'}
-    hasBin: true
-    dev: true
 
   /typescript@5.0.4:
     resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
