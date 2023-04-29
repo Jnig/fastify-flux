@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.30.1](https://github.com/Jnig/fastify-flux/compare/v2.30.0...v2.30.1) (2023-04-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger-ui to v1.7.0 ([9ca7a88](https://github.com/Jnig/fastify-flux/commit/9ca7a883776a376ce1055864be546a89856582aa))
+* **deps:** update dependency @fastify/swagger-ui to v1.8.0 ([9a9fa3e](https://github.com/Jnig/fastify-flux/commit/9a9fa3eb356067d9a433a5c170704bbc053ce905))
+* **deps:** update dependency commander to v10.0.1 ([5206703](https://github.com/Jnig/fastify-flux/commit/5206703627394052de64b46a5141530fb2ee4b24))
+* **deps:** update dependency fastify to v4.16.3 ([be236cb](https://github.com/Jnig/fastify-flux/commit/be236cb510788240945971bf03db3cb00d253fad))
+* **deps:** update dependency fastify to v4.17.0 ([cd56486](https://github.com/Jnig/fastify-flux/commit/cd5648686e4da69056013c34a61cf56dbe02b90e))
+* **deps:** update prisma monorepo to v4.13.0 ([ec1671d](https://github.com/Jnig/fastify-flux/commit/ec1671d120541a87f627d01fa06b72727b1c56ba))
+
 ## [2.30.0](https://github.com/Jnig/fastify-flux/compare/v2.29.0...v2.30.0) (2023-04-02)
 
 
