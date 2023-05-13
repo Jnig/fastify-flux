@@ -21,7 +21,7 @@
     "tsconfig-paths": "4.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.16.8",
+    "@types/node": "18.16.9",
     "fastify-flux-cli": "2.30.1",
     "typescript": "5.0.4"
   }
