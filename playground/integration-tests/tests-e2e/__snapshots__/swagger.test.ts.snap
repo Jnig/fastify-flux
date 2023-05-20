@@ -1164,7 +1164,7 @@ exports[`schema 1`] = `
           "todos",
         ],
       },
-      "post": {
+      "put": {
         "operationId": "update",
         "parameters": [
           {

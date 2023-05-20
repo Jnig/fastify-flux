@@ -86,10 +86,6 @@ export class HttpClient<SecurityDataType = unknown> {
     const requestParams = params;
     const responseFormat = (format && this.format) || void 0;
 
-    if (!type) {
-      type = ContentType.Json;
-    }
-
     if (!body) {
       body = {};
     }
@@ -97,10 +93,6 @@ export class HttpClient<SecurityDataType = unknown> {
     try {
       const result: any = await this.instance.request({
         ...requestParams,
-        headers: {
-          ...(type && type !== ContentType.FormData ? { 'Content-Type': type } : {}),
-          ...(requestParams.headers || {}),
-        } as any,
         params: query,
         responseType: responseFormat,
         data: body,
@@ -220,7 +212,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      *
      * @tags todos
      * @name Update
-     * @request POST:/todos/{id}
+     * @request PUT:/todos/{id}
      */
     update: (
       id: number,
@@ -245,7 +237,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
         any
       >({
         path: `/todos/${id}`,
-        method: 'POST',
+        method: 'PUT',
         body: data,
         type: ContentType.Json,
         format: 'json',

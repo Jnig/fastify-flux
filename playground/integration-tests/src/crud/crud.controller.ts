@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Status } from 'fastify-flux';
+import { Controller, Delete, Get, Post, Put, Status } from 'fastify-flux';
 import { CreateTodo, ListTodoQuery, TodoResponse, UpdateTodo } from './crud.schema';
 import { HttpException } from '~/helper/exceptions';
 
@@ -32,7 +32,7 @@ export class CrudController {
     return found;
   }
 
-  @Post('/:id')
+  @Put('/:id')
   async update(id: number, body: UpdateTodo): Promise<TodoResponse> {
     const found = todos.find((x) => x.id === id);
 
