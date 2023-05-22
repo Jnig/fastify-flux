@@ -34,7 +34,7 @@
     "templates/"
   ],
   "engines": {
-    "node": "19.8.1"
+    "node": ">=16"
   },
   "version": "0.0.1"
 }
