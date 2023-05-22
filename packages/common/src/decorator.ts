@@ -63,6 +63,13 @@ export function Put(url: string = ''): MethodDecorator {
   };
 }
 
+export function Patch(url: string = ''): MethodDecorator {
+  return function (target: Object, functionName: string | symbol) {
+    addProperty(target, functionName, 'url', url);
+    addProperty(target, functionName, 'method', 'PATCH');
+  };
+}
+
 export function Status(code: number): MethodDecorator {
   return function (target: Object, functionName: string | symbol) {
     addProperty(target, functionName, 'statusCode', code);
