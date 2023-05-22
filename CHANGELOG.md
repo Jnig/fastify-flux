@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.31.0](https://github.com/Jnig/fastify-flux/compare/v2.30.1...v2.31.0) (2023-05-22)
+
+
+### Features
+
+* add patch decorator ([f6ac42a](https://github.com/Jnig/fastify-flux/commit/f6ac42a65c9b26c2fdebe8f3b48a2b61d07e7753))
+* add put verb ([#41](https://github.com/Jnig/fastify-flux/issues/41)) ([771da89](https://github.com/Jnig/fastify-flux/commit/771da89540b14ccd219a4ec75d05597a2c64ad01))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger to v8.4.0 ([70a250d](https://github.com/Jnig/fastify-flux/commit/70a250d8fde6c3a1c23100312ad5cd8431e763e4))
+* **deps:** update dependency @fastify/swagger-ui to v1.8.1 ([928c89a](https://github.com/Jnig/fastify-flux/commit/928c89ad331e2085c4f81f2ade071fec306cf809))
+* **deps:** update dependency p-map to v6 ([#39](https://github.com/Jnig/fastify-flux/issues/39)) ([d1b18a6](https://github.com/Jnig/fastify-flux/commit/d1b18a6c2fa93c4bddf82cae694db2cb4eefb1e6))
+* **deps:** update prisma monorepo to v4.14.0 ([be965bb](https://github.com/Jnig/fastify-flux/commit/be965bbb077f9d9b90a3ef5e04dd5c3ca775082f))
+* **deps:** update prisma monorepo to v4.14.1 ([64260a2](https://github.com/Jnig/fastify-flux/commit/64260a2d3890a97464c8680206464d4ed7fb7254))
+* remove engine warnings ([6f8b299](https://github.com/Jnig/fastify-flux/commit/6f8b29954cfed4a36723cb2fcc7b26ce776aa307))
+
 ## [2.30.1](https://github.com/Jnig/fastify-flux/compare/v2.30.0...v2.30.1) (2023-04-29)
 
 
