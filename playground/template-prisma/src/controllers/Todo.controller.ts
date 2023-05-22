@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Status } from 'fastify-flux';
+import { Controller, Delete, Get, Post, Put, Status } from 'fastify-flux';
 import { CreateTodo, ListTodoQuery, TodoResponse, UpdateTodo } from './Todo.schema';
 import { HttpException } from '~/helper/exceptions';
 import { PrismaClient } from '@prisma/client';
@@ -32,7 +32,7 @@ export class TodoController {
     return found;
   }
 
-  @Post('/:id')
+  @Put('/:id')
   async update(id: number, body: UpdateTodo): Promise<TodoResponse> {
     const found = await prisma.todos.findUnique({ where: { id } });
 

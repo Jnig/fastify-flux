@@ -56,6 +56,13 @@ export function Post(url: string = ''): MethodDecorator {
   };
 }
 
+export function Put(url: string = ''): MethodDecorator {
+  return function (target: Object, functionName: string | symbol) {
+    addProperty(target, functionName, 'url', url);
+    addProperty(target, functionName, 'method', 'PUT');
+  };
+}
+
 export function Status(code: number): MethodDecorator {
   return function (target: Object, functionName: string | symbol) {
     addProperty(target, functionName, 'statusCode', code);

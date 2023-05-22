@@ -86,7 +86,7 @@ The following code snippets are only provided as example. It's best to start a n
 `Todo.controller.ts`
 
 ```ts
-import { Controller, Delete, Get, Post, Status } from '@fluxapi/common';
+import { Controller, Delete, Get, Post, Put, Status } from '@fluxapi/common';
 import {
   CreateTodo,
   ListTodoQuery,
@@ -111,7 +111,7 @@ export class TodoController {
     // implementation
   }
 
-  @Post('/:id')
+  @Put('/:id')
   async update(id: number, body: UpdateTodo): Promise<TodoResponse> {
     // implementation
   }
