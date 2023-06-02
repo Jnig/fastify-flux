@@ -47,11 +47,11 @@ export class GenerateGlobalSchema {
 
       if (e.diagnostics) {
         e.diagnostics.forEach(
-          (element: { messageText: string; file: { fileName: string } }) => {
+          (element: { messageText: string; file?: { fileName: string } }) => {
             log({
               component: 'cli',
               warning: element.messageText,
-              details: element.file.fileName,
+              details: element?.file?.fileName,
             });
           },
         );
