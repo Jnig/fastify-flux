@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@fastify/swagger": "8.5.1",
+    "@fastify/swagger": "8.6.0",
     "@fastify/swagger-ui": "1.9.0",
     "@types/jest": "29.5.2",
     "@types/lodash": "4.14.195",
@@ -25,7 +25,7 @@
     "typescript": "5.1.3"
   },
   "peerDependencies": {
-    "@fastify/swagger": "8.5.1",
+    "@fastify/swagger": "8.6.0",
     "@fastify/swagger-ui": "1.9.0",
     "fastify": "4.18.0"
   },
