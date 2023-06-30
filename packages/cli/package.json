@@ -21,7 +21,7 @@
     "chokidar": "3.5.3",
     "commander": "10.0.1",
     "execa": "7.1.1",
-    "fast-glob": "3.2.12",
+    "fast-glob": "3.3.0",
     "lodash": "4.17.21",
     "p-map": "6.0.0",
     "pidtree": "0.6.0",
