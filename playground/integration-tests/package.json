@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@fastify/swagger": "8.6.0",
-    "fastify": "4.19.1",
+    "fastify": "4.19.2",
     "fastify-flux": "workspace:*",
     "source-map-support": "0.5.21",
     "tsconfig-paths": "4.2.0"
