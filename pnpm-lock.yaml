@@ -98,8 +98,8 @@ importers:
         version: 4.17.21
     devDependencies:
       '@fastify/swagger':
-        specifier: 8.6.0
-        version: 8.6.0
+        specifier: 8.7.0
+        version: 8.7.0
       '@fastify/swagger-ui':
         specifier: 1.9.2
         version: 1.9.2
@@ -184,8 +184,8 @@ importers:
   playground/integration-tests:
     dependencies:
       '@fastify/swagger':
-        specifier: 8.6.0
-        version: 8.6.0
+        specifier: 8.7.0
+        version: 8.7.0
       fastify:
         specifier: 4.19.2
         version: 4.19.2
@@ -242,8 +242,8 @@ importers:
   playground/template-prisma:
     dependencies:
       '@fastify/swagger':
-        specifier: 8.6.0
-        version: 8.6.0
+        specifier: 8.7.0
+        version: 8.7.0
       '@fastify/swagger-ui':
         specifier: 1.9.2
         version: 1.9.2
@@ -1321,8 +1321,8 @@ packages:
       rfdc: 1.3.0
       yaml: 2.2.2
 
-  /@fastify/swagger@8.6.0:
-    resolution: {integrity: sha512-PGde7ryn0nsX/BpSrjP4Ade8RK2M0uBIU4Iow3Qt3kWa/70p1fM7AW28kS3dKERnwT0VwrUdxU3ftrRI+DsNTw==}
+  /@fastify/swagger@8.7.0:
+    resolution: {integrity: sha512-SaP2UyHG9t3+P3ybKlWJSyxHAoQbaRC6GEynK4jXxtwGwUpm5IUF42fdUy5GkUp8mQP8I8GnSAMkw4oHP5yCaA==}
     dependencies:
       fastify-plugin: 4.5.0
       json-schema-resolver: 2.0.0
