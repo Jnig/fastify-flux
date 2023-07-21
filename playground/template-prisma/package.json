@@ -34,7 +34,7 @@
     "eslint": "8.45.0",
     "fastify-flux-cli": "workspace:*",
     "jest": "29.6.1",
-    "pino-pretty": "10.0.1",
+    "pino-pretty": "10.1.0",
     "prisma": "4.16.2",
     "ts-jest": "29.1.1",
     "typescript": "5.1.6"
