@@ -40,7 +40,7 @@
     "ts-jest": "29.1.1"
   },
   "peerDependencies": {
-    "esbuild": "0.18.15"
+    "esbuild": "0.18.16"
   },
   "files": [
     "cli.js",
