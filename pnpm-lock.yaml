@@ -227,8 +227,8 @@ importers:
         specifier: 29.6.1
         version: 29.6.1(@types/node@18.17.0)(ts-node@10.9.1)
       pino-pretty:
-        specifier: 10.1.0
-        version: 10.1.0
+        specifier: 10.2.0
+        version: 10.2.0
       prisma:
         specifier: 4.16.2
         version: 4.16.2
@@ -288,8 +288,8 @@ importers:
         specifier: 29.6.1
         version: 29.6.1(@types/node@18.17.0)(ts-node@10.9.1)
       pino-pretty:
-        specifier: 10.1.0
-        version: 10.1.0
+        specifier: 10.2.0
+        version: 10.2.0
       prisma:
         specifier: 4.16.2
         version: 4.16.2
@@ -4887,6 +4887,7 @@ packages:
 
   /node-addon-api@3.2.1:
     resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
+    requiresBuild: true
     optional: true
 
   /node-domexception@1.0.0:
@@ -4926,6 +4927,7 @@ packages:
   /node-gyp-build@4.6.0:
     resolution: {integrity: sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==}
     hasBin: true
+    requiresBuild: true
     optional: true
 
   /node-int64@0.4.0:
@@ -5204,8 +5206,8 @@ packages:
       readable-stream: 4.3.0
       split2: 4.2.0
 
-  /pino-pretty@10.1.0:
-    resolution: {integrity: sha512-9gAgVHCVTEq0ThcjoXkOICYQgdqh1h90WSuVAnNeCrRrefJInUvMbpDfy6PlsI29Nbu9UW9CGkUHztrR1A9N+A==}
+  /pino-pretty@10.2.0:
+    resolution: {integrity: sha512-tRvpyEmGtc2D+Lr3FulIZ+R1baggQ4S3xD2Ar93KixFEDx6SEAUP3W5aYuEw1C73d6ROrNcB2IXLteW8itlwhA==}
     hasBin: true
     dependencies:
       colorette: 2.0.19
