@@ -26,7 +26,7 @@
     "@types/node": "18.17.11",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
-    "axios": "1.4.0",
+    "axios": "1.5.0",
     "esbuild": "0.19.2",
     "eslint": "8.48.0",
     "fastify-flux-cli": "workspace:*",
