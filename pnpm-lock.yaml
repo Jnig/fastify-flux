@@ -113,8 +113,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0(esbuild@0.19.2)
       fastify:
-        specifier: 4.22.0
-        version: 4.22.0
+        specifier: 4.22.1
+        version: 4.22.1
       jest:
         specifier: 29.6.4
         version: 29.6.4(@types/node@20.4.7)(ts-node@10.9.1)
@@ -187,8 +187,8 @@ importers:
         specifier: 8.9.0
         version: 8.9.0
       fastify:
-        specifier: 4.22.0
-        version: 4.22.0
+        specifier: 4.22.1
+        version: 4.22.1
       fastify-flux:
         specifier: workspace:*
         version: link:../../packages/common
@@ -251,8 +251,8 @@ importers:
         specifier: 4.16.2
         version: 4.16.2(prisma@4.16.2)
       fastify:
-        specifier: 4.22.0
-        version: 4.22.0
+        specifier: 4.22.1
+        version: 4.22.1
       fastify-flux:
         specifier: workspace:*
         version: link:../../packages/common
@@ -1991,7 +1991,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.3
+      semver: 7.5.4
       tsutils: 3.21.0(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
@@ -3372,8 +3372,8 @@ packages:
   /fastify-plugin@4.5.1:
     resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
 
-  /fastify@4.22.0:
-    resolution: {integrity: sha512-HLoBmetdQ6zaJohKW6jzUww8NnwHzkbIbUEyAzM+Nnf7cZVSXRuUV+6b2/xLmu6GGkruIFJ/bIQoKWYRx4wnAQ==}
+  /fastify@4.22.1:
+    resolution: {integrity: sha512-Jz4NFqARAjCuxteYio+jQmZ3W+MHJQWJK0rEE66qY818q9GFCFUOZRHm0hwF1VcX/CnmdxcAycjNUHSG54Gn7g==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
