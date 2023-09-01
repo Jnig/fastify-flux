@@ -113,8 +113,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0(esbuild@0.19.2)
       fastify:
-        specifier: 4.22.1
-        version: 4.22.1
+        specifier: 4.22.2
+        version: 4.22.2
       jest:
         specifier: 29.6.4
         version: 29.6.4(@types/node@20.4.7)(ts-node@10.9.1)
@@ -187,8 +187,8 @@ importers:
         specifier: 8.9.0
         version: 8.9.0
       fastify:
-        specifier: 4.22.1
-        version: 4.22.1
+        specifier: 4.22.2
+        version: 4.22.2
       fastify-flux:
         specifier: workspace:*
         version: link:../../packages/common
@@ -251,8 +251,8 @@ importers:
         specifier: 4.16.2
         version: 4.16.2(prisma@4.16.2)
       fastify:
-        specifier: 4.22.1
-        version: 4.22.1
+        specifier: 4.22.2
+        version: 4.22.2
       fastify-flux:
         specifier: workspace:*
         version: link:../../packages/common
@@ -3372,8 +3372,8 @@ packages:
   /fastify-plugin@4.5.1:
     resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
 
-  /fastify@4.22.1:
-    resolution: {integrity: sha512-Jz4NFqARAjCuxteYio+jQmZ3W+MHJQWJK0rEE66qY818q9GFCFUOZRHm0hwF1VcX/CnmdxcAycjNUHSG54Gn7g==}
+  /fastify@4.22.2:
+    resolution: {integrity: sha512-rK8mF/1mZJHH6H/L22OhmilTgrp5XMkk3RHcSy03LC+TJ6+wLhbq+4U62bjns15VzIbBNgxTqAForBqtGAa0NQ==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0
