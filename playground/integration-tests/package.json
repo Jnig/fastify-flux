@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fastify/swagger": "8.10.0",
+    "@fastify/swagger": "8.10.1",
     "fastify": "4.23.2",
     "fastify-flux": "workspace:*",
     "source-map-support": "0.5.21",
