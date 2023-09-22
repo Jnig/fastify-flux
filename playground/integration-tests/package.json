@@ -28,7 +28,7 @@
     "@typescript-eslint/parser": "5.62.0",
     "axios": "1.5.0",
     "esbuild": "0.19.3",
-    "eslint": "8.49.0",
+    "eslint": "8.50.0",
     "fastify-flux-cli": "workspace:*",
     "jest": "29.7.0",
     "pino-pretty": "10.2.0",
