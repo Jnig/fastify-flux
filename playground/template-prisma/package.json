@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@fastify/swagger": "8.10.1",
-    "@fastify/swagger-ui": "1.9.3",
+    "@fastify/swagger-ui": "1.10.0",
     "@prisma/client": "4.16.2",
     "fastify": "4.23.2",
     "fastify-flux": "workspace:*",
