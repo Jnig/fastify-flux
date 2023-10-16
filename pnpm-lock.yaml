@@ -66,8 +66,8 @@ importers:
         specifier: 1.4.0
         version: 1.4.0
       ts-morph:
-        specifier: 18.0.0
-        version: 18.0.0
+        specifier: 20.0.0
+        version: 20.0.0
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -1736,6 +1736,16 @@ packages:
       minimatch: 7.4.3
       mkdirp: 2.1.6
       path-browserify: 1.0.1
+    dev: true
+
+  /@ts-morph/common@0.21.0:
+    resolution: {integrity: sha512-ES110Mmne5Vi4ypUKrtVQfXFDtCsDXiUiGxF6ILVlE90dDD4fdpC1LSjydl/ml7xJWKSDZwUYD2zkOePMSrPBA==}
+    dependencies:
+      fast-glob: 3.3.1
+      minimatch: 7.4.3
+      mkdirp: 2.1.6
+      path-browserify: 1.0.1
+    dev: false
 
   /@tsconfig/node10@1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
@@ -6273,6 +6283,14 @@ packages:
     dependencies:
       '@ts-morph/common': 0.19.0
       code-block-writer: 12.0.0
+    dev: true
+
+  /ts-morph@20.0.0:
+    resolution: {integrity: sha512-JVmEJy2Wow5n/84I3igthL9sudQ8qzjh/6i4tmYCm6IqYyKFlNbJZi7oBdjyqcWSWYRu3CtL0xbT6fS03ESZIg==}
+    dependencies:
+      '@ts-morph/common': 0.21.0
+      code-block-writer: 12.0.0
+    dev: false
 
   /ts-node@10.9.1(@types/node@20.5.1)(typescript@5.2.2):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
