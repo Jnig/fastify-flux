@@ -73,8 +73,8 @@ importers:
         version: 5.2.2
     devDependencies:
       '@types/fs-extra':
-        specifier: 11.0.2
-        version: 11.0.2
+        specifier: 11.0.3
+        version: 11.0.3
       '@types/jest':
         specifier: 29.5.6
         version: 29.5.6
@@ -144,8 +144,8 @@ importers:
         version: 0.5.21
     devDependencies:
       '@types/fs-extra':
-        specifier: 11.0.2
-        version: 11.0.2
+        specifier: 11.0.3
+        version: 11.0.3
       '@types/jest':
         specifier: 29.5.6
         version: 29.5.6
@@ -1782,8 +1782,8 @@ packages:
       '@babel/types': 7.21.4
     dev: true
 
-  /@types/fs-extra@11.0.2:
-    resolution: {integrity: sha512-c0hrgAOVYr21EX8J0jBMXGLMgJqVf/v6yxi0dLaJboW9aQPh16Id+z6w2Tx1hm+piJOLv8xPfVKZCLfjPw/IMQ==}
+  /@types/fs-extra@11.0.3:
+    resolution: {integrity: sha512-sF59BlXtUdzEAL1u0MSvuzWd7PdZvZEtnaVkzX5mjpdWTJ8brG0jUqve3jPCzSzvAKKMHTG8F8o/WMQLtleZdQ==}
     dependencies:
       '@types/jsonfile': 6.1.1
       '@types/node': 18.18.6
