@@ -76,8 +76,8 @@ importers:
         specifier: 11.0.3
         version: 11.0.3
       '@types/jest':
-        specifier: 29.5.6
-        version: 29.5.6
+        specifier: 29.5.10
+        version: 29.5.10
       '@types/node':
         specifier: 18.18.6
         version: 18.18.6
@@ -104,8 +104,8 @@ importers:
         specifier: 1.10.1
         version: 1.10.1
       '@types/jest':
-        specifier: 29.5.6
-        version: 29.5.6
+        specifier: 29.5.10
+        version: 29.5.10
       '@types/lodash':
         specifier: 4.14.200
         version: 4.14.200
@@ -147,8 +147,8 @@ importers:
         specifier: 11.0.3
         version: 11.0.3
       '@types/jest':
-        specifier: 29.5.6
-        version: 29.5.6
+        specifier: 29.5.10
+        version: 29.5.10
       '@types/node':
         specifier: 18.18.6
         version: 18.18.6
@@ -200,8 +200,8 @@ importers:
         version: 4.2.0
     devDependencies:
       '@types/jest':
-        specifier: 29.5.6
-        version: 29.5.6
+        specifier: 29.5.10
+        version: 29.5.10
       '@types/node':
         specifier: 18.18.6
         version: 18.18.6
@@ -261,8 +261,8 @@ importers:
         version: 4.2.0
     devDependencies:
       '@types/jest':
-        specifier: 29.5.6
-        version: 29.5.6
+        specifier: 29.5.10
+        version: 29.5.10
       '@types/node':
         specifier: 18.18.6
         version: 18.18.6
@@ -1811,8 +1811,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest@29.5.6:
-    resolution: {integrity: sha512-/t9NnzkOpXb4Nfvg17ieHE6EeSjDS2SGSpNYfoLbUAeL/EOueU/RSdOWFpfQTXBEM7BguYW1XQ0EbM+6RlIh6w==}
+  /@types/jest@29.5.10:
+    resolution: {integrity: sha512-tE4yxKEphEyxj9s4inideLHktW/x6DwesIwWZ9NN1FKf9zbJYsnhBoA9vrHA/IuIOKwPa5PcFBNV4lpMIOEzyQ==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
