@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "@fastify/swagger": "8.12.0",
-    "@fastify/swagger-ui": "1.10.1",
+    "@fastify/swagger-ui": "1.10.2",
     "@types/jest": "29.5.10",
     "@types/lodash": "4.14.202",
     "esbuild-jest": "0.5.0",
@@ -26,7 +26,7 @@
   },
   "peerDependencies": {
     "@fastify/swagger": "8.12.0",
-    "@fastify/swagger-ui": "1.10.1",
+    "@fastify/swagger-ui": "1.10.2",
     "fastify": "4.24.3"
   },
   "files": [
