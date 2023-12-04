@@ -12,8 +12,8 @@
   "private": true,
   "repository": "git@github.com:fluxapi/fluxapi.git",
   "devDependencies": {
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "17.8.1",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
     "husky": "8.0.3"
   },
   "workspaces": [
