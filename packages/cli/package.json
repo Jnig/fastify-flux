@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apidevtools/json-schema-ref-parser": "10.1.0",
+    "@apidevtools/json-schema-ref-parser": "11.1.0",
     "@types/lodash": "4.14.202",
     "chalk": "5.3.0",
     "chokidar": "3.5.3",
