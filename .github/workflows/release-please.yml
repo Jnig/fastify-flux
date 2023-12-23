@@ -17,7 +17,6 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: release-please-action
       - uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v4
