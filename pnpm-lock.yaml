@@ -227,8 +227,8 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.10.5)
       pino-pretty:
-        specifier: 10.3.0
-        version: 10.3.0
+        specifier: 10.3.1
+        version: 10.3.1
       prisma:
         specifier: 5.7.1
         version: 5.7.1
@@ -288,8 +288,8 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.10.5)
       pino-pretty:
-        specifier: 10.3.0
-        version: 10.3.0
+        specifier: 10.3.1
+        version: 10.3.1
       prisma:
         specifier: 4.16.2
         version: 4.16.2
@@ -5066,8 +5066,8 @@ packages:
       readable-stream: 4.5.1
       split2: 4.2.0
 
-  /pino-pretty@10.3.0:
-    resolution: {integrity: sha512-JthvQW289q3454mhM3/38wFYGWPiBMR28T3CpDNABzoTQOje9UKS7XCJQSnjWF9LQGQkGd8D7h0oq+qwiM3jFA==}
+  /pino-pretty@10.3.1:
+    resolution: {integrity: sha512-az8JbIYeN/1iLj2t0jR9DV48/LQ3RC6hZPpapKPkb84Q+yTidMCpgWxIT3N0flnBDilyBQ1luWNpOeJptjdp/g==}
     hasBin: true
     dependencies:
       colorette: 2.0.20
