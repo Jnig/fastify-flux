@@ -15,7 +15,7 @@ async function handler(options: { typecheck: true }) {
   await Promise.all([
     runWorkerEsbuild(),
     runWorkerControllerGeneration(),
-    runWorkerSchemaGeneration(),
+    //runWorkerSchemaGeneration(),
   ]);
 }
 
