@@ -29,6 +29,7 @@ export async function generateMeta() {
         functionName: method,
         params: x.functions[method].params,
         returnType: x.functions[method].returnType,
+        returnSchema: x.functions[method].returnSchema,
       }),
     );
   });

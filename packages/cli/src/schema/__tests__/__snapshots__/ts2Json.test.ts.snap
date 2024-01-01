@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`complex 1`] = `
+{
+  "$id": "complex",
+  "additionalProperties": false,
+  "properties": {
+    "anyObject": {
+      "$id": undefined,
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object",
+    },
+    "object": {
+      "$id": "Record<string, any>",
+      "additionalProperties": false,
+      "properties": {},
+      "required": [],
+      "type": "object",
+    },
+  },
+  "required": [
+    "object",
+    "anyObject",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`simple array 1`] = `
+{
+  "$id": "simple[]",
+  "additionalProperties": false,
+  "items": {
+    "$id": undefined,
+    "additionalProperties": false,
+    "properties": {
+      "checked": {
+        "type": "boolean",
+      },
+    },
+    "required": [
+      "checked",
+    ],
+    "type": "object",
+  },
+  "type": "array",
+}
+`;
+
+exports[`simple interface 1`] = `
+{
+  "$id": "simple",
+  "additionalProperties": false,
+  "properties": {
+    "checked": {
+      "type": "boolean",
+    },
+  },
+  "required": [
+    "checked",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`simple interface with undefined and null 1`] = `
+{
+  "$id": "simpleUndefinedNull",
+  "additionalProperties": false,
+  "properties": {
+    "checked": {
+      "anyOf": [
+        {
+          "type": "boolean",
+        },
+        {
+          "type": "null",
+        },
+      ],
+    },
+  },
+  "required": [],
+  "type": "object",
+}
+`;
+
+exports[`simple nested 1`] = `
+{
+  "$id": "simpleNested",
+  "additionalProperties": false,
+  "properties": {
+    "checked": {
+      "$id": undefined,
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "number",
+        },
+      },
+      "required": [
+        "id",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [],
+  "type": "object",
+}
+`;

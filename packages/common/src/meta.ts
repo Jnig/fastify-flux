@@ -1,4 +1,4 @@
-const schema = require(process.cwd() + '/dist/flux-schema.json');
+const schema = require(process.cwd() + '/dist/flux-schema-new.json');
 const controllerMeta = require(process.cwd() + '/dist/flux-controller.json');
 
 export function getFluxJsonSchema() {

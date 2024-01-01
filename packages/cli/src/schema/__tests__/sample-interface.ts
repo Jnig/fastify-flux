@@ -11,12 +11,29 @@ interface foobar {
   nestedArray?: nested[];
 }
 
+interface simple {
+  checked: boolean;
+}
+
+interface simpleUndefinedNull {
+  checked?: boolean | null;
+}
+
+interface simpleNested {
+  checked?: { id: number } | null;
+}
+
+interface complex {
+  object: Record<string, any>
+  anyObject: { [key: string]: string };
+}
+
 import { Controller, Get } from '../../../../common/dist';
 
 @Controller('/v2', { tags: ['v2'] })
 export class V2Controller {
   @Get()
-  async string(input: foobar): Promise<foobar> {
+  async string(s1: simple, s2: simpleUndefinedNull, s3: simpleNested, s4: simple[], s5: complex): Promise<foobar> {
     return { id: 1, checked: true, mixed: 'foo' };
   }
 

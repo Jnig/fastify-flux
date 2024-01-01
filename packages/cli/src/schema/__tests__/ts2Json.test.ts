@@ -1,8 +1,34 @@
-import { ts2Json } from "../ts2Json";
+import { ts2JsonTest } from "../ts2Json";
 
-const foo = ts2Json('src/schema/__tests__/sample-interface.ts')
+const foo = ts2JsonTest('src/schema/__tests__/sample-interface.ts')
 
 
-test('foo', () => {
-  console.log('test did run')
+test('simple interface', () => {
+  const simple = foo[0].parameters[0]
+
+  expect(simple).toMatchSnapshot()
+})
+
+test('simple interface with undefined and null', () => {
+  const simpleUndefinedNull = foo[0].parameters[1]
+
+  expect(simpleUndefinedNull).toMatchSnapshot()
+})
+
+test('simple nested', () => {
+  const simpleUndefinedNull = foo[0].parameters[2]
+
+  expect(simpleUndefinedNull).toMatchSnapshot()
+})
+
+test('simple array', () => {
+  const simpleArray = foo[0].parameters[3]
+
+  expect(simpleArray).toMatchSnapshot()
+})
+
+test('complex', () => {
+  const simpleArray = foo[0].parameters[4]
+
+  expect(simpleArray).toMatchSnapshot()
 })

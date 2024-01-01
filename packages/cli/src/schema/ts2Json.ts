@@ -1,12 +1,36 @@
-import { Project, SyntaxKind, TypeNode, Node, Symbol } from "ts-morph";
+import { Project, SyntaxKind, Node, Symbol } from "ts-morph";
 
-const primitives = ['void', 'number', 'string', 'any', 'boolean', 'Date', 'null']
+const primitives = ['void', 'number', 'string', 'any', 'boolean', 'Date', 'null',]
+
+function primitive2Json(primitive: string) {
+  return { type: primitive, }
+}
+
+function unionToJson(union: string) {
+  const splitted = union.split(' | ')
+
+  const formatted = splitted.filter(x => x !== 'undefined').map((x: string) => {
+    if (x === 'Date') {
+      return { type: 'string', format: 'date-time' }
+    }
+
+    return { type: x };
+  })
+
+  if (formatted.length > 1) {
+    return { anyOf: formatted }
+  }
+
+  return formatted[0];
+}
+
+
 function handleDeclarations(symbol: Symbol, parent: Node) {
 
   const type = symbol.getTypeAtLocation(parent);
   const propertySignature = symbol.getDeclarations()[0]
   if (!propertySignature) {
-    return { type: type.getText(), childs: '' }
+    return unionToJson(type.getText())
 
   }
 
@@ -18,13 +42,11 @@ function handleDeclarations(symbol: Symbol, parent: Node) {
     })
 
   if (nestedInterfaces.length > 0) {
-    return getTypeOfReturn(nestedInterfaces[0])
+    return ts2Json(nestedInterfaces[0])
   }
 
 
-  return { type: type.getText() }
-
-
+  return unionToJson(type.getText())
 }
 
 
@@ -51,12 +73,18 @@ function unwrapArray(node: Node) {
   return node.getChildAtIndex(0);
 }
 
-export function getTypeOfReturn(returnType: Node): string | Array<Record<string, any>> | Record<string, any> {
+export function ts2Json(returnType: Node): string | Array<Record<string, any>> | Record<string, any> {
   returnType = unwrapPromise(returnType);
 
-  const insidePromise = returnType.getText() || '';
+  let insidePromise: undefined | string;
+  insidePromise = returnType.getText() || '';
+
   if (primitives.includes(insidePromise)) {
-    return insidePromise;
+    return { ...primitive2Json(insidePromise) };
+  }
+
+  if (insidePromise.startsWith('{')) {
+    insidePromise = undefined;
   }
 
   let isArray = false;
@@ -66,23 +94,29 @@ export function getTypeOfReturn(returnType: Node): string | Array<Record<string,
   }
 
 
+  const required = [] as string[];
   const properties = returnType.getType().getProperties().reduce((acc: any, x) => {
     acc[x.getName()] = handleDeclarations(x, returnType)
+    if (!x.isOptional()) {
+      required.push(x.getName())
+    }
 
     return acc
   }, {})
 
 
+  const jsonObject = { type: 'object', properties, required, additionalProperties: false, '$id': insidePromise };
   if (isArray) {
-    return { type: 'array', properties }
+    jsonObject['$id'] = undefined;
+    return { type: 'array', items: jsonObject, additionalProperties: false, '$id': insidePromise }
   } else {
-    return { type: 'object', properties };
+    return jsonObject;
   }
 
 }
 
 
-export function ts2Json(file: string) {
+export function ts2JsonTest(file: string) {
   const project = new Project({ compilerOptions: { strictNullChecks: true } });
   project.addSourceFileAtPath(file);
   const parsed = project.getSourceFile(file);
@@ -98,9 +132,11 @@ export function ts2Json(file: string) {
 
   const methods = classes[0].getInstanceMethods();
 
-  [methods[0]].forEach((method) => {
-    const foo = getTypeOfReturn(method.getReturnTypeNodeOrThrow())
-    console.log(JSON.stringify(foo, null, 2))
-  });
+  return methods.map((method) => {
+    const parameters = method.getParameters().map(x => {
+      return ts2Json(x.getTypeNodeOrThrow())
+    });
 
+    return { parameters }
+  });
 }

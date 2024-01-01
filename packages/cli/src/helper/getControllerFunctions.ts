@@ -1,6 +1,6 @@
 import { MethodDeclaration, ParameterDeclaration, Project, ReturnTypedNode, SyntaxKind, SyntaxList, TypeNode, TypeReferenceNode } from 'ts-morph';
 import { log } from '../log.js';
-import { getTypeOfReturn } from '../schema/ts2Json.js';
+import { ts2Json } from '../schema/ts2Json.js';
 
 export function cleanInterfaceName(name: string | undefined) {
   if (!name) {
@@ -79,24 +79,23 @@ export function getControllerFunctions(file: string) {
   const mapped = declarations.reduce<any>((acc, y) => {
     const params = y.getParameters().map((x) => {
 
-      const resolved = getTypeOfInterface(x);
 
       return {
         name: x.getNameNode().getText(),
         type: cleanInterfaceName(x.getTypeNode()?.getText()),
-        resolved,
+        schema: ts2Json(x.getTypeNodeOrThrow()),
       };
     });
 
 
     const name = y.getNameNode().getText();
     const returnType = cleanInterfaceName(y.getReturnTypeNode()?.getText());
-    const returnTypeResolved = getTypeOfReturn(y.getReturnTypeNodeOrThrow());
-    console.log(file, JSON.stringify(returnTypeResolved, null, 2))
+    const returnSchema = ts2Json(y.getReturnTypeNodeOrThrow());
 
     acc[name] = {
       params,
       returnType,
+      returnSchema
     };
 
     return acc;

@@ -1,5 +1,6 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import _ from 'lodash'
 import { getConfig } from './config.js';
 import { generateMeta } from './generateMeta.js';
 import { generateSchema } from '../schema/generateSchema.js';
@@ -14,12 +15,23 @@ export async function writeControllerJson() {
 
 export async function writeSchemaJson() {
   const config = await getConfig();
-  let schema = await generateSchema(config.entry, { removeDateTime: false });
-  if (!schema) {
-    schema = '{}';
-  }
+  // let schema = await generateSchema(config.entry, { removeDateTime: false });
+  // if (!schema) {
+  //   schema = '{}';
+  // }
+  // const sorted = _.sortBy(JSON.parse(schema), "$id")
+  // writeFile(join(config.outdir, 'flux-schema.json'), schema);
+  //
 
-  writeFile(join(config.outdir, 'flux-schema.json'), schema);
+  const functionMeta = JSON.parse(await generateMeta());
+  const functionsSchema = _.sortBy(functionMeta.flatMap((x: any) => {
+    return [x.returnSchema, ...x.params.map((y: any) => y.schema)];
+  }), '$id').reduce((acc, x) => {
+    acc[x['$id']] = x
+    return acc
+  }, {})
+
+  writeFile(join(config.outdir, 'flux-schema-new.json'), JSON.stringify(functionsSchema, null, 2))
 }
 
 export function getRootDir() {
