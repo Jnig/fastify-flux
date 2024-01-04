@@ -1,59 +1,92 @@
 import { Project, SyntaxKind, Node, Symbol } from "ts-morph";
 
-const primitives = ['void', 'number', 'string', 'any', 'boolean', 'Date', 'null',]
+const primitives = ['^void$',
+  '^number$',
+  '^string$',
+  '^any$',
+  '^boolean$',
+  '^Date$',
+  '^null$',
+]
 
-function primitive2Json(primitive: string) {
-  return { type: primitive, }
+function isObject(str: string) {
+  const objects = [
+    '^Record<.+,.+>$', // Record<any,any>
+    '^{\\s?\\[.+:\\s?.+\\]\\s?:.+}$', // { [key: any]: any}
+  ];
+
+  return objects.some(x => new RegExp(x).test(str));
 }
 
-function unionToJson(union: string) {
-  console.log(union);
-  const splitted = union.split(' | ')
+function isPrimitive(str: string) {
+  return isObject(str) || primitives.some(x => new RegExp(x).test(str));
+}
 
-  const formatted = splitted.filter(x => x !== 'undefined').map((x: string) => {
-    if (x === 'Date') {
-      return { type: 'string', format: 'date-time' }
-    }
 
-    if (x === 'any') {
-      return {};
-    }
 
-    return { type: x };
-  })
-
-  if (formatted.length > 1) {
-    return { anyOf: formatted }
+function primitive2Json(type: string) {
+  if (type === 'Date') {
+    return { type: 'string', format: 'date-time' }
   }
 
-  return formatted[0];
+  if (isObject(type)) {
+    return { type: 'object', additionalProperties: true }
+  }
+
+  if (type === 'any') {
+    return {};
+  }
+
+  return { type };
+
 }
 
 
 function handleDeclarations(symbol: Symbol, parent: Node) {
-
   const type = symbol.getTypeAtLocation(parent);
   const propertySignature = symbol.getDeclarations()[0]
-
-  if (!propertySignature) {
-    return unionToJson(type.getText())
-
+  if (!propertySignature) { // why needed for prisma ?
+    return primitive2Json(type.getText())
   }
 
-  const skipKinds = [SyntaxKind.Identifier, SyntaxKind.UnionType, SyntaxKind.QuestionToken]
-  const nestedInterfaces = propertySignature.forEachDescendantAsArray()
-    .filter(x => !skipKinds.includes(x.getKind()))
-    .filter((x) => {
-      return !primitives.includes(x.getText())
+  const skipKinds = [
+    SyntaxKind.Identifier,
+    SyntaxKind.QuestionToken,
+    SyntaxKind.ColonToken,
+    SyntaxKind.BarToken,
+    SyntaxKind.SemicolonToken,
+  ];
+
+  const unions = propertySignature.getChildrenOfKind(SyntaxKind.UnionType)
+
+  const formatted = [];
+  if (unions.length) {
+    const foo = unions[0].getChildren()[0].getChildren().filter(x => !skipKinds.includes(x.getKind())).map(x => {
+      if (isPrimitive(x.getText())) {
+        return primitive2Json(x.getText())
+      } else {
+        return ts2Json(x, true)
+      }
     })
-  console.log(nestedInterfaces.map(x => x.getKindName()))
 
-  if (nestedInterfaces.length > 0) {
-    return ts2Json(nestedInterfaces[0], true)
+    formatted.push(...foo)
+  } else {
+    const foo = propertySignature.getChildren().filter(x => !skipKinds.includes(x.getKind())).map(x => {
+      if (isPrimitive(x.getText())) {
+        return primitive2Json(x.getText())
+      } else {
+        return ts2Json(x, true)
+      }
+    })
+
+    formatted.push(...foo)
   }
 
-
-  return unionToJson(type.getText())
+  if (formatted.length > 1) {
+    return { anyOf: formatted }
+  } else {
+    return formatted[0];
+  }
 }
 
 
@@ -83,21 +116,20 @@ function unwrapArray(node: Node) {
 export function ts2Json(returnType: Node, nested = false): string | Array<Record<string, any>> | Record<string, any> {
   returnType = unwrapPromise(returnType);
 
-  let insidePromise: undefined | string;
-  insidePromise = returnType.getText() || '';
 
-  if (primitives.includes(insidePromise)) {
-    return { ...primitive2Json(insidePromise) };
-  }
-
-  if (nested) {
-    insidePromise = undefined;
-  }
 
   let isArray = false;
   if (returnType.getKind() === SyntaxKind.ArrayType) {
     isArray = true;
     returnType = unwrapArray(returnType)
+  }
+
+  if (isPrimitive(returnType.getText())) {
+    if (isArray) {
+      return { type: 'array', items: primitive2Json(returnType.getText()) }
+    } else {
+      return { ...primitive2Json(returnType.getText()) };
+    }
   }
 
   const required = [] as string[];
@@ -110,15 +142,15 @@ export function ts2Json(returnType: Node, nested = false): string | Array<Record
     return acc
   }, {})
 
-  if (nested && !properties.length) {
-    //    return { type: 'object', additionalProperties: true };
+  let name = returnType.getText() || '' as string | undefined
+  if (nested) {
+    name = undefined;
   }
 
-
-  const jsonObject = { type: 'object', properties, required, additionalProperties: false, '$id': insidePromise };
+  const jsonObject = { type: 'object', properties, required, additionalProperties: false, '$id': name };
   if (isArray) {
     jsonObject['$id'] = undefined;
-    return { type: 'array', items: jsonObject, additionalProperties: false, '$id': insidePromise }
+    return { type: 'array', items: jsonObject, additionalProperties: false, '$id': name }
   } else {
     return jsonObject;
   }

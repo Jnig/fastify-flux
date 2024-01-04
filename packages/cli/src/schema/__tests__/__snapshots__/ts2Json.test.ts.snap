@@ -6,31 +6,39 @@ exports[`complex 1`] = `
   "additionalProperties": false,
   "properties": {
     "anyArray": {
-      "$id": undefined,
-      "additionalProperties": false,
-      "items": {
-        "$id": undefined,
-        "additionalProperties": false,
-        "properties": {},
-        "required": [],
-        "type": "object",
-      },
+      "items": {},
       "type": "array",
     },
     "anyObject": {
-      "$id": undefined,
-      "additionalProperties": false,
-      "properties": {},
-      "required": [],
+      "additionalProperties": true,
       "type": "object",
+    },
+    "anyObject2": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object",
+        },
+        {
+          "type": "null",
+        },
+      ],
     },
     "anyString": {},
     "object": {
-      "$id": undefined,
-      "additionalProperties": false,
-      "properties": {},
-      "required": [],
+      "additionalProperties": true,
       "type": "object",
+    },
+    "object2": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object",
+        },
+        {
+          "type": "null",
+        },
+      ],
     },
   },
   "required": [
@@ -45,7 +53,7 @@ exports[`complex 1`] = `
 
 exports[`simple array 1`] = `
 {
-  "$id": "simple[]",
+  "$id": "simple",
   "additionalProperties": false,
   "items": {
     "$id": undefined,
@@ -107,17 +115,24 @@ exports[`simple nested 1`] = `
   "additionalProperties": false,
   "properties": {
     "checked": {
-      "$id": undefined,
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "number",
+      "anyOf": [
+        {
+          "$id": undefined,
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "number",
+            },
+          },
+          "required": [
+            "id",
+          ],
+          "type": "object",
         },
-      },
-      "required": [
-        "id",
+        {
+          "type": "null",
+        },
       ],
-      "type": "object",
     },
   },
   "required": [],
