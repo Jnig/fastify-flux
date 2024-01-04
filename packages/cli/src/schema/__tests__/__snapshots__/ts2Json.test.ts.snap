@@ -5,6 +5,18 @@ exports[`complex 1`] = `
   "$id": "complex",
   "additionalProperties": false,
   "properties": {
+    "anyArray": {
+      "$id": undefined,
+      "additionalProperties": false,
+      "items": {
+        "$id": undefined,
+        "additionalProperties": false,
+        "properties": {},
+        "required": [],
+        "type": "object",
+      },
+      "type": "array",
+    },
     "anyObject": {
       "$id": undefined,
       "additionalProperties": false,
@@ -12,8 +24,9 @@ exports[`complex 1`] = `
       "required": [],
       "type": "object",
     },
+    "anyString": {},
     "object": {
-      "$id": "Record<string, any>",
+      "$id": undefined,
       "additionalProperties": false,
       "properties": {},
       "required": [],
@@ -23,6 +36,8 @@ exports[`complex 1`] = `
   "required": [
     "object",
     "anyObject",
+    "anyString",
+    "anyArray",
   ],
   "type": "object",
 }

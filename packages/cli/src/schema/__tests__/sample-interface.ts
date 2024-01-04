@@ -26,6 +26,10 @@ interface simpleNested {
 interface complex {
   object: Record<string, any>
   anyObject: { [key: string]: string };
+  object2?: Record<string, any> | null;
+  anyObject2?: { [key: string]: string } | null;
+  anyString: any;
+  anyArray: any[];
 }
 
 import { Controller, Get } from '../../../../common/dist';
@@ -35,14 +39,5 @@ export class V2Controller {
   @Get()
   async string(s1: simple, s2: simpleUndefinedNull, s3: simpleNested, s4: simple[], s5: complex): Promise<foobar> {
     return { id: 1, checked: true, mixed: 'foo' };
-  }
-
-  @Get()
-  async list(input: foobar): Promise<foobar[]> {
-    return [{ id: 1, checked: true, mixed: 'foo' }];
-  }
-
-  @Get()
-  async none(input: foobar): Promise<void> {
   }
 }
