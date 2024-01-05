@@ -5,6 +5,7 @@ const primitives = ['^void$',
   '^string$',
   '^any$',
   '^boolean$',
+  '^true$',
   '^Date$',
   '^null$',
 ]
@@ -25,6 +26,10 @@ function isPrimitive(str: string) {
 
 
 function primitive2Json(type: string) {
+  if (type === 'true') { // getUntionTypes returns [true, false]
+    return { type: 'boolean' }
+  }
+
   if (type === 'Date') {
     return { type: 'string', format: 'date-time' }
   }
@@ -44,42 +49,39 @@ function primitive2Json(type: string) {
 
 function handleDeclarations(symbol: Symbol, parent: Node) {
   const type = symbol.getTypeAtLocation(parent);
-  const propertySignature = symbol.getDeclarations()[0]
-  if (!propertySignature) { // why needed for prisma ?
-    return primitive2Json(type.getText())
-  }
-
-  const skipKinds = [
-    SyntaxKind.Identifier,
-    SyntaxKind.QuestionToken,
-    SyntaxKind.ColonToken,
-    SyntaxKind.BarToken,
-    SyntaxKind.SemicolonToken,
-  ];
-
-  const unions = propertySignature.getChildrenOfKind(SyntaxKind.UnionType)
 
   const formatted = [];
-  if (unions.length) {
-    const foo = unions[0].getChildren()[0].getChildren().filter(x => !skipKinds.includes(x.getKind())).map(x => {
+  if (type.isUnion()) {
+    const types = type.getUnionTypes().filter(x => !['false', 'undefined'].includes(x.getText()))
+    formatted.push(...types.map(x => {
       if (isPrimitive(x.getText())) {
-        return primitive2Json(x.getText())
-      } else {
-        return ts2Json(x, true)
+        return primitive2Json(x.getText());
       }
-    })
 
-    formatted.push(...foo)
+      const symbol = x.getSymbol()
+      if (symbol) {
+        const node = symbol.getDeclarations()[0];
+        return ts2Json(node, true);
+      }
+
+      throw new Error('unhandled case')
+
+    }))
   } else {
-    const foo = propertySignature.getChildren().filter(x => !skipKinds.includes(x.getKind())).map(x => {
-      if (isPrimitive(x.getText())) {
-        return primitive2Json(x.getText())
-      } else {
-        return ts2Json(x, true)
-      }
-    })
+    if (isPrimitive(type.getText())) {
+      return primitive2Json(type.getText())
+    }
 
-    formatted.push(...foo)
+    const parent = symbol.getDeclarations()[0];
+    return ts2Json(parent, true);
+  }
+
+  if (formatted.length === 2 && formatted.find((x: any) => x.type === 'null')) {
+    const found = formatted.find((x: any) => x.type !== 'null');
+    (found as any).nullable = true;
+
+    return found;
+
   }
 
   if (formatted.length > 1) {
@@ -110,16 +112,18 @@ function unwrapPromise(node: Node): Node {
 }
 
 function unwrapArray(node: Node) {
-  return node.getChildAtIndex(0);
+  if (node.getKind() === SyntaxKind.ArrayType) {
+    return node.getChildAtIndex(0);
+  }
+
+  return node.getChildrenOfKind(SyntaxKind.ArrayType)[0].getChildren()[0]
 }
 
 export function ts2Json(returnType: Node, nested = false): string | Array<Record<string, any>> | Record<string, any> {
   returnType = unwrapPromise(returnType);
 
-
-
   let isArray = false;
-  if (returnType.getKind() === SyntaxKind.ArrayType) {
+  if (returnType.getKind() === SyntaxKind.ArrayType || returnType.getChildrenOfKind(SyntaxKind.ArrayType).length) {
     isArray = true;
     returnType = unwrapArray(returnType)
   }

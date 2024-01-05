@@ -31,7 +31,7 @@ test('remove additional properties', async () => {
   });
 });
 
-test.only('handle null properties', async () => {
+test('handle null properties', async () => {
   const result = await client.responses.nullProperty();
   expect(result).toEqual({
     id: 1,

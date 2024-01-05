@@ -16,11 +16,11 @@ exports[`complex 1`] = `
     "anyObject2": {
       "anyOf": [
         {
-          "additionalProperties": true,
-          "type": "object",
+          "type": "null",
         },
         {
-          "type": "null",
+          "additionalProperties": true,
+          "type": "object",
         },
       ],
     },
@@ -32,11 +32,11 @@ exports[`complex 1`] = `
     "object2": {
       "anyOf": [
         {
-          "additionalProperties": true,
-          "type": "object",
+          "type": "null",
         },
         {
-          "type": "null",
+          "additionalProperties": true,
+          "type": "object",
         },
       ],
     },
@@ -96,10 +96,10 @@ exports[`simple interface with undefined and null 1`] = `
     "checked": {
       "anyOf": [
         {
-          "type": "boolean",
+          "type": "null",
         },
         {
-          "type": "null",
+          "type": "boolean",
         },
       ],
     },
@@ -117,6 +117,9 @@ exports[`simple nested 1`] = `
     "checked": {
       "anyOf": [
         {
+          "type": "null",
+        },
+        {
           "$id": undefined,
           "additionalProperties": false,
           "properties": {
@@ -128,9 +131,6 @@ exports[`simple nested 1`] = `
             "id",
           ],
           "type": "object",
-        },
-        {
-          "type": "null",
         },
       ],
     },

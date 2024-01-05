@@ -28,6 +28,7 @@ export interface CreateTodo {
 }
 
 export interface UpdateTodo {
+  /** @format date-time */
   createdAt?: string;
   text?: string;
   priority?: number;
@@ -216,6 +217,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
     update: (
       id: number,
       data: {
+        /** @format date-time */
         createdAt?: string;
         text?: string;
         priority?: number;
