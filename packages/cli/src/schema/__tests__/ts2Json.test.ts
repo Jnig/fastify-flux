@@ -28,3 +28,8 @@ test('complex', () => {
   const result = ts2JsonTest(file, 0, 4)
   expect(result).toMatchSnapshot()
 })
+
+test('enum sample', () => {
+  const result = ts2JsonTest(file, 0, 5)
+  expect(result).toMatchSnapshot()
+})

@@ -51,7 +51,13 @@ function handleDeclarations(symbol: Symbol, parent: Node) {
   const type = symbol.getTypeAtLocation(parent);
 
   const formatted = [];
-  if (type.isUnion()) {
+
+  const enums = symbol.getDeclarations()[0].getDescendantsOfKind(SyntaxKind.StringLiteral);
+
+
+  if (enums.length) {
+    return { type: 'string', enum: enums.map(x => x.getText().replace(/[\'\"]/gi, '')) }
+  } else if (type.isUnion()) {
     const types = type.getUnionTypes().filter(x => !['false', 'undefined'].includes(x.getText()))
     formatted.push(...types.map(x => {
       if (isPrimitive(x.getText())) {

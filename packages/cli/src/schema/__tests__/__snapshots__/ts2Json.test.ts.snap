@@ -14,15 +14,9 @@ exports[`complex 1`] = `
       "type": "object",
     },
     "anyObject2": {
-      "anyOf": [
-        {
-          "type": "null",
-        },
-        {
-          "additionalProperties": true,
-          "type": "object",
-        },
-      ],
+      "additionalProperties": true,
+      "nullable": true,
+      "type": "object",
     },
     "anyString": {},
     "object": {
@@ -30,15 +24,9 @@ exports[`complex 1`] = `
       "type": "object",
     },
     "object2": {
-      "anyOf": [
-        {
-          "type": "null",
-        },
-        {
-          "additionalProperties": true,
-          "type": "object",
-        },
-      ],
+      "additionalProperties": true,
+      "nullable": true,
+      "type": "object",
     },
   },
   "required": [
@@ -46,6 +34,26 @@ exports[`complex 1`] = `
     "anyObject",
     "anyString",
     "anyArray",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`enum sample 1`] = `
+{
+  "$id": "enumSample",
+  "additionalProperties": false,
+  "properties": {
+    "barcode": {
+      "enum": [
+        "code128",
+        "qr",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "barcode",
   ],
   "type": "object",
 }
@@ -94,14 +102,8 @@ exports[`simple interface with undefined and null 1`] = `
   "additionalProperties": false,
   "properties": {
     "checked": {
-      "anyOf": [
-        {
-          "type": "null",
-        },
-        {
-          "type": "boolean",
-        },
-      ],
+      "nullable": true,
+      "type": "boolean",
     },
   },
   "required": [],
@@ -115,24 +117,18 @@ exports[`simple nested 1`] = `
   "additionalProperties": false,
   "properties": {
     "checked": {
-      "anyOf": [
-        {
-          "type": "null",
+      "$id": undefined,
+      "additionalProperties": false,
+      "nullable": true,
+      "properties": {
+        "id": {
+          "type": "number",
         },
-        {
-          "$id": undefined,
-          "additionalProperties": false,
-          "properties": {
-            "id": {
-              "type": "number",
-            },
-          },
-          "required": [
-            "id",
-          ],
-          "type": "object",
-        },
+      },
+      "required": [
+        "id",
       ],
+      "type": "object",
     },
   },
   "required": [],
