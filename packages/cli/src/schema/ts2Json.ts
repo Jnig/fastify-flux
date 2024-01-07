@@ -20,30 +20,38 @@ function isObject(str: string) {
 }
 
 function isPrimitive(str: string) {
+  if (str.endsWith('[]')) {
+    str = str.replace('[]', '');
+  }
   return isObject(str) || primitives.some(x => new RegExp(x).test(str));
 }
 
 
 
 function primitive2Json(type: string) {
+  let isArray = false;
+  if (type.endsWith('[]')) {
+    type = type.replace('[]', '');
+    isArray = true;
+  }
+
+  let ret = { type } as any;
   if (type === 'true') { // getUntionTypes returns [true, false]
-    return { type: 'boolean' }
+    ret = { type: 'boolean' }
+  } else if (type === 'Date') {
+    ret = { type: 'string', format: 'date-time' }
+  } else if (isObject(type)) {
+    ret = { type: 'object', additionalProperties: true }
+  } else if (type === 'any') {
+    ret = {};
+  };
+
+
+  if (isArray) {
+    return { type: 'array', items: ret }
   }
 
-  if (type === 'Date') {
-    return { type: 'string', format: 'date-time' }
-  }
-
-  if (isObject(type)) {
-    return { type: 'object', additionalProperties: true }
-  }
-
-  if (type === 'any') {
-    return {};
-  }
-
-  return { type };
-
+  return ret
 }
 
 
@@ -64,14 +72,26 @@ function handleDeclarations(symbol: Symbol, parent: Node) {
         return primitive2Json(x.getText());
       }
 
+      if (x.isArray()) {
+        const arrayType = x.getTypeArguments()[0];
+
+        const symbol = arrayType.getSymbol()
+        if (!symbol) {
+          throw new Error('Array type must have a symbol');
+        }
+
+        return ts2Json(symbol.getDeclarations()[0], true, true)
+      }
+
       const symbol = x.getSymbol()
       if (symbol) {
         const node = symbol.getDeclarations()[0];
         return ts2Json(node, true);
       }
 
-      throw new Error('unhandled case')
 
+      const err = `handleDeclarations: unhandled case ${x.getText()} ${parent.getSourceFile().getText()}`
+      throw new Error(err)
     }))
   } else {
     if (isPrimitive(type.getText())) {
@@ -125,10 +145,10 @@ function unwrapArray(node: Node) {
   return node.getChildrenOfKind(SyntaxKind.ArrayType)[0].getChildren()[0]
 }
 
-export function ts2Json(returnType: Node, nested = false): string | Array<Record<string, any>> | Record<string, any> {
+export function ts2Json(returnType: Node, nested = false, overrideArray = false): string | Array<Record<string, any>> | Record<string, any> {
   returnType = unwrapPromise(returnType);
 
-  let isArray = false;
+  let isArray = overrideArray;
   if (returnType.getKind() === SyntaxKind.ArrayType || returnType.getChildrenOfKind(SyntaxKind.ArrayType).length) {
     isArray = true;
     returnType = unwrapArray(returnType)

@@ -19,6 +19,28 @@ exports[`complex 1`] = `
       "type": "object",
     },
     "anyString": {},
+    "complexArray": {
+      "$id": undefined,
+      "additionalProperties": false,
+      "items": {
+        "$id": undefined,
+        "additionalProperties": false,
+        "properties": {
+          "bar": {
+            "type": "number",
+          },
+          "foo": {
+            "type": "string",
+          },
+        },
+        "required": [
+          "foo",
+          "bar",
+        ],
+        "type": "object",
+      },
+      "type": "array",
+    },
     "object": {
       "additionalProperties": true,
       "type": "object",
@@ -27,6 +49,12 @@ exports[`complex 1`] = `
       "additionalProperties": true,
       "nullable": true,
       "type": "object",
+    },
+    "stringArray": {
+      "items": {
+        "type": "string",
+      },
+      "type": "array",
     },
   },
   "required": [

@@ -16,29 +16,6 @@ export function cleanInterfaceName(name: string | undefined) {
 }
 
 
-
-
-function getTypeOfInterface(parameter: ParameterDeclaration) {
-  const declaration = parameter.getParent()
-
-  const type = parameter.getType()
-  const name = parameter.getType().getText();
-  const primitives = ['string', 'number', 'boolean', 'Date'];
-
-  if (primitives.includes(name)) {
-    return [];
-  }
-
-  return type.getProperties().map((prop) => {
-    return {
-      name: prop.getName(),
-      type: prop.getTypeAtLocation(declaration).getText(),
-    }
-  })
-}
-
-
-
 export function getControllerFunctions(file: string) {
   const project = new Project({ compilerOptions: { strictNullChecks: true } });
   project.addSourceFileAtPath(file);
@@ -83,7 +60,7 @@ export function getControllerFunctions(file: string) {
       return {
         name: x.getNameNode().getText(),
         type: cleanInterfaceName(x.getTypeNode()?.getText()),
-        schema: ts2Json(x.getTypeNodeOrThrow()),
+        schema: ['query', 'body'].includes(x.getNameNode().getText()) ? ts2Json(x.getTypeNodeOrThrow()) : undefined,
       };
     });
 

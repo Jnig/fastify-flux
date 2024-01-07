@@ -30,6 +30,8 @@ interface complex {
   anyObject2?: { [key: string]: string } | null;
   anyString: any;
   anyArray: any[];
+  stringArray?: string[];
+  complexArray?: { foo: string; bar: number }[];
 }
 
 interface enumSample {
