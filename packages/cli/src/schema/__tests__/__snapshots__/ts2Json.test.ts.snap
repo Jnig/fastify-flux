@@ -20,8 +20,6 @@ exports[`complex 1`] = `
     },
     "anyString": {},
     "complexArray": {
-      "$id": undefined,
-      "additionalProperties": false,
       "items": {
         "$id": undefined,
         "additionalProperties": false,
@@ -89,7 +87,7 @@ exports[`enum sample 1`] = `
 
 exports[`simple array 1`] = `
 {
-  "$id": "simple",
+  "$id": "simple[]",
   "additionalProperties": false,
   "items": {
     "$id": undefined,

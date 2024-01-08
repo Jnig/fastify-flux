@@ -1,6 +1,7 @@
-import { MethodDeclaration, ParameterDeclaration, Project, ReturnTypedNode, SyntaxKind, SyntaxList, TypeNode, TypeReferenceNode } from 'ts-morph';
+import { Project, SyntaxKind, } from 'ts-morph';
 import { log } from '../log.js';
 import { ts2Json } from '../schema/ts2Json.js';
+import { join } from 'node:path';
 
 export function cleanInterfaceName(name: string | undefined) {
   if (!name) {
@@ -16,8 +17,13 @@ export function cleanInterfaceName(name: string | undefined) {
 }
 
 
-export function getControllerFunctions(file: string) {
-  const project = new Project({ compilerOptions: { strictNullChecks: true } });
+export async function getControllerFunctions(file: string) {
+  const tsConfigFilePath = join(process.cwd(), 'tsconfig.json')
+  const project = new Project({ tsConfigFilePath });
+  const config = project.getCompilerOptions();
+  if (!config.strict && !config.strictNullChecks) {
+    throw new Error('tsconfig.json must have strict or strictNullChecks enabled.')
+  }
   project.addSourceFileAtPath(file);
 
   const parsed = project.getSourceFile(file);
