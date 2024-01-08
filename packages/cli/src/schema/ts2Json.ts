@@ -1,4 +1,4 @@
-import { Project, SyntaxKind, Node, Symbol } from "ts-morph";
+import { Project, SyntaxKind, Node, Symbol, Type } from "ts-morph";
 
 const primitives = ['^void$',
   '^number$',
@@ -20,110 +20,29 @@ function isObject(str: string) {
 }
 
 function isPrimitive(str: string) {
-  if (str.endsWith('[]')) {
-    str = str.replace('[]', '');
-  }
   return isObject(str) || primitives.some(x => new RegExp(x).test(str));
 }
 
-
-
 function primitive2Json(type: string) {
-  let isArray = false;
-  if (type.endsWith('[]')) {
-    type = type.replace('[]', '');
-    isArray = true;
-  }
-
-  let ret = { type } as any;
   if (type === 'true') { // getUntionTypes returns [true, false]
-    ret = { type: 'boolean' }
+    return { type: 'boolean' }
   } else if (type === 'Date') {
-    ret = { type: 'string', format: 'date-time' }
+    return { type: 'string', format: 'date-time' }
   } else if (isObject(type)) {
-    ret = { type: 'object', additionalProperties: true }
+    return { type: 'object', additionalProperties: true }
   } else if (type === 'any') {
-    ret = {};
+    return {};
   };
 
 
-  if (isArray) {
-    return { type: 'array', items: ret }
-  }
-
-  return ret
+  return { type };
 }
-
-
-function handleDeclarations(symbol: Symbol, parent: Node) {
-  const type = symbol.getTypeAtLocation(parent);
-
-  const formatted = [];
-
-  const enums = symbol.getDeclarations()[0].getDescendantsOfKind(SyntaxKind.StringLiteral);
-
-
-  if (enums.length) {
-    return { type: 'string', enum: enums.map(x => x.getText().replace(/[\'\"]/gi, '')) }
-  } else if (type.isUnion()) {
-    const types = type.getUnionTypes().filter(x => !['false', 'undefined'].includes(x.getText()))
-    formatted.push(...types.map(x => {
-      if (isPrimitive(x.getText())) {
-        return primitive2Json(x.getText());
-      }
-
-      if (x.isArray()) {
-        const arrayType = x.getTypeArguments()[0];
-
-        const symbol = arrayType.getSymbol()
-        if (!symbol) {
-          throw new Error('Array type must have a symbol');
-        }
-
-        return ts2Json(symbol.getDeclarations()[0], true, true)
-      }
-
-      const symbol = x.getSymbol()
-      if (symbol) {
-        const node = symbol.getDeclarations()[0];
-        return ts2Json(node, true);
-      }
-
-
-      const err = `handleDeclarations: unhandled case ${x.getText()} ${parent.getSourceFile().getText()}`
-      throw new Error(err)
-    }))
-  } else {
-    if (isPrimitive(type.getText())) {
-      return primitive2Json(type.getText())
-    }
-
-    const parent = symbol.getDeclarations()[0];
-    return ts2Json(parent, true);
-  }
-
-  if (formatted.length === 2 && formatted.find((x: any) => x.type === 'null')) {
-    const found = formatted.find((x: any) => x.type !== 'null');
-    (found as any).nullable = true;
-
-    return found;
-
-  }
-
-  if (formatted.length > 1) {
-    return { anyOf: formatted }
-  } else {
-    return formatted[0];
-  }
-}
-
 
 function unwrapPromise(node: Node): Node {
   const identifier = node.getFirstChildByKind(SyntaxKind.Identifier)
   if (!identifier) {
     return node;
   }
-
 
   if (identifier.getText() === 'Promise') {
     const found = node.forEachChildAsArray().find(x => x.getText() !== 'Promise')
@@ -137,59 +56,131 @@ function unwrapPromise(node: Node): Node {
   return node;
 }
 
-function unwrapArray(node: Node) {
-  if (node.getKind() === SyntaxKind.ArrayType) {
-    return node.getChildAtIndex(0);
+function handleArray(type: Type) {
+  const arrayType = type.getTypeArguments()[0];
+
+  if (isPrimitive(arrayType.getText())) {
+    return { type: 'array', items: primitive2Json(arrayType.getText()) }
   }
 
-  return node.getChildrenOfKind(SyntaxKind.ArrayType)[0].getChildren()[0]
+  const symbol = arrayType.getSymbol()
+  if (!symbol) {
+    throw new Error('Array type must have a symbol');
+  }
+
+  return { type: 'array', items: ts2Json(symbol.getDeclarations()[0], true) }
 }
 
-export function ts2Json(returnType: Node, nested = false, overrideArray = false): string | Array<Record<string, any>> | Record<string, any> {
-  returnType = unwrapPromise(returnType);
-
-  let isArray = overrideArray;
-  if (returnType.getKind() === SyntaxKind.ArrayType || returnType.getChildrenOfKind(SyntaxKind.ArrayType).length) {
-    isArray = true;
-    returnType = unwrapArray(returnType)
+function handleUnion(type: Type) {
+  const enums = type.getUnionTypes().filter(x => x.isStringLiteral());
+  if (enums.length) {
+    return { type: 'string', enum: enums.map(x => x.getText().replace(/[\'\"]/gi, '').trim()) }
   }
 
-  if (isPrimitive(returnType.getText())) {
-    if (isArray) {
-      return { type: 'array', items: primitive2Json(returnType.getText()) }
-    } else {
-      return { ...primitive2Json(returnType.getText()) };
+
+  const types = type.getUnionTypes().filter(x => !['false', 'undefined'].includes(x.getText()))
+  const formatted = types.map(x => {
+    if (isPrimitive(x.getText())) {
+      return primitive2Json(x.getText());
+    }
+
+    if (x.isArray()) {
+      return handleArray(x);
+    }
+
+    const symbol = x.getSymbol()
+    if (symbol) {
+      const node = symbol.getDeclarations()[0];
+      return ts2Json(node, true);
+    }
+
+
+    const err = `handleDeclarations: unhandled case ${x.getText()}`
+    throw new Error(err)
+  })
+
+
+  if (formatted.length === 2 && formatted.find((x: any) => x.type === 'null')) {
+    const found = formatted.find((x: any) => x.type !== 'null');
+    (found as any).nullable = true;
+
+    return found;
+  }
+
+  if (formatted.length > 1) {
+    return { anyOf: formatted }
+  }
+
+  return formatted[0];
+}
+
+export function ts2Json(node: Node, nested = false): any {
+  node = unwrapPromise(node);
+
+  const $id = nested ? undefined : node.getText();
+
+  if (isPrimitive(node.getType().getText())) {
+    return primitive2Json(node.getType().getText());
+  }
+
+  if (node.getType().isArray()) {
+    return { $id, additionalProperties: false, ...handleArray(node.getType()) }
+  }
+
+  if (node.getType().isInterface() || node.getType().isObject()) {
+    const required = [] as string[];
+    const properties = node.getType().getProperties().
+      reduce((acc: any, x) => {
+        const type = x.getTypeAtLocation(node)
+
+        if (!x.isOptional()) {
+          required.push(x.getName())
+        }
+
+        if (isPrimitive(type.getText())) {
+          acc[x.getName()] = primitive2Json(type.getText())
+          return acc;
+        }
+
+        if (type.isArray()) {
+          acc[x.getName()] = handleArray(type)
+          return acc;
+        }
+
+        if (type.isUnion()) {
+          acc[x.getName()] = handleUnion(type)
+          return acc;
+        }
+
+        if (type.isObject() || type.isInterface()) {
+          acc[x.getName()] = ts2Json(type.getSymbolOrThrow().getDeclarations()[0], true)
+          return acc;
+        }
+
+        const symbol = type.getSymbol()
+        if (symbol) {
+          const node = symbol.getDeclarations()[0];
+          return ts2Json(node, true);
+        }
+
+        throw new Error('not implemented in properties ' + type.getText() + x.getDeclarations().map(x => x.getText()))
+      }, {})
+
+    return {
+      $id,
+      type: 'object', additionalProperties: false, properties, required
     }
   }
 
-  const required = [] as string[];
-  const properties = returnType.getType().getProperties().reduce((acc: any, x) => {
-    acc[x.getName()] = handleDeclarations(x, returnType)
-    if (!x.isOptional()) {
-      required.push(x.getName())
-    }
-
-    return acc
-  }, {})
-
-  let name = returnType.getText() || '' as string | undefined
-  if (nested) {
-    name = undefined;
-  }
-
-  const jsonObject = { type: 'object', properties, required, additionalProperties: false, '$id': name };
-  if (isArray) {
-    jsonObject['$id'] = undefined;
-    return { type: 'array', items: jsonObject, additionalProperties: false, '$id': name }
-  } else {
-    return jsonObject;
-  }
-
+  throw new Error('not implemented ' + node.getKindName())
 }
 
-
-export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0) {
-  const project = new Project({ compilerOptions: { strictNullChecks: true } });
+export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0, v2 = false) {
+  const project = new Project({
+    compilerOptions: {
+      strictNullChecks: true,
+    }
+  });
   project.addSourceFileAtPath(file);
   const parsed = project.getSourceFile(file);
   if (!parsed) {
