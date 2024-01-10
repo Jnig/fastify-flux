@@ -46,24 +46,42 @@ exports[`schema 1`] = `
             "type": "number",
           },
           "multiNull": {
-            "nullable": true,
-            "type": [
-              "number",
-              "string",
+            "anyOf": [
+              {
+                "type": "null",
+              },
+              {
+                "type": "string",
+              },
+              {
+                "type": "number",
+              },
             ],
           },
           "multiNumber": {
-            "nullable": true,
-            "type": [
-              "number",
-              "string",
+            "anyOf": [
+              {
+                "type": "null",
+              },
+              {
+                "type": "string",
+              },
+              {
+                "type": "number",
+              },
             ],
           },
           "multiString": {
-            "nullable": true,
-            "type": [
-              "number",
-              "string",
+            "anyOf": [
+              {
+                "type": "null",
+              },
+              {
+                "type": "string",
+              },
+              {
+                "type": "number",
+              },
             ],
           },
         },
@@ -78,56 +96,10 @@ exports[`schema 1`] = `
         ],
         "type": "object",
       },
-      "CreateTodo": {
-        "additionalProperties": false,
-        "properties": {
-          "priority": {
-            "type": "number",
-          },
-          "text": {
-            "type": "string",
-          },
-        },
-        "required": [
-          "priority",
-          "text",
-        ],
-        "type": "object",
-      },
       "EmptyInterfaceResponse": {
         "additionalProperties": false,
         "properties": {},
-        "type": "object",
-      },
-      "InputEmptyQuery": {
-        "additionalProperties": false,
-        "properties": {},
-        "type": "object",
-      },
-      "InputEmptyStringNull": {
-        "additionalProperties": false,
-        "properties": {
-          "n": {
-            "nullable": true,
-            "type": "number",
-          },
-          "n2": {
-            "nullable": true,
-            "type": "number",
-          },
-        },
-        "required": [
-          "n",
-        ],
-        "type": "object",
-      },
-      "ListTodoQuery": {
-        "additionalProperties": false,
-        "properties": {
-          "includeDone": {
-            "type": "boolean",
-          },
-        },
+        "required": [],
         "type": "object",
       },
       "NestedInterfaceResponse": {
@@ -218,9 +190,7 @@ exports[`schema 1`] = `
         "additionalProperties": false,
         "properties": {
           "anyObject": {
-            "additionalProperties": {
-              "type": "string",
-            },
+            "additionalProperties": true,
             "type": "object",
           },
           "anyRecord": {
@@ -231,9 +201,7 @@ exports[`schema 1`] = `
             "type": "number",
           },
           "stringObject": {
-            "additionalProperties": {
-              "type": "string",
-            },
+            "additionalProperties": true,
             "type": "object",
           },
         },
@@ -266,11 +234,11 @@ exports[`schema 1`] = `
           },
         },
         "required": [
-          "createdAt",
-          "done",
           "id",
-          "priority",
+          "createdAt",
           "text",
+          "priority",
+          "done",
         ],
         "type": "object",
       },
@@ -375,25 +343,6 @@ exports[`schema 1`] = `
         ],
         "type": "object",
       },
-      "UpdateTodo": {
-        "additionalProperties": false,
-        "properties": {
-          "createdAt": {
-            "format": "date-time",
-            "type": "string",
-          },
-          "done": {
-            "type": "boolean",
-          },
-          "priority": {
-            "type": "number",
-          },
-          "text": {
-            "type": "string",
-          },
-        },
-        "type": "object",
-      },
     },
   },
   "info": {
@@ -482,24 +431,42 @@ exports[`schema 1`] = `
                       "type": "number",
                     },
                     "multiNull": {
-                      "nullable": true,
-                      "type": [
-                        "number",
-                        "string",
+                      "anyOf": [
+                        {
+                          "type": "null",
+                        },
+                        {
+                          "type": "string",
+                        },
+                        {
+                          "type": "number",
+                        },
                       ],
                     },
                     "multiNumber": {
-                      "nullable": true,
-                      "type": [
-                        "number",
-                        "string",
+                      "anyOf": [
+                        {
+                          "type": "null",
+                        },
+                        {
+                          "type": "string",
+                        },
+                        {
+                          "type": "number",
+                        },
                       ],
                     },
                     "multiString": {
-                      "nullable": true,
-                      "type": [
-                        "number",
-                        "string",
+                      "anyOf": [
+                        {
+                          "type": "null",
+                        },
+                        {
+                          "type": "string",
+                        },
+                        {
+                          "type": "number",
+                        },
                       ],
                     },
                   },
@@ -534,6 +501,7 @@ exports[`schema 1`] = `
                 "schema": {
                   "additionalProperties": false,
                   "properties": {},
+                  "required": [],
                   "type": "object",
                 },
               },
@@ -712,9 +680,7 @@ exports[`schema 1`] = `
                   "additionalProperties": false,
                   "properties": {
                     "anyObject": {
-                      "additionalProperties": {
-                        "type": "string",
-                      },
+                      "additionalProperties": true,
                       "type": "object",
                     },
                     "anyRecord": {
@@ -725,9 +691,7 @@ exports[`schema 1`] = `
                       "type": "number",
                     },
                     "stringObject": {
-                      "additionalProperties": {
-                        "type": "string",
-                      },
+                      "additionalProperties": true,
                       "type": "object",
                     },
                   },
@@ -972,6 +936,7 @@ exports[`schema 1`] = `
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "items": {
                     "additionalProperties": false,
                     "properties": {
@@ -993,11 +958,11 @@ exports[`schema 1`] = `
                       },
                     },
                     "required": [
-                      "createdAt",
-                      "done",
                       "id",
-                      "priority",
+                      "createdAt",
                       "text",
+                      "priority",
+                      "done",
                     ],
                     "type": "object",
                   },
@@ -1028,8 +993,8 @@ exports[`schema 1`] = `
                   },
                 },
                 "required": [
-                  "priority",
                   "text",
+                  "priority",
                 ],
                 "type": "object",
               },
@@ -1062,11 +1027,11 @@ exports[`schema 1`] = `
                     },
                   },
                   "required": [
-                    "createdAt",
-                    "done",
                     "id",
-                    "priority",
+                    "createdAt",
                     "text",
+                    "priority",
+                    "done",
                   ],
                   "type": "object",
                 },
@@ -1147,11 +1112,11 @@ exports[`schema 1`] = `
                     },
                   },
                   "required": [
-                    "createdAt",
-                    "done",
                     "id",
-                    "priority",
+                    "createdAt",
                     "text",
+                    "priority",
+                    "done",
                   ],
                   "type": "object",
                 },
@@ -1196,6 +1161,7 @@ exports[`schema 1`] = `
                     "type": "string",
                   },
                 },
+                "required": [],
                 "type": "object",
               },
             },
@@ -1226,11 +1192,11 @@ exports[`schema 1`] = `
                     },
                   },
                   "required": [
-                    "createdAt",
-                    "done",
                     "id",
-                    "priority",
+                    "createdAt",
                     "text",
+                    "priority",
+                    "done",
                   ],
                   "type": "object",
                 },

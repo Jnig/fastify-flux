@@ -4,7 +4,6 @@ import { generateSdk } from '../helper/generateSdk.js';
 import {
   esbuildHelper,
   writeControllerJson,
-  writeSchemaJson,
 } from '../helper/index.js';
 
 import { log } from '../log.js';
@@ -15,10 +14,6 @@ export default function handler() {
 
 export async function runControllerGeneration() {
   await writeControllerJson();
-}
-
-export async function runSchemaGeneration() {
-  await writeSchemaJson();
 }
 
 export async function runEsbuild() {

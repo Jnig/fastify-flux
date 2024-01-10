@@ -6,7 +6,6 @@ import _ from 'lodash';
 import {
   runWorkerControllerGeneration,
   runWorkerEsbuild,
-  runWorkerSchemaGeneration,
   runWorkerSdkGeneration,
   runWorkerTypecheck,
 } from '../piscina/index.js';
@@ -106,7 +105,6 @@ class WatchHandler {
 
     await Promise.all([
       runWorkerControllerGeneration(),
-      runWorkerSchemaGeneration(),
     ]);
 
     this.excecHandler.restartAll();
