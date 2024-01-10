@@ -17,16 +17,8 @@ export function cleanInterfaceName(name: string | undefined) {
     .slice(-1)[0];
 }
 
-
-export async function getControllerFunctions(file: string) {
-  const tsConfigFilePath = join(process.cwd(), 'tsconfig.json')
-  const project = new Project({ tsConfigFilePath });
-  const config = project.getCompilerOptions();
-  if (!config.strict && !config.strictNullChecks) {
-    throw new Error('tsconfig.json must have strict or strictNullChecks enabled.')
-  }
+export async function getControllerFunctions(file: string, project: Project) {
   project.addSourceFileAtPath(file);
-
   const parsed = project.getSourceFile(file);
   if (!parsed) {
     log({

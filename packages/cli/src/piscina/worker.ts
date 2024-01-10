@@ -14,13 +14,7 @@ export default function handler() {
 }
 
 export async function runControllerGeneration() {
-  try {
-    await writeControllerJson();
-  } catch (err: any) {
-    if (err.message !== '') {
-      throw err;
-    }
-  }
+  await writeControllerJson();
 }
 
 export async function runSchemaGeneration() {

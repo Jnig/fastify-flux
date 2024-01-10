@@ -11,6 +11,15 @@ export async function writeControllerJson() {
   const meta = await generateMeta();
 
   writeFile(join(config.outdir, 'flux-controller.json'), meta);
+
+  const functionsSchema = _.sortBy(JSON.parse(meta).flatMap((x: any) => {
+    return [x.returnSchema, ...x.params.filter((y: any) => y.schema).map((y: any) => y.schema)];
+  }), '$id').reduce((acc, x) => {
+    acc[x['$id']] = x
+    return acc
+  }, {})
+
+  writeFile(join(config.outdir, 'flux-schema-new.json'), JSON.stringify(functionsSchema, null, 2))
 }
 
 export async function writeSchemaJson() {

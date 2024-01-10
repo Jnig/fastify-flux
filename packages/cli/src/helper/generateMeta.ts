@@ -3,8 +3,23 @@ import { join } from 'node:path';
 import pMap from 'p-map';
 import { getConfig } from './config.js';
 import { getControllerFunctions } from './getControllerFunctions.js';
+import { Project, } from 'ts-morph';
+
+
+
+function getProject() {
+  const tsConfigFilePath = join(process.cwd(), 'tsconfig.json')
+  const project = new Project({ tsConfigFilePath });
+  const config = project.getCompilerOptions();
+  if (!config.strict && !config.strictNullChecks) {
+    throw new Error('tsconfig.json must have strict or strictNullChecks enabled.')
+  }
+
+  return project;
+}
 
 export async function generateMeta() {
+  const project = getProject()
   const config = await getConfig();
   const controllers = await fg(join(config.entry, '/**/*[cC]ontroller.ts'), {
     absolute: true,
@@ -14,7 +29,7 @@ export async function generateMeta() {
   const results = await pMap(
     controllers,
     async (file) => {
-      const definitions = await getControllerFunctions(file);
+      const definitions = await getControllerFunctions(file, project);
 
       return definitions;
     },
