@@ -12,6 +12,7 @@ export function cleanInterfaceName(name: string | undefined) {
     .replace('Promise<', '')
     .replace('>', '')
     .replace('void', '')
+    .replace('[]', '')
     .split('.')
     .slice(-1)[0];
 }

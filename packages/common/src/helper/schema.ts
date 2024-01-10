@@ -57,12 +57,8 @@ export function getSchemaQuerystring(
 
   let name = query[0].type;
 
-  if (name.includes('[]')) {
-    name = name.replace('[]', '');
-    return { type: 'array', items: getSchemaOrThrow(config, name, s) };
-  } else {
-    return getSchemaOrThrow(config, name, s);
-  }
+  name = name.replace('[]', '');
+  return getSchemaOrThrow(config, name, s);
 }
 
 export function getSchemaResponse(
@@ -92,14 +88,6 @@ export function getSchemaResponse(
     };
   }
 
-  if (name && name.includes('[]')) {
-    return {
-      [route.statusCode]: {
-        type: 'array',
-        items: getSchemaOrThrow(config, name.replace('[]', ''), s),
-      },
-    };
-  }
 
   if (name) {
     return {

@@ -34,7 +34,6 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
   });
 
 
-  console.log(route)
   config.fastify.route({
     method,
     handler: async (request: FastifyRequest, reply: FastifyReply) => {

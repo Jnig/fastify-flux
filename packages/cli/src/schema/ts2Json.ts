@@ -1,4 +1,4 @@
-import { Project, SyntaxKind, Node, Symbol, Type } from "ts-morph";
+import { Project, SyntaxKind, Node, Symbol, Type, ParameteredNode } from "ts-morph";
 
 const primitives = ['^void$',
   '^number$',
@@ -8,6 +8,7 @@ const primitives = ['^void$',
   '^true$',
   '^Date$',
   '^null$',
+  'Prisma\.JsonValue$'
 ]
 
 function isObject(str: string) {
@@ -30,7 +31,7 @@ function primitive2Json(type: string) {
     return { type: 'string', format: 'date-time' }
   } else if (isObject(type)) {
     return { type: 'object', additionalProperties: true }
-  } else if (type === 'any') {
+  } else if (type === 'any' || type.endsWith('Prisma.JsonValue')) {
     return {};
   };
 
@@ -91,6 +92,7 @@ function handleUnion(type: Type) {
     const symbol = x.getSymbol()
     if (symbol) {
       const node = symbol.getDeclarations()[0];
+      console.log(node.getText())
       return ts2Json(node, true);
     }
 

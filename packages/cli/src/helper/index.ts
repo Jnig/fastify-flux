@@ -27,6 +27,7 @@ export async function writeSchemaJson() {
   const functionsSchema = _.sortBy(functionMeta.flatMap((x: any) => {
     return [x.returnSchema, ...x.params.filter((y: any) => y.schema).map((y: any) => y.schema)];
   }), '$id').reduce((acc, x) => {
+    x['$id'] = x['$id'].replace('[]', '');
     acc[x['$id']] = x
     return acc
   }, {})
