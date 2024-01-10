@@ -9,10 +9,6 @@
  * ---------------------------------------------------------------
  */
 
-export interface ListTodoQuery {
-  includeDone?: boolean;
-}
-
 export interface TodoResponse {
   id: number;
   /** @format date-time */
@@ -20,19 +16,6 @@ export interface TodoResponse {
   text: string;
   priority: number;
   done: boolean;
-}
-
-export interface CreateTodo {
-  text: string;
-  priority: number;
-}
-
-export interface UpdateTodo {
-  /** @format date-time */
-  createdAt?: string;
-  text?: string;
-  priority?: number;
-  done?: boolean;
 }
 
 import axios, { AxiosInstance, AxiosRequestConfig, ResponseType } from 'axios';

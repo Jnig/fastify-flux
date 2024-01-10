@@ -119,7 +119,7 @@ function handleUnion(type: Type) {
 export function ts2Json(node: Node, nested = false): any {
   node = unwrapPromise(node);
 
-  const $id = nested ? undefined : node.getText();
+  const $id = nested ? undefined : node.getText().replace('[]', '');
 
   if (isPrimitive(node.getType().getText())) {
     return primitive2Json(node.getType().getText());

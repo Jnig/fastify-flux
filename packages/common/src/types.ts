@@ -21,7 +21,8 @@ export interface FluxRoute {
   tags: string[];
   statusCode: number;
   returnType: string;
-  params: { name: string; type: string }[];
+  params: { name: string; type: string, schema: any }[];
+  returnSchema: any;
   auth?: unknown;
   [key: string]: unknown; // custom properties
 }
@@ -40,5 +41,5 @@ export interface FluxConfig {
 export type FluxController = new () => any;
 
 declare module 'fastify' {
-  interface FastifyContextConfig extends FluxRoute {}
+  interface FastifyContextConfig extends FluxRoute { }
 }

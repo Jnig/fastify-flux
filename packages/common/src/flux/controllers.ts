@@ -1,16 +1,118 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { FluxConfig, FluxRoute, FluxRoutes } from '..';
 import { getRouteMappers } from '../helper/call-parameter';
-import {
-  getSchemaBody,
-  getSchemaParams,
-  getSchemaQuerystring,
-  getSchemaResponse,
-} from '../helper/schema';
-import { getFluxControllerMeta, getFluxJsonSchema } from '../meta';
+import { getFluxControllerMeta } from '../meta';
 
 const controllerMeta = getFluxControllerMeta();
-const schema = getFluxJsonSchema();
+
+export function getSchemaParams(route: FluxRoute) {
+  const matches = route.url.match(/:[a-zA-Z]+/g);
+
+  if (!matches || !matches.length) {
+    return;
+  }
+
+  const params = {
+    type: 'object',
+    properties: {} as { [key: string]: { type: string } },
+  };
+
+  matches.forEach((element: string) => {
+    const nameShort = element.replace(':', '');
+    const found = route.params.find((x) => x.name === nameShort);
+    if (found) {
+      params.properties[nameShort] = { type: found.type };
+    }
+  });
+
+  return params;
+}
+
+
+
+
+function getSchemaQuerystring(route: FluxRoute) {
+  const query = route.params.filter(x => x.name === 'query');
+  if (query.length > 1) {
+    throw new Error(`too many potential query params for ${route.url}`);
+  }
+
+  if (!query.length) {
+    return;
+  }
+
+  return query[0].schema
+}
+
+export function getSchemaBody(
+  route: FluxRoute,
+) {
+  const body = route.params.filter((x) => x.name === 'body');
+
+  if (body.length > 1) {
+    throw new Error(`too many potential body params for ${route.url}`);
+  }
+
+  if (!body.length) {
+    return;
+  }
+
+  return body[0].schema;
+}
+
+function addSchema(config: FluxConfig, schema: any) {
+  if (config.fastify.getSchema(schema['$id'])) {
+    return
+  }
+
+  if (schema.type === 'array') {
+    config.fastify.addSchema({ '$id': schema['$id'], ...schema.items });
+  } else {
+    console.log(schema)
+    config.fastify.addSchema(schema)
+  }
+
+}
+
+export function getSchemaResponse(
+  config: FluxConfig,
+  route: FluxRoute,
+) {
+  const name = route.returnType;
+
+  if (name === 'any') {
+    return {};
+  }
+
+  if (name === 'string') {
+    return {
+      [route.statusCode]: {
+        type: 'string',
+      },
+    };
+  }
+
+  if (name === 'number') {
+    return {
+      [route.statusCode]: {
+        type: 'number',
+      },
+    };
+  }
+
+
+  if (name) {
+    addSchema(config, route.returnSchema)
+    return {
+      [route.statusCode]: route.returnSchema,
+    };
+  }
+
+  return {
+    [route.statusCode]: {},
+  };
+}
+
 
 function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
   const { url, method, tags, statusCode } = route;
@@ -21,9 +123,9 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
     operationId: f.name,
     tags,
     params: getSchemaParams(route),
-    querystring: getSchemaQuerystring(config, route, schema),
-    body: getSchemaBody(config, route, schema),
-    response: getSchemaResponse(config, route, schema),
+    querystring: getSchemaQuerystring(route),
+    body: getSchemaBody(route),
+    response: getSchemaResponse(config, route),
   } as any;
 
   // remove undefined value with stringify and parse
@@ -47,6 +149,7 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
     schema: s,
     config: route,
   });
+
 }
 
 export function registerController(
