@@ -1,22 +1,13 @@
 import { Command } from 'commander';
-
-import {
-  runWorkerControllerGeneration,
-  runWorkerEsbuild,
-  runWorkerSchemaGeneration,
-  runWorkerTypecheck,
-} from '../piscina/index.js';
+import { writeControllerJson, esbuildHelper, runTypecheck } from '../helper/index.js';
 
 async function handler(options: { typecheck: true }) {
   if (options.typecheck) {
-    await runWorkerTypecheck();
+    await runTypecheck();
   }
 
-  await Promise.all([
-    runWorkerEsbuild(),
-    runWorkerControllerGeneration(),
-    runWorkerSchemaGeneration(),
-  ]);
+  await esbuildHelper()
+  await writeControllerJson();
 }
 
 export function addBuildCommand(program: Command) {

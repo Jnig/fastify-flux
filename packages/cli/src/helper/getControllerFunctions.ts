@@ -1,5 +1,7 @@
-import { Project, SyntaxKind } from 'ts-morph';
+import { Project, SyntaxKind, } from 'ts-morph';
 import { log } from '../log.js';
+import { ts2Json } from '../schema/ts2Json.js';
+import { join } from 'node:path';
 
 export function cleanInterfaceName(name: string | undefined) {
   if (!name) {
@@ -10,12 +12,12 @@ export function cleanInterfaceName(name: string | undefined) {
     .replace('Promise<', '')
     .replace('>', '')
     .replace('void', '')
+    .replace('[]', '')
     .split('.')
     .slice(-1)[0];
 }
 
-export function getControllerFunctions(file: string) {
-  const project = new Project();
+export async function getControllerFunctions(file: string, project: Project) {
   project.addSourceFileAtPath(file);
   const parsed = project.getSourceFile(file);
   if (!parsed) {
@@ -52,18 +54,24 @@ export function getControllerFunctions(file: string) {
 
   const mapped = declarations.reduce<any>((acc, y) => {
     const params = y.getParameters().map((x) => {
+
+
       return {
         name: x.getNameNode().getText(),
         type: cleanInterfaceName(x.getTypeNode()?.getText()),
+        schema: ['query', 'body'].includes(x.getNameNode().getText()) ? ts2Json(x.getTypeNodeOrThrow()) : undefined,
       };
     });
 
+
     const name = y.getNameNode().getText();
     const returnType = cleanInterfaceName(y.getReturnTypeNode()?.getText());
+    const returnSchema = ts2Json(y.getReturnTypeNodeOrThrow());
 
     acc[name] = {
       params,
       returnType,
+      returnSchema
     };
 
     return acc;

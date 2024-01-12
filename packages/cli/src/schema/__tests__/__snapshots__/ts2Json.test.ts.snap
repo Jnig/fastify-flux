@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`complex 1`] = `
+{
+  "$id": "complex",
+  "additionalProperties": false,
+  "properties": {
+    "anyArray": {
+      "items": {},
+      "type": "array",
+    },
+    "anyObject": {
+      "additionalProperties": true,
+      "type": "object",
+    },
+    "anyObject2": {
+      "additionalProperties": true,
+      "nullable": true,
+      "type": "object",
+    },
+    "anyString": {},
+    "complexArray": {
+      "items": {
+        "$id": undefined,
+        "additionalProperties": false,
+        "properties": {
+          "bar": {
+            "type": "number",
+          },
+          "foo": {
+            "type": "string",
+          },
+        },
+        "required": [
+          "foo",
+          "bar",
+        ],
+        "type": "object",
+      },
+      "type": "array",
+    },
+    "object": {
+      "additionalProperties": true,
+      "type": "object",
+    },
+    "object2": {
+      "additionalProperties": true,
+      "nullable": true,
+      "type": "object",
+    },
+    "stringArray": {
+      "items": {
+        "type": "string",
+      },
+      "type": "array",
+    },
+  },
+  "required": [
+    "object",
+    "anyObject",
+    "anyString",
+    "anyArray",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`enum sample 1`] = `
+{
+  "$id": "enumSample",
+  "additionalProperties": false,
+  "properties": {
+    "barcode": {
+      "enum": [
+        "code128",
+        "qr",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "barcode",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`imported 1`] = `
+{
+  "$id": "s.importedInterface",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "number",
+    },
+  },
+  "required": [
+    "id",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`simple array 1`] = `
+{
+  "$id": "simple",
+  "additionalProperties": false,
+  "items": {
+    "$id": undefined,
+    "additionalProperties": false,
+    "properties": {
+      "checked": {
+        "type": "boolean",
+      },
+    },
+    "required": [
+      "checked",
+    ],
+    "type": "object",
+  },
+  "type": "array",
+}
+`;
+
+exports[`simple interface 1`] = `
+{
+  "$id": "simple",
+  "additionalProperties": false,
+  "properties": {
+    "checked": {
+      "type": "boolean",
+    },
+  },
+  "required": [
+    "checked",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`simple interface with undefined and null 1`] = `
+{
+  "$id": "simpleUndefinedNull",
+  "additionalProperties": false,
+  "properties": {
+    "checked": {
+      "nullable": true,
+      "type": "boolean",
+    },
+  },
+  "required": [],
+  "type": "object",
+}
+`;
+
+exports[`simple nested 1`] = `
+{
+  "$id": "simpleNested",
+  "additionalProperties": false,
+  "properties": {
+    "checked": {
+      "$id": undefined,
+      "additionalProperties": false,
+      "nullable": true,
+      "properties": {
+        "id": {
+          "type": "number",
+        },
+      },
+      "required": [
+        "id",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [],
+  "type": "object",
+}
+`;

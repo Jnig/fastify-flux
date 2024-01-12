@@ -41,7 +41,7 @@ export interface NestedInterfaceResponseChild {
   id: number;
 }
 
-export interface EmptyInterfaceResponse {}
+export interface EmptyInterfaceResponse { }
 
 export interface NestedInterfaceResponse {
   ids: NestedInterfaceResponseChild[];
