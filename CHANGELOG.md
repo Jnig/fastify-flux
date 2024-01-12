@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/Jnig/fastify-flux/compare/v2.31.2...v3.0.0) (2024-01-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* the new json-schema-generator might not produce the exact same resolut like previous generator vega/ts-json-schema-generator
+
+### Features
+
+* add json-schema-generator ([a0176c4](https://github.com/Jnig/fastify-flux/commit/a0176c436139b8330823590b4573fc13cef01e67))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger to v8.12.2 ([f22cddb](https://github.com/Jnig/fastify-flux/commit/f22cddba1865121b914aeecf0b3555b579cb9735))
+* **deps:** update dependency @fastify/swagger to v8.13.0 ([293b34e](https://github.com/Jnig/fastify-flux/commit/293b34ecaa26bcb7fcea1008edb7b010adf75771))
+* **deps:** update dependency fastify to v4.25.2 ([86f819f](https://github.com/Jnig/fastify-flux/commit/86f819f692dc46022df5789576152489d7102bc6))
+* **deps:** update dependency p-map to v7.0.1 ([92c1b4b](https://github.com/Jnig/fastify-flux/commit/92c1b4b5eadfb393cc2865354edf9124048a642f))
+
 ## [2.31.2](https://github.com/Jnig/fastify-flux/compare/v2.31.1...v2.31.2) (2023-12-23)
 
 
