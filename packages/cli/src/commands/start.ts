@@ -3,17 +3,14 @@ import { execa } from 'execa';
 import chokidar from 'chokidar';
 import pMap from 'p-map';
 import _ from 'lodash';
-import {
-  runWorkerControllerGeneration,
-  runWorkerEsbuild,
-  runWorkerSdkGeneration,
-  runWorkerTypecheck,
-} from '../piscina/index.js';
 import { log } from '../log.js';
 import { getConfig } from '../helper/config.js';
 import { FluxProjectConfig } from '../types.js';
 import { killProcess } from '../helper/killProcess.js';
 import { existsSync, mkdirSync } from 'fs';
+import { esbuildHelper } from '../helper/esbuild.js';
+import { runTypecheck, writeControllerJson } from '../helper/index.js';
+import { generateSdk } from '../helper/generateSdk.js';
 
 interface Options {
   watch: boolean;
@@ -96,18 +93,15 @@ class WatchHandler {
 
   async build() {
     this.excecHandler.cancelAll();
-
-    const esbuildSuccess = await runWorkerEsbuild();
+    const esbuildSuccess = await esbuildHelper()
     if (!esbuildSuccess) {
       log({ component: 'cli', warning: 'Skipping restart... esbuild failed.' });
       return;
     }
 
-    await Promise.all([
-      runWorkerControllerGeneration(),
-    ]);
+    await writeControllerJson(),
 
-    this.excecHandler.restartAll();
+      this.excecHandler.restartAll();
   }
 
   async handle(change: string) {
@@ -116,7 +110,7 @@ class WatchHandler {
     await this.build();
 
     if (this.options.typecheck) {
-      runWorkerTypecheck();
+      runTypecheck();
     }
   }
 
@@ -132,7 +126,7 @@ async function startSdkWatch() {
 
     const { sdk } = project;
 
-    const handler = async () => await runWorkerSdkGeneration(sdk);
+    const handler = async () => await generateSdk(sdk);
 
     chokidar
       .watch(sdk.input, {

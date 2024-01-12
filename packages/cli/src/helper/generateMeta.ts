@@ -29,9 +29,14 @@ export async function generateMeta() {
   const results = await pMap(
     controllers,
     async (file) => {
-      const definitions = await getControllerFunctions(file, project);
+      try {
+        const definitions = await getControllerFunctions(file, project);
 
-      return definitions;
+        return definitions;
+      } catch (err: any) {
+        err.message = `Error in file ${file}: ${err.message}`
+        throw err;
+      }
     },
     { concurrency: 2 },
   );

@@ -85,9 +85,25 @@ exports[`enum sample 1`] = `
 }
 `;
 
+exports[`imported 1`] = `
+{
+  "$id": "s.importedInterface",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "number",
+    },
+  },
+  "required": [
+    "id",
+  ],
+  "type": "object",
+}
+`;
+
 exports[`simple array 1`] = `
 {
-  "$id": "simple[]",
+  "$id": "simple",
   "additionalProperties": false,
   "items": {
     "$id": undefined,

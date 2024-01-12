@@ -57,8 +57,19 @@ function unwrapPromise(node: Node): Node {
   return node;
 }
 
+function checkResolvable(type: Type) {
+  if (type.getText() === 'any') {
+    return
+  }
+
+  if (type.getFlags() === 1) {
+    throw new Error(`${type.getText()} can't be resolved. Please check for a typo or why it is not defined.`)
+  }
+}
+
 function handleArray(type: Type) {
   const arrayType = type.getTypeArguments()[0];
+  checkResolvable(arrayType)
 
   if (isPrimitive(arrayType.getText())) {
     return { type: 'array', items: primitive2Json(arrayType.getText()) }
@@ -92,7 +103,6 @@ function handleUnion(type: Type) {
     const symbol = x.getSymbol()
     if (symbol) {
       const node = symbol.getDeclarations()[0];
-      console.log(node.getText())
       return ts2Json(node, true);
     }
 
@@ -174,10 +184,12 @@ export function ts2Json(node: Node, nested = false): any {
     }
   }
 
+  checkResolvable(node.getType())
+
   throw new Error('not implemented ' + node.getKindName())
 }
 
-export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0, v2 = false) {
+export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0) {
   const project = new Project({
     compilerOptions: {
       strictNullChecks: true,
@@ -197,5 +209,8 @@ export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0, 
 
   const methods = classes[0].getInstanceMethods();
 
+  if (paramterIndex === -1) {
+    return ts2Json(methods[functionIndex].getReturnTypeNodeOrThrow());
+  }
   return ts2Json(methods[functionIndex].getParameters()[paramterIndex].getTypeNodeOrThrow());
 }

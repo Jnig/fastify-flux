@@ -1,3 +1,6 @@
+import * as s from './sample-imported-interface.ts'
+
+
 interface nested {
   id: number;
 }
@@ -49,7 +52,9 @@ export class V2Controller {
     s4: simple[],
     s5: complex,
     s6: enumSample,
-  ): Promise<foobar> {
+    s7: s.importedInterface
+    s8: NotExistingInterface
+  ): Promise<any> {
     return { id: 1, checked: true, mixed: 'foo' };
   }
 }

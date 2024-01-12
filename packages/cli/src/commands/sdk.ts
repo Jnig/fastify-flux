@@ -1,8 +1,7 @@
 import { Command } from 'commander';
 import pMap from 'p-map';
 import { getConfig } from '../helper/config.js';
-
-import { runWorkerSdkGeneration } from '../piscina/index.js';
+import { generateSdk } from '../helper/generateSdk.js';
 
 async function handler() {
   const config = await getConfig();
@@ -11,7 +10,8 @@ async function handler() {
       return;
     }
 
-    await runWorkerSdkGeneration(project.sdk);
+
+    await generateSdk(project.sdk);
   });
 }
 

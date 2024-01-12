@@ -68,7 +68,6 @@ function addSchema(config: FluxConfig, schema: any) {
   if (schema.type === 'array') {
     config.fastify.addSchema({ '$id': schema['$id'], ...schema.items });
   } else {
-    console.log(schema)
     config.fastify.addSchema(schema)
   }
 
