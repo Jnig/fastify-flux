@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/Jnig/fastify-flux/compare/v3.0.0...v3.1.0) (2024-01-14)
+
+
+### Features
+
+* cache parsed files ([b362803](https://github.com/Jnig/fastify-flux/commit/b36280348dc28164141b77aafc16ba3e271a9ebb))
+
+
+### Bug Fixes
+
+* **deps:** update prisma monorepo to v5 ([#63](https://github.com/Jnig/fastify-flux/issues/63)) ([23e6c86](https://github.com/Jnig/fastify-flux/commit/23e6c8633d9f82c60d8f482c1a3a391e735eb098))
+
 ## [3.0.0](https://github.com/Jnig/fastify-flux/compare/v2.31.2...v3.0.0) (2024-01-12)
 
 
