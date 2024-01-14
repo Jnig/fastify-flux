@@ -1,7 +1,6 @@
 import { Project, SyntaxKind, } from 'ts-morph';
 import { log } from '../log.js';
 import { ts2Json } from '../schema/ts2Json.js';
-import { join } from 'node:path';
 
 export function cleanInterfaceName(name: string | undefined) {
   if (!name) {
@@ -18,7 +17,9 @@ export function cleanInterfaceName(name: string | undefined) {
 }
 
 export async function getControllerFunctions(file: string, project: Project) {
-  project.addSourceFileAtPath(file);
+  if (!project.getSourceFile(file)) {
+    project.addSourceFileAtPath(file);
+  }
   const parsed = project.getSourceFile(file);
   if (!parsed) {
     log({

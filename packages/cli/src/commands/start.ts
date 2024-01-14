@@ -91,7 +91,7 @@ class WatchHandler {
       .on('change', this.handleDebounced.bind(this));
   }
 
-  async build() {
+  async build(changedFile?: string) {
     this.excecHandler.cancelAll();
     const esbuildSuccess = await esbuildHelper()
     if (!esbuildSuccess) {
@@ -99,15 +99,15 @@ class WatchHandler {
       return;
     }
 
-    await writeControllerJson(),
+    await writeControllerJson(changedFile);
 
-      this.excecHandler.restartAll();
+    this.excecHandler.restartAll();
   }
 
   async handle(change: string) {
     log({ component: 'cli', success: 'App reload', details: change });
 
-    await this.build();
+    await this.build(change);
 
     if (this.options.typecheck) {
       runTypecheck();

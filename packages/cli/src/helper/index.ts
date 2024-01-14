@@ -8,9 +8,9 @@ import { getConfig } from './config.js';
 import { generateMeta } from './generateMeta.js';
 import { writeFile } from './writeFile.js';
 
-export async function writeControllerJson() {
+export async function writeControllerJson(changedFile?: string) {
   const config = await getConfig();
-  const meta = await generateMeta();
+  const meta = await generateMeta(changedFile);
 
   writeFile(join(config.outdir, 'flux-controller.json'), meta);
 }

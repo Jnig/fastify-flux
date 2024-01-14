@@ -7,9 +7,14 @@ import { Project, } from 'ts-morph';
 
 
 
+let project: Project;
 function getProject() {
+  if (project) {
+    return project;
+  }
+
   const tsConfigFilePath = join(process.cwd(), 'tsconfig.json')
-  const project = new Project({ tsConfigFilePath });
+  project = new Project({ tsConfigFilePath });
   const config = project.getCompilerOptions();
   if (!config.strict && !config.strictNullChecks) {
     throw new Error('tsconfig.json must have strict or strictNullChecks enabled.')
@@ -18,8 +23,16 @@ function getProject() {
   return project;
 }
 
-export async function generateMeta() {
+export async function generateMeta(changedFile?: string) {
   const project = getProject()
+
+  if (changedFile) {
+    const existing = project.getSourceFiles().find(x => x.getFilePath().endsWith(changedFile));
+    if (existing) {
+      project.removeSourceFile(existing);
+    }
+  }
+
   const config = await getConfig();
   const controllers = await fg(join(config.entry, '/**/*[cC]ontroller.ts'), {
     absolute: true,
