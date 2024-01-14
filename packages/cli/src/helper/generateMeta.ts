@@ -29,7 +29,9 @@ export async function generateMeta(changedFile?: string) {
   if (changedFile) {
     const existing = project.getSourceFiles().find(x => x.getFilePath().endsWith(changedFile));
     if (existing) {
+      const absolutePath = existing.getFilePath()
       project.removeSourceFile(existing);
+      project.addSourceFileAtPath(absolutePath)
     }
   }
 
