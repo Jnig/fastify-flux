@@ -16,7 +16,7 @@
   "devDependencies": {
     "@fastify/swagger": "8.14.0",
     "@fastify/swagger-ui": "2.1.0",
-    "@types/jest": "29.5.11",
+    "@types/jest": "29.5.12",
     "@types/lodash": "4.14.202",
     "esbuild-jest": "0.5.0",
     "fastify": "4.26.0",
