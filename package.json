@@ -13,7 +13,7 @@
   "repository": "git@github.com:fluxapi/fluxapi.git",
   "devDependencies": {
     "@commitlint/cli": "18.6.1",
-    "@commitlint/config-conventional": "18.6.1",
+    "@commitlint/config-conventional": "18.6.2",
     "husky": "8.0.3"
   },
   "workspaces": [
