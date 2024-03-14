@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.2](https://github.com/Jnig/fastify-flux/compare/v3.1.1...v3.1.2) (2024-03-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger to v8.14.0 ([404926e](https://github.com/Jnig/fastify-flux/commit/404926efdeb9c2466a8ed0407dc8433193a9a644))
+* **deps:** update dependency @fastify/swagger-ui to v2.1.0 ([b0ef55c](https://github.com/Jnig/fastify-flux/commit/b0ef55cbade43463a8b2a3580848b663e733e193))
+* **deps:** update dependency @fastify/swagger-ui to v3 ([#74](https://github.com/Jnig/fastify-flux/issues/74)) ([30f08fc](https://github.com/Jnig/fastify-flux/commit/30f08fccb96c9dcc6997765792a00a7639303aa2))
+* **deps:** update dependency chokidar to v3.6.0 ([b4cfd16](https://github.com/Jnig/fastify-flux/commit/b4cfd16c5baf69d602c611389c5a4df0dd819ec9))
+* **deps:** update dependency fastify to v4.26.0 ([61f53f0](https://github.com/Jnig/fastify-flux/commit/61f53f0d1ea36fa2f384996f4e3be49aa05cf694))
+* **deps:** update dependency fastify to v4.26.1 ([040fa6b](https://github.com/Jnig/fastify-flux/commit/040fa6b9b4905210ef8bbbe435c2f83920d82ecf))
+* **deps:** update dependency fastify to v4.26.2 ([8f7ff52](https://github.com/Jnig/fastify-flux/commit/8f7ff52bddf93dbe270a990bf0dc040d5d641b88))
+* **deps:** update dependency ts-morph to v22 ([#76](https://github.com/Jnig/fastify-flux/issues/76)) ([55cbd4b](https://github.com/Jnig/fastify-flux/commit/55cbd4b6f5216a68bb95a7488ab25eb3b76d148c))
+* **deps:** update prisma monorepo to v5.10.1 ([6ebea1c](https://github.com/Jnig/fastify-flux/commit/6ebea1c939e34f696690a1375572862996f97102))
+* **deps:** update prisma monorepo to v5.10.2 ([013c665](https://github.com/Jnig/fastify-flux/commit/013c665766bf65f6fb4986c68e2963b107cce8ff))
+* **deps:** update prisma monorepo to v5.11.0 ([fc3a9e0](https://github.com/Jnig/fastify-flux/commit/fc3a9e0cd795596b25c371236465507de69cdc55))
+* **deps:** update prisma monorepo to v5.8.1 ([8544c9a](https://github.com/Jnig/fastify-flux/commit/8544c9a591c8663b1b33efff354cd9630c211cf2))
+* **deps:** update prisma monorepo to v5.9.0 ([af64cf6](https://github.com/Jnig/fastify-flux/commit/af64cf6ea486bc2981e034a8cd5c135c0467f88f))
+* **deps:** update prisma monorepo to v5.9.1 ([2bddf03](https://github.com/Jnig/fastify-flux/commit/2bddf039d56c1df417d2cad2570c0d028fc4c9a7))
+* json schema strict remote additional properties for array ([ab58602](https://github.com/Jnig/fastify-flux/commit/ab58602a911d3dd5a7754b4a2add11ea6501452b))
+
 ## [3.1.1](https://github.com/Jnig/fastify-flux/compare/v3.1.0...v3.1.1) (2024-01-14)
 
 
