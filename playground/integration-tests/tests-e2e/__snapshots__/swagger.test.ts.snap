@@ -936,7 +936,6 @@ exports[`schema 1`] = `
             "content": {
               "application/json": {
                 "schema": {
-                  "additionalProperties": false,
                   "items": {
                     "additionalProperties": false,
                     "properties": {
