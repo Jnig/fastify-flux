@@ -104,7 +104,6 @@ exports[`imported 1`] = `
 exports[`simple array 1`] = `
 {
   "$id": "simple",
-  "additionalProperties": false,
   "items": {
     "$id": undefined,
     "additionalProperties": false,

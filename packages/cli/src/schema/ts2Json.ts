@@ -1,6 +1,14 @@
-import { Project, SyntaxKind, Node, Symbol, Type, ParameteredNode } from "ts-morph";
+import {
+  Project,
+  SyntaxKind,
+  Node,
+  Symbol,
+  Type,
+  ParameteredNode,
+} from 'ts-morph';
 
-const primitives = ['^void$',
+const primitives = [
+  '^void$',
   '^number$',
   '^string$',
   '^any$',
@@ -8,8 +16,8 @@ const primitives = ['^void$',
   '^true$',
   '^Date$',
   '^null$',
-  'Prisma\.JsonValue$'
-]
+  'Prisma.JsonValue$',
+];
 
 function isObject(str: string) {
   const objects = [
@@ -17,36 +25,38 @@ function isObject(str: string) {
     '^{\\s?\\[.+:\\s?.+\\]\\s?:.+}$', // { [key: any]: any}
   ];
 
-  return objects.some(x => new RegExp(x).test(str));
+  return objects.some((x) => new RegExp(x).test(str));
 }
 
 function isPrimitive(str: string) {
-  return isObject(str) || primitives.some(x => new RegExp(x).test(str));
+  return isObject(str) || primitives.some((x) => new RegExp(x).test(str));
 }
 
 function primitive2Json(type: string) {
-  if (type === 'true') { // getUntionTypes returns [true, false]
-    return { type: 'boolean' }
+  if (type === 'true') {
+    // getUntionTypes returns [true, false]
+    return { type: 'boolean' };
   } else if (type === 'Date') {
-    return { type: 'string', format: 'date-time' }
+    return { type: 'string', format: 'date-time' };
   } else if (isObject(type)) {
-    return { type: 'object', additionalProperties: true }
+    return { type: 'object', additionalProperties: true };
   } else if (type === 'any' || type.endsWith('Prisma.JsonValue')) {
     return {};
-  };
-
+  }
 
   return { type };
 }
 
 function unwrapPromise(node: Node): Node {
-  const identifier = node.getFirstChildByKind(SyntaxKind.Identifier)
+  const identifier = node.getFirstChildByKind(SyntaxKind.Identifier);
   if (!identifier) {
     return node;
   }
 
   if (identifier.getText() === 'Promise') {
-    const found = node.forEachChildAsArray().find(x => x.getText() !== 'Promise')
+    const found = node
+      .forEachChildAsArray()
+      .find((x) => x.getText() !== 'Promise');
     if (!found) {
       throw new Error('unwrapPromise: did not find type inside Promise');
     }
@@ -59,39 +69,50 @@ function unwrapPromise(node: Node): Node {
 
 function checkResolvable(type: Type) {
   if (type.getText() === 'any') {
-    return
+    return;
   }
 
   if (type.getFlags() === 1) {
-    throw new Error(`${type.getText()} can't be resolved. Please check for a typo or why it is not defined.`)
+    throw new Error(
+      `${type.getText()} can't be resolved. Please check for a typo or why it is not defined.`,
+    );
   }
 }
 
 function handleArray(type: Type) {
   const arrayType = type.getTypeArguments()[0];
-  checkResolvable(arrayType)
+  checkResolvable(arrayType);
 
   if (isPrimitive(arrayType.getText())) {
-    return { type: 'array', items: primitive2Json(arrayType.getText()) }
+    return { type: 'array', items: primitive2Json(arrayType.getText()) };
   }
 
-  const symbol = arrayType.getSymbol()
+  const symbol = arrayType.getSymbol();
   if (!symbol) {
     throw new Error('Array type must have a symbol');
   }
 
-  return { type: 'array', items: ts2Json(symbol.getDeclarations()[0], true) }
+  return { type: 'array', items: ts2Json(symbol.getDeclarations()[0], true) };
 }
 
 function handleUnion(type: Type) {
-  const enums = type.getUnionTypes().filter(x => x.isStringLiteral());
+  const enums = type.getUnionTypes().filter((x) => x.isStringLiteral());
   if (enums.length) {
-    return { type: 'string', enum: enums.map(x => x.getText().replace(/[\'\"]/gi, '').trim()) }
+    return {
+      type: 'string',
+      enum: enums.map((x) =>
+        x
+          .getText()
+          .replace(/[\'\"]/gi, '')
+          .trim(),
+      ),
+    };
   }
 
-
-  const types = type.getUnionTypes().filter(x => !['false', 'undefined'].includes(x.getText()))
-  const formatted = types.map(x => {
+  const types = type
+    .getUnionTypes()
+    .filter((x) => !['false', 'undefined'].includes(x.getText()));
+  const formatted = types.map((x) => {
     if (isPrimitive(x.getText())) {
       return primitive2Json(x.getText());
     }
@@ -100,17 +121,15 @@ function handleUnion(type: Type) {
       return handleArray(x);
     }
 
-    const symbol = x.getSymbol()
+    const symbol = x.getSymbol();
     if (symbol) {
       const node = symbol.getDeclarations()[0];
       return ts2Json(node, true);
     }
 
-
-    const err = `handleDeclarations: unhandled case ${x.getText()}`
-    throw new Error(err)
-  })
-
+    const err = `handleDeclarations: unhandled case ${x.getText()}`;
+    throw new Error(err);
+  });
 
   if (formatted.length === 2 && formatted.find((x: any) => x.type === 'null')) {
     const found = formatted.find((x: any) => x.type !== 'null');
@@ -120,7 +139,7 @@ function handleUnion(type: Type) {
   }
 
   if (formatted.length > 1) {
-    return { anyOf: formatted }
+    return { anyOf: formatted };
   }
 
   return formatted[0];
@@ -136,64 +155,80 @@ export function ts2Json(node: Node, nested = false): any {
   }
 
   if (node.getType().isArray()) {
-    return { $id, additionalProperties: false, ...handleArray(node.getType()) }
+    return { $id, ...handleArray(node.getType()) };
   }
 
   if (node.getType().isInterface() || node.getType().isObject()) {
     const required = [] as string[];
-    const properties = node.getType().getProperties().
-      reduce((acc: any, x) => {
-        const type = x.getTypeAtLocation(node)
+    const properties = node
+      .getType()
+      .getProperties()
+      .reduce((acc: any, x) => {
+        const type = x.getTypeAtLocation(node);
 
         if (!x.isOptional()) {
-          required.push(x.getName())
+          required.push(x.getName());
         }
 
         if (isPrimitive(type.getText())) {
-          acc[x.getName()] = primitive2Json(type.getText())
+          acc[x.getName()] = primitive2Json(type.getText());
           return acc;
         }
 
         if (type.isArray()) {
-          acc[x.getName()] = handleArray(type)
+          acc[x.getName()] = handleArray(type);
           return acc;
         }
 
         if (type.isUnion()) {
-          acc[x.getName()] = handleUnion(type)
+          acc[x.getName()] = handleUnion(type);
           return acc;
         }
 
         if (type.isObject() || type.isInterface()) {
-          acc[x.getName()] = ts2Json(type.getSymbolOrThrow().getDeclarations()[0], true)
+          acc[x.getName()] = ts2Json(
+            type.getSymbolOrThrow().getDeclarations()[0],
+            true,
+          );
           return acc;
         }
 
-        const symbol = type.getSymbol()
+        const symbol = type.getSymbol();
         if (symbol) {
           const node = symbol.getDeclarations()[0];
           return ts2Json(node, true);
         }
 
-        throw new Error('not implemented in properties ' + type.getText() + x.getDeclarations().map(x => x.getText()))
-      }, {})
+        throw new Error(
+          'not implemented in properties ' +
+            type.getText() +
+            x.getDeclarations().map((x) => x.getText()),
+        );
+      }, {});
 
     return {
       $id,
-      type: 'object', additionalProperties: false, properties, required
-    }
+      type: 'object',
+      additionalProperties: false,
+      properties,
+      required,
+    };
   }
 
-  checkResolvable(node.getType())
+  checkResolvable(node.getType());
 
-  throw new Error('not implemented ' + node.getKindName())
+  throw new Error('not implemented ' + node.getKindName());
 }
 
-export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0) {
+export function ts2JsonTest(
+  file: string,
+  functionIndex = 0,
+  paramterIndex = 0,
+) {
   const project = new Project({
     compilerOptions: {
       strictNullChecks: true,
-    }
+    },
   });
   project.addSourceFileAtPath(file);
   const parsed = project.getSourceFile(file);
@@ -206,11 +241,12 @@ export function ts2JsonTest(file: string, functionIndex = 0, paramterIndex = 0) 
     throw new Error('did not found a class');
   }
 
-
   const methods = classes[0].getInstanceMethods();
 
   if (paramterIndex === -1) {
     return ts2Json(methods[functionIndex].getReturnTypeNodeOrThrow());
   }
-  return ts2Json(methods[functionIndex].getParameters()[paramterIndex].getTypeNodeOrThrow());
+  return ts2Json(
+    methods[functionIndex].getParameters()[paramterIndex].getTypeNodeOrThrow(),
+  );
 }
