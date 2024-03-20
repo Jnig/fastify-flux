@@ -23,6 +23,6 @@
   "devDependencies": {
     "@types/node": "20.11.30",
     "fastify-flux-cli": "3.1.2",
-    "typescript": "5.4.2"
+    "typescript": "5.4.3"
   }
 }
