@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.3](https://github.com/Jnig/fastify-flux/compare/v3.1.2...v3.1.3) (2024-04-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency p-map to v7.0.2 ([8dd656c](https://github.com/Jnig/fastify-flux/commit/8dd656c8a820a2c277d2343c863d9a66f695a6d6))
+* **deps:** update prisma monorepo to v5.12.0 ([d00ed96](https://github.com/Jnig/fastify-flux/commit/d00ed96d7acb466098b78063655be79a77917889))
+* **deps:** update prisma monorepo to v5.12.1 ([22fb870](https://github.com/Jnig/fastify-flux/commit/22fb870f31949243fc6f0adcbf2183c3ad929269))
+
 ## [3.1.2](https://github.com/Jnig/fastify-flux/compare/v3.1.1...v3.1.2) (2024-03-14)
 
 
