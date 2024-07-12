@@ -20,7 +20,7 @@
     "@fastify/swagger": "8.14.0",
     "@fastify/swagger-ui": "3.0.0",
     "@prisma/client": "5.12.1",
-    "fastify": "4.26.2",
+    "fastify": "4.28.1",
     "fastify-flux": "workspace:*",
     "tsconfig-paths": "4.2.0"
   },
