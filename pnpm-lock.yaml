@@ -21,8 +21,8 @@ importers:
   packages/cli:
     dependencies:
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       chalk:
         specifier: 5.3.0
         version: 5.3.0
@@ -98,8 +98,8 @@ importers:
         specifier: 29.5.12
         version: 29.5.12
       '@types/lodash':
-        specifier: 4.17.6
-        version: 4.17.6
+        specifier: 4.17.7
+        version: 4.17.7
       esbuild-jest:
         specifier: 0.5.0
         version: 0.5.0(esbuild@0.23.0)
@@ -1818,8 +1818,8 @@ packages:
     resolution: {integrity: sha512-t7dhREVv6dbNj0q17X12j7yDG4bD/DHYX7o5/DbDxobP0HnGPgpRz2Ej77aL7TZT3DSw13fqUTj8J4mMnqa7WA==}
     dev: true
 
-  /@types/lodash@4.17.6:
-    resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
+  /@types/lodash@4.17.7:
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   /@types/minimist@1.2.5:
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
