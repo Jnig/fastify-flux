@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/Jnig/fastify-flux/compare/v3.1.3...v3.2.0) (2024-07-19)
+
+
+### Features
+
+* add description and summary ([7d16d77](https://github.com/Jnig/fastify-flux/commit/7d16d775890eb4302aa9b16a25f76395c6c345a4))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger-ui to v3.1.0 ([82bfd86](https://github.com/Jnig/fastify-flux/commit/82bfd863d5c2a665db72069c43840bd70c701d2e))
+* **deps:** update dependency @fastify/swagger-ui to v4 ([#88](https://github.com/Jnig/fastify-flux/issues/88)) ([627e6b0](https://github.com/Jnig/fastify-flux/commit/627e6b0da9fc5fd3bb352296ba62fc5f16276093))
+* **deps:** update dependency commander to v12 ([#72](https://github.com/Jnig/fastify-flux/issues/72)) ([b9d7137](https://github.com/Jnig/fastify-flux/commit/b9d713739cd127ab8aa298a3b011c4ff538528cd))
+* **deps:** update dependency fastify to v4.28.1 ([#84](https://github.com/Jnig/fastify-flux/issues/84)) ([b54073f](https://github.com/Jnig/fastify-flux/commit/b54073fbee6ebb6ffedbc0f9c1f85ec7f51621d3))
+* **deps:** update dependency ts-morph to v23 ([#90](https://github.com/Jnig/fastify-flux/issues/90)) ([fa52897](https://github.com/Jnig/fastify-flux/commit/fa52897db0724d473fc110df1ee54867608bd1b5))
+* **deps:** update prisma monorepo to v5.16.2 ([6fd524a](https://github.com/Jnig/fastify-flux/commit/6fd524ae68bf57970e7ab59764eea4b1280f5a13))
+* **deps:** update prisma monorepo to v5.17.0 ([4c2332e](https://github.com/Jnig/fastify-flux/commit/4c2332ef45e48b42e827f99e682f735e1a7cfb95))
+
 ## [3.1.3](https://github.com/Jnig/fastify-flux/compare/v3.1.2...v3.1.3) (2024-04-11)
 
 
