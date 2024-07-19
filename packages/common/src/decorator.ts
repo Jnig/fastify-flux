@@ -92,8 +92,14 @@ export function Custom(key: string, value: unknown): MethodDecorator {
   };
 }
 
-export function Description(key: string, value: unknown): MethodDecorator {
+export function Description(value: unknown): MethodDecorator {
   return function (target: Object, functionName: string | symbol) {
-    addProperty(target, functionName, key, value);
+    addProperty(target, functionName, 'description', value);
+  };
+}
+
+export function Summary(value: unknown): MethodDecorator {
+  return function (target: Object, functionName: string | symbol) {
+    addProperty(target, functionName, 'summary', value);
   };
 }

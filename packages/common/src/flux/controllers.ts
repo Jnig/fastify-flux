@@ -28,11 +28,8 @@ export function getSchemaParams(route: FluxRoute) {
   return params;
 }
 
-
-
-
 function getSchemaQuerystring(route: FluxRoute) {
-  const query = route.params.filter(x => x.name === 'query');
+  const query = route.params.filter((x) => x.name === 'query');
   if (query.length > 1) {
     throw new Error(`too many potential query params for ${route.url}`);
   }
@@ -41,12 +38,10 @@ function getSchemaQuerystring(route: FluxRoute) {
     return;
   }
 
-  return query[0].schema
+  return query[0].schema;
 }
 
-export function getSchemaBody(
-  route: FluxRoute,
-) {
+export function getSchemaBody(route: FluxRoute) {
   const body = route.params.filter((x) => x.name === 'body');
 
   if (body.length > 1) {
@@ -62,21 +57,17 @@ export function getSchemaBody(
 
 function addSchema(config: FluxConfig, schema: any) {
   if (config.fastify.getSchema(schema['$id'])) {
-    return
+    return;
   }
 
   if (schema.type === 'array') {
-    config.fastify.addSchema({ '$id': schema['$id'], ...schema.items });
+    config.fastify.addSchema({ $id: schema['$id'], ...schema.items });
   } else {
-    config.fastify.addSchema(schema)
+    config.fastify.addSchema(schema);
   }
-
 }
 
-export function getSchemaResponse(
-  config: FluxConfig,
-  route: FluxRoute,
-) {
+export function getSchemaResponse(config: FluxConfig, route: FluxRoute) {
   const name = route.returnType;
 
   if (name === 'any') {
@@ -99,9 +90,8 @@ export function getSchemaResponse(
     };
   }
 
-
   if (name) {
-    addSchema(config, route.returnSchema)
+    addSchema(config, route.returnSchema);
     return {
       [route.statusCode]: route.returnSchema,
     };
@@ -111,7 +101,6 @@ export function getSchemaResponse(
     [route.statusCode]: {},
   };
 }
-
 
 function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
   const { url, method, tags, statusCode } = route;
@@ -125,6 +114,8 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
     querystring: getSchemaQuerystring(route),
     body: getSchemaBody(route),
     response: getSchemaResponse(config, route),
+    description: route.description,
+    summary: route.summary,
   } as any;
 
   // remove undefined value with stringify and parse
@@ -133,7 +124,6 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
       delete s[key];
     }
   });
-
 
   config.fastify.route({
     method,
@@ -148,11 +138,10 @@ function handleRoute(config: FluxConfig, route: FluxRoute, f: Function) {
     schema: s,
     config: route,
   });
-
 }
 
 export function registerController(
-  controller: { new(): any },
+  controller: { new (): any },
   options: FluxConfig,
 ) {
   if (!controller.name.endsWith('Controller')) {
