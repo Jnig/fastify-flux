@@ -37,6 +37,6 @@
     "pino-pretty": "11.2.1",
     "prisma": "5.17.0",
     "ts-jest": "29.2.3",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   }
 }
