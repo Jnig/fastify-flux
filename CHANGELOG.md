@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.1](https://github.com/Jnig/fastify-flux/compare/v3.2.0...v3.2.1) (2024-08-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger to v8.15.0 ([b9ad507](https://github.com/Jnig/fastify-flux/commit/b9ad507ffa474a753bdd1df3dddb3656b982d7c2))
+* **deps:** update prisma monorepo to v5.18.0 ([7d36256](https://github.com/Jnig/fastify-flux/commit/7d36256343a6fae3bcdb8208d12c6ee685c421e4))
+
 ## [3.2.0](https://github.com/Jnig/fastify-flux/compare/v3.1.3...v3.2.0) (2024-07-19)
 
 
