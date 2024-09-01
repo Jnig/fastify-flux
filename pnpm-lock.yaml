@@ -203,8 +203,8 @@ importers:
         specifier: 7.18.0
         version: 7.18.0(eslint@9.9.1)(typescript@5.5.4)
       axios:
-        specifier: 1.7.6
-        version: 1.7.6
+        specifier: 1.7.7
+        version: 1.7.7
       esbuild:
         specifier: 0.23.1
         version: 0.23.1
@@ -264,8 +264,8 @@ importers:
         specifier: 7.18.0
         version: 7.18.0(eslint@9.9.1)(typescript@5.5.4)
       axios:
-        specifier: 1.7.6
-        version: 1.7.6
+        specifier: 1.7.7
+        version: 1.7.7
       esbuild:
         specifier: 0.23.1
         version: 0.23.1
@@ -2177,8 +2177,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /axios@1.7.6:
-    resolution: {integrity: sha512-Ekur6XDwhnJ5RgOCaxFnXyqlPALI3rVeukZMwOdfghW7/wGz784BYKiQq+QD8NPcr91KRo30KfHOchyijwWw7g==}
+  /axios@1.7.7:
+    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
