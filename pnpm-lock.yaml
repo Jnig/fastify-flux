@@ -218,8 +218,8 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.16.11)
       pino-pretty:
-        specifier: 11.2.2
-        version: 11.2.2
+        specifier: 11.3.0
+        version: 11.3.0
       prisma:
         specifier: 5.21.0
         version: 5.21.0
@@ -279,8 +279,8 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.16.11)
       pino-pretty:
-        specifier: 11.2.2
-        version: 11.2.2
+        specifier: 11.3.0
+        version: 11.3.0
       prisma:
         specifier: 5.21.0
         version: 5.21.0
@@ -5165,8 +5165,14 @@ packages:
       readable-stream: 4.5.1
       split2: 4.2.0
 
-  /pino-pretty@11.2.2:
-    resolution: {integrity: sha512-2FnyGir8nAJAqD3srROdrF1J5BIcMT4nwj7hHSc60El6Uxlym00UbCCd8pYIterstVBFlMyF1yFV8XdGIPbj4A==}
+  /pino-abstract-transport@2.0.0:
+    resolution: {integrity: sha512-F63x5tizV6WCh4R6RHyi2Ml+M70DNRXt/+HANowMflpgGFMAym/VKm6G7ZOQRjqN7XbGxK1Lg9t6ZrtzOaivMw==}
+    dependencies:
+      split2: 4.2.0
+    dev: true
+
+  /pino-pretty@11.3.0:
+    resolution: {integrity: sha512-oXwn7ICywaZPHmu3epHGU2oJX4nPmKvHvB/bwrJHlGcbEWaVcotkpyVHMKLKmiVryWYByNp0jpgAcXpFJDXJzA==}
     hasBin: true
     dependencies:
       colorette: 2.0.20
@@ -5177,7 +5183,7 @@ packages:
       joycon: 3.1.1
       minimist: 1.2.8
       on-exit-leak-free: 2.1.2
-      pino-abstract-transport: 1.2.0
+      pino-abstract-transport: 2.0.0
       pump: 3.0.0
       readable-stream: 4.5.1
       secure-json-parse: 2.7.0
