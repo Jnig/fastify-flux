@@ -218,8 +218,8 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.17.10)
       pino-pretty:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 13.0.0
+        version: 13.0.0
       prisma:
         specifier: 5.22.0
         version: 5.22.0
@@ -279,8 +279,8 @@ importers:
         specifier: 29.7.0
         version: 29.7.0(@types/node@20.17.10)
       pino-pretty:
-        specifier: 11.3.0
-        version: 11.3.0
+        specifier: 13.0.0
+        version: 13.0.0
       prisma:
         specifier: 5.22.0
         version: 5.22.0
@@ -5211,8 +5211,8 @@ packages:
       split2: 4.2.0
     dev: true
 
-  /pino-pretty@11.3.0:
-    resolution: {integrity: sha512-oXwn7ICywaZPHmu3epHGU2oJX4nPmKvHvB/bwrJHlGcbEWaVcotkpyVHMKLKmiVryWYByNp0jpgAcXpFJDXJzA==}
+  /pino-pretty@13.0.0:
+    resolution: {integrity: sha512-cQBBIVG3YajgoUjo1FdKVRX6t9XPxwB9lcNJVD5GCnNM4Y6T12YYx8c6zEejxQsU0wrg9TwmDulcE9LR7qcJqA==}
     hasBin: true
     dependencies:
       colorette: 2.0.20
@@ -5225,7 +5225,6 @@ packages:
       on-exit-leak-free: 2.1.2
       pino-abstract-transport: 2.0.0
       pump: 3.0.0
-      readable-stream: 4.5.1
       secure-json-parse: 2.7.0
       sonic-boom: 4.0.1
       strip-json-comments: 3.1.1
