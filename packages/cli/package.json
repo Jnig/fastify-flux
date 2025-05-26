@@ -19,7 +19,7 @@
     "chalk": "5.4.1",
     "chokidar": "3.6.0",
     "commander": "12.1.0",
-    "execa": "8.0.1",
+    "execa": "9.6.0",
     "fast-glob": "3.3.2",
     "lodash": "4.17.21",
     "p-map": "7.0.3",
