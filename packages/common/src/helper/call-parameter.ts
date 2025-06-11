@@ -31,7 +31,7 @@ function getParamMapper(name: string): FluxMapping['mapper'] {
   return ({ request }) => {
     const { params } = request as any;
 
-    if (params && params.hasOwnProperty(name)) {
+    if (params && params[name] !== undefined) {
       return params[name];
     }
 

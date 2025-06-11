@@ -1,7 +1,7 @@
-import { GenerateApiParams } from 'swagger-typescript-api';
+import { generateApi } from 'swagger-typescript-api';
 import { log } from '../log.js';
 
-export async function generateSdk(sdk: GenerateApiParams) {
+export async function generateSdk(sdk: Parameters<typeof generateApi>[0]) {
   const logFunction = console.log;
 
   let warning = [''] as string[];
@@ -34,6 +34,10 @@ export async function generateSdk(sdk: GenerateApiParams) {
   if (error.length > 1) {
     log({ component: 'cli', error: 'SDK error', details: error.join('\n') });
   } else {
-    log({ component: 'cli', success: 'SDK written to', details: sdk.output as string });
+    log({
+      component: 'cli',
+      success: 'SDK written to',
+      details: sdk.output as string,
+    });
   }
 }

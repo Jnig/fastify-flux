@@ -1,8 +1,8 @@
 import { BuildOptions } from 'esbuild';
-import { GenerateApiParamsFromPath } from 'swagger-typescript-api';
+import { generateApi } from 'swagger-typescript-api';
 
 export interface FluxProjectConfig {
-  sdk?: GenerateApiParamsFromPath;
+  sdk?: Parameters<typeof generateApi>[0];
   run: string[];
 }
 

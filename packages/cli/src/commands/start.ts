@@ -49,7 +49,7 @@ async function createDistDir() {
 class ExecHandler {
   private procs: number[] = [];
 
-  constructor(private config: FluxProjectConfig['run'][]) { }
+  constructor(private config: FluxProjectConfig['run'][]) {}
 
   async cancelAll() {
     await pMap(this.procs, async (pid) => {
@@ -66,7 +66,7 @@ class ExecHandler {
 class WatchHandler {
   private excecHandler!: ExecHandler;
 
-  constructor(private options: Options) { }
+  constructor(private options: Options) {}
 
   async setup() {
     const config = await getConfig();
@@ -86,14 +86,14 @@ class WatchHandler {
         disableGlobbing: true,
         persistent: true,
         ignoreInitial: true,
-      })
+      } as any)
       .on('add', this.handleDebounced.bind(this))
       .on('change', this.handleDebounced.bind(this));
   }
 
   async build(changedFile?: string) {
     this.excecHandler.cancelAll();
-    const esbuildSuccess = await esbuildHelper()
+    const esbuildSuccess = await esbuildHelper();
     if (!esbuildSuccess) {
       log({ component: 'cli', warning: 'Skipping restart... esbuild failed.' });
       return;
@@ -128,12 +128,16 @@ async function startSdkWatch() {
 
     const handler = async () => await generateSdk(sdk);
 
+    if (!sdk.input) {
+      throw new Error('SDK input path is not defined.');
+    }
+
     chokidar
       .watch(sdk.input, {
         disableGlobbing: true,
         persistent: true,
         ignoreInitial: true,
-      })
+      } as any)
       .on('add', handler)
       .on('change', handler);
   });

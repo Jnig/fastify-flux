@@ -15,26 +15,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/lodash": "4.17.13",
+    "@types/lodash": "4.17.17",
     "chalk": "5.4.1",
-    "chokidar": "3.6.0",
-    "commander": "12.1.0",
-    "execa": "8.0.1",
-    "fast-glob": "3.3.2",
+    "chokidar": "4.0.3",
+    "commander": "14.0.0",
+    "execa": "9.6.0",
+    "fast-glob": "3.3.3",
     "lodash": "4.17.21",
     "p-map": "7.0.3",
     "pidtree": "0.6.0",
     "source-map-support": "0.5.21",
-    "swagger-typescript-api": "13.0.3",
-    "ts-morph": "23.0.0",
-    "typescript": "5.7.2"
+    "swagger-typescript-api": "13.2.1",
+    "ts-morph": "26.0.0",
+    "typescript": "5.8.3"
   },
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
     "@types/jest": "29.5.14",
-    "@types/node": "20.17.10",
-    "jest": "29.7.0",
-    "ts-jest": "29.2.5"
+    "@types/node": "24.0.0",
+    "jest": "30.0.0",
+    "ts-jest": "29.3.4"
   },
   "peerDependencies": {
     "esbuild": "0.24.2"

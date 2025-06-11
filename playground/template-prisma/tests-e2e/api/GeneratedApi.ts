@@ -235,7 +235,7 @@ export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDa
      * @request DELETE:/todos/{id}
      */
     remove: (id: number, params: RequestParams = {}) =>
-      this.request<object, any>({
+      this.request<any, any>({
         path: `/todos/${id}`,
         method: 'DELETE',
         format: 'json',
