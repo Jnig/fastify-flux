@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/Jnig/fastify-flux/compare/v3.2.0...v3.3.0) (2025-06-11)
+
+
+### Features
+
+* update deps ([889278d](https://github.com/Jnig/fastify-flux/commit/889278d5fcb3247d72649dbed5ad1e437a332203))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @fastify/swagger to v8.15.0 ([b9ad507](https://github.com/Jnig/fastify-flux/commit/b9ad507ffa474a753bdd1df3dddb3656b982d7c2))
+* **deps:** update dependency @fastify/swagger-ui to v4.1.0 ([fc721e1](https://github.com/Jnig/fastify-flux/commit/fc721e17fff7e5bee0e96800ea64bda76cca56e2))
+* **deps:** update dependency @fastify/swagger-ui to v4.1.1 ([70dd8c1](https://github.com/Jnig/fastify-flux/commit/70dd8c1d23669bde83677298842edf56b184e20d))
+* **deps:** update dependency @fastify/swagger-ui to v4.2.0 ([ded0171](https://github.com/Jnig/fastify-flux/commit/ded0171d183363b59840e42723ef885401bf874c))
+* **deps:** update dependency @types/lodash to v4.17.13 ([5f44537](https://github.com/Jnig/fastify-flux/commit/5f445379b6294e59cb9df44436a7ff3d984d63ed))
+* **deps:** update dependency chalk to v5.4.1 ([d6bb387](https://github.com/Jnig/fastify-flux/commit/d6bb387216b845517875f44eb9087af298de713f))
+* **deps:** update dependency fastify to v4.29.0 ([bd08ba3](https://github.com/Jnig/fastify-flux/commit/bd08ba3adced3cf2a54cf884865827d613455629))
+* **deps:** update dependency p-map to v7.0.3 ([cb4f1fe](https://github.com/Jnig/fastify-flux/commit/cb4f1fe13f216548735dfff4e418e67012504148))
+* **deps:** update dependency typescript to v5.7.2 ([addc907](https://github.com/Jnig/fastify-flux/commit/addc90715decf7e73701bacdc0a86357f2bf5233))
+* **deps:** update prisma monorepo to v5.18.0 ([7d36256](https://github.com/Jnig/fastify-flux/commit/7d36256343a6fae3bcdb8208d12c6ee685c421e4))
+* **deps:** update prisma monorepo to v5.19.0 ([1d01753](https://github.com/Jnig/fastify-flux/commit/1d01753b1d17efbeb25e90b222332838e059f5fb))
+* **deps:** update prisma monorepo to v5.19.1 ([3a346ed](https://github.com/Jnig/fastify-flux/commit/3a346edd6f1b71d225201e867a48278d647a3e4a))
+* **deps:** update prisma monorepo to v5.20.0 ([947d32a](https://github.com/Jnig/fastify-flux/commit/947d32ae7a30c62bf6dabd2df0f8db3706b662ea))
+* **deps:** update prisma monorepo to v5.21.0 ([59faaa3](https://github.com/Jnig/fastify-flux/commit/59faaa32069ed0d0e63ca8b11c4e3d48330ff5b5))
+* **deps:** update prisma monorepo to v5.21.1 ([76a3049](https://github.com/Jnig/fastify-flux/commit/76a30490a9700d98ef17bb6cb6329c2fd2030294))
+* **deps:** update prisma monorepo to v5.22.0 ([9019d93](https://github.com/Jnig/fastify-flux/commit/9019d9317cd93912399a92aef4bcfb11dbedbef2))
+* execa and api generation ([c88b3d5](https://github.com/Jnig/fastify-flux/commit/c88b3d574f60903c398347ad50c8b9a417f1a556))
+
 ## [3.2.0](https://github.com/Jnig/fastify-flux/compare/v3.1.3...v3.2.0) (2024-07-19)
 
 
