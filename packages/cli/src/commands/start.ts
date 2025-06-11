@@ -23,11 +23,18 @@ function startProcess(command: string[], projectIndex: number) {
   const [file, ...args] = command;
   const subprocess = execa(file, args, {
     env: { FLUX_PROJECT_INDEX: `${projectIndex}` },
+    reject: false,
   });
 
   if (subprocess.stdout) {
-    subprocess.stdout.on('data', (line) => {
-      log({ component: 'app', details: line.toString().trim() });
+    subprocess.stdout.on('data', (lines) => {
+      lines
+        .toString()
+        .trim()
+        .split('\n')
+        .forEach((line: any) => {
+          log({ component: 'app', details: line });
+        });
     });
   }
   if (subprocess.stderr) {

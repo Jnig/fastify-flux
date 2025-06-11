@@ -15,8 +15,7 @@ export async function generateSdk(sdk: Parameters<typeof generateApi>[0]) {
   };
 
   try {
-    const generator = await import('swagger-typescript-api');
-    await generator.default.generateApi(sdk);
+    await generateApi(sdk);
   } catch (err: any) {
     console.error(err.message);
   }

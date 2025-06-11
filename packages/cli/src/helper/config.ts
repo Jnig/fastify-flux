@@ -5,7 +5,7 @@ import { FluxCliConfig } from '../types.js';
 
 function getSdkDefaultConfig(projectIndex: number, outdir: string) {
   const sdk = {
-    name: 'GeneratedApi.ts',
+    fileName: 'GeneratedApi.ts',
     input: join(outdir, `/openapi-${projectIndex}.json`),
     templates: join(getRootDir(), '/sdk-templates/'),
     httpClientType: 'axios',
