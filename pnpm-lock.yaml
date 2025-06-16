@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.2.1
-        version: 13.2.1
+        specifier: 13.2.2
+        version: 13.2.2
       ts-morph:
         specifier: 26.0.0
         version: 26.0.0
@@ -3347,6 +3347,11 @@ packages:
 
   swagger-typescript-api@13.2.1:
     resolution: {integrity: sha512-2mf2rM0JGnNFFeJ3GUVg63H3iG/1XKlYEI1EM/BODz6ts0Vyx2quZtUKE3VCeZNSGklbPFbiMW4ORl/qpLXEhQ==}
+    engines: {node: '>=20'}
+    hasBin: true
+
+  swagger-typescript-api@13.2.2:
+    resolution: {integrity: sha512-g67Bn18qujAu7L7EWexjR4R0MDiSYo+HT5EkV/5IJ5HuuP8N8Pcj4mrbBY1GX5BTeGGw7Vd5nSE9jgLj0IxinQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -7107,6 +7112,27 @@ snapshots:
   swagger-schema-official@2.0.0-bab6bed: {}
 
   swagger-typescript-api@13.2.1:
+    dependencies:
+      '@biomejs/js-api': 0.8.0-beta.3(@biomejs/wasm-nodejs@2.0.0-beta.6)
+      '@biomejs/wasm-nodejs': 2.0.0-beta.6
+      '@types/swagger-schema-official': 2.0.25
+      c12: 3.0.4
+      citty: 0.1.6
+      consola: 3.4.2
+      eta: 2.2.0
+      js-yaml: 4.1.0
+      lodash: 4.17.21
+      nanoid: 5.1.5
+      swagger-schema-official: 2.0.0-bab6bed
+      swagger2openapi: 7.0.8
+      typescript: 5.8.3
+    transitivePeerDependencies:
+      - '@biomejs/wasm-bundler'
+      - '@biomejs/wasm-web'
+      - encoding
+      - magicast
+
+  swagger-typescript-api@13.2.2:
     dependencies:
       '@biomejs/js-api': 0.8.0-beta.3(@biomejs/wasm-nodejs@2.0.0-beta.6)
       '@biomejs/wasm-nodejs': 2.0.0-beta.6
