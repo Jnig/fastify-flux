@@ -1,6 +1,6 @@
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import _ from 'lodash'
+import _ from 'lodash';
 import { execa } from 'execa';
 import { log } from '../log.js';
 
@@ -10,9 +10,17 @@ import { writeFile } from './writeFile.js';
 
 export async function writeControllerJson(changedFile?: string) {
   const config = await getConfig();
-  const meta = await generateMeta(changedFile);
+  try {
+    const meta = await generateMeta(changedFile);
 
-  writeFile(join(config.outdir, 'flux-controller.json'), meta);
+    writeFile(join(config.outdir, 'flux-controller.json'), meta);
+  } catch (err: any) {
+    log({
+      component: 'cli',
+      error: 'Metadata generation failed',
+      details: err.message,
+    });
+  }
 }
 
 export function getRootDir() {
