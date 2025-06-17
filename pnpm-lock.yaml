@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.2.2
-        version: 13.2.2
+        specifier: 13.2.3
+        version: 13.2.3
       ts-morph:
         specifier: 26.0.0
         version: 26.0.0
@@ -477,6 +477,23 @@ packages:
         optional: true
       '@biomejs/wasm-web':
         optional: true
+
+  '@biomejs/js-api@1.0.0':
+    resolution: {integrity: sha512-69OfQ7+09AtiCIg+k+aU3rEsGit5o/SJWCS3BeBH/2nJYdJGi0cIx+ybka8i1EK69aNcZxYO1y1iAAEmYMq1HA==}
+    peerDependencies:
+      '@biomejs/wasm-bundler': ^2.0.0
+      '@biomejs/wasm-nodejs': ^2.0.0
+      '@biomejs/wasm-web': ^2.0.0
+    peerDependenciesMeta:
+      '@biomejs/wasm-bundler':
+        optional: true
+      '@biomejs/wasm-nodejs':
+        optional: true
+      '@biomejs/wasm-web':
+        optional: true
+
+  '@biomejs/wasm-nodejs@2.0.0':
+    resolution: {integrity: sha512-jcMpFDXura5J9MfL2DB8Qw5Cyg5zJXkzI8Ro/VYEC3R4oPnrqEvnPj5hEu70IVtlUPj1DZjrMRi+o2vqZurXEQ==}
 
   '@biomejs/wasm-nodejs@2.0.0-beta.6':
     resolution: {integrity: sha512-UI8uhz8YUjROBqr8OX3M8aK5Dw+MQfpE3D8sODCoE1CHH/4lvYdYksO/hU6qUe7qOYTI/Dyf2/DOQA5XRvRtAg==}
@@ -3350,8 +3367,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.2.2:
-    resolution: {integrity: sha512-g67Bn18qujAu7L7EWexjR4R0MDiSYo+HT5EkV/5IJ5HuuP8N8Pcj4mrbBY1GX5BTeGGw7Vd5nSE9jgLj0IxinQ==}
+  swagger-typescript-api@13.2.3:
+    resolution: {integrity: sha512-OnENkEVq6XpOPmr+rVcXp6WLHRm/OWmtql7UFpbtFpKeymgWpi/Cgi15LSLrVC1F6VCWYA64Gn7TZRZpchoy0Q==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3808,6 +3825,12 @@ snapshots:
   '@biomejs/js-api@0.8.0-beta.3(@biomejs/wasm-nodejs@2.0.0-beta.6)':
     optionalDependencies:
       '@biomejs/wasm-nodejs': 2.0.0-beta.6
+
+  '@biomejs/js-api@1.0.0(@biomejs/wasm-nodejs@2.0.0)':
+    optionalDependencies:
+      '@biomejs/wasm-nodejs': 2.0.0
+
+  '@biomejs/wasm-nodejs@2.0.0': {}
 
   '@biomejs/wasm-nodejs@2.0.0-beta.6': {}
 
@@ -7132,10 +7155,10 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.2.2:
+  swagger-typescript-api@13.2.3:
     dependencies:
-      '@biomejs/js-api': 0.8.0-beta.3(@biomejs/wasm-nodejs@2.0.0-beta.6)
-      '@biomejs/wasm-nodejs': 2.0.0-beta.6
+      '@biomejs/js-api': 1.0.0(@biomejs/wasm-nodejs@2.0.0)
+      '@biomejs/wasm-nodejs': 2.0.0
       '@types/swagger-schema-official': 2.0.25
       c12: 3.0.4
       citty: 0.1.6
