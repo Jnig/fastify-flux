@@ -32,7 +32,7 @@
     "fastify-flux-cli": "workspace:*",
     "jest": "30.0.0",
     "pino-pretty": "13.0.0",
-    "prisma": "6.9.0",
+    "prisma": "6.10.0",
     "ts-jest": "29.4.0",
     "typescript": "5.8.3"
   },
