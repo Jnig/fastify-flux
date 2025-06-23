@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.2.3
-        version: 13.2.3
+        specifier: 13.2.4
+        version: 13.2.4
       ts-morph:
         specifier: 26.0.0
         version: 26.0.0
@@ -492,11 +492,11 @@ packages:
       '@biomejs/wasm-web':
         optional: true
 
-  '@biomejs/wasm-nodejs@2.0.0':
-    resolution: {integrity: sha512-jcMpFDXura5J9MfL2DB8Qw5Cyg5zJXkzI8Ro/VYEC3R4oPnrqEvnPj5hEu70IVtlUPj1DZjrMRi+o2vqZurXEQ==}
-
   '@biomejs/wasm-nodejs@2.0.0-beta.6':
     resolution: {integrity: sha512-UI8uhz8YUjROBqr8OX3M8aK5Dw+MQfpE3D8sODCoE1CHH/4lvYdYksO/hU6qUe7qOYTI/Dyf2/DOQA5XRvRtAg==}
+
+  '@biomejs/wasm-nodejs@2.0.4':
+    resolution: {integrity: sha512-RkVreqfka0Q96xI0btZxBy5/xVFib7Z9zX5uxZRblZli+M7snH+/BgRXUxA+JkO6o3rIXeSfo88JRIbM19oJuA==}
 
   '@cnakazawa/watch@1.0.4':
     resolution: {integrity: sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ==}
@@ -3370,8 +3370,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.2.3:
-    resolution: {integrity: sha512-OnENkEVq6XpOPmr+rVcXp6WLHRm/OWmtql7UFpbtFpKeymgWpi/Cgi15LSLrVC1F6VCWYA64Gn7TZRZpchoy0Q==}
+  swagger-typescript-api@13.2.4:
+    resolution: {integrity: sha512-m9OFX5kgkInOtnR882juEyOfFojazqIr1g5KFC3xK/BZOwZzYW3ikZdsiMet+qsOr6Ppimdap3xCXXdYrCKHTw==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3829,13 +3829,13 @@ snapshots:
     optionalDependencies:
       '@biomejs/wasm-nodejs': 2.0.0-beta.6
 
-  '@biomejs/js-api@1.0.0(@biomejs/wasm-nodejs@2.0.0)':
+  '@biomejs/js-api@1.0.0(@biomejs/wasm-nodejs@2.0.4)':
     optionalDependencies:
-      '@biomejs/wasm-nodejs': 2.0.0
-
-  '@biomejs/wasm-nodejs@2.0.0': {}
+      '@biomejs/wasm-nodejs': 2.0.4
 
   '@biomejs/wasm-nodejs@2.0.0-beta.6': {}
+
+  '@biomejs/wasm-nodejs@2.0.4': {}
 
   '@cnakazawa/watch@1.0.4':
     dependencies:
@@ -7160,10 +7160,10 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.2.3:
+  swagger-typescript-api@13.2.4:
     dependencies:
-      '@biomejs/js-api': 1.0.0(@biomejs/wasm-nodejs@2.0.0)
-      '@biomejs/wasm-nodejs': 2.0.0
+      '@biomejs/js-api': 1.0.0(@biomejs/wasm-nodejs@2.0.4)
+      '@biomejs/wasm-nodejs': 2.0.4
       '@types/swagger-schema-official': 2.0.25
       c12: 3.0.4
       citty: 0.1.6
