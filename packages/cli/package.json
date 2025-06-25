@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/lodash": "4.17.18",
+    "@types/lodash": "4.17.19",
     "chalk": "5.4.1",
     "chokidar": "4.0.3",
     "commander": "14.0.0",
