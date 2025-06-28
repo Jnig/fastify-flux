@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.1](https://github.com/Jnig/fastify-flux/compare/v3.3.0...v3.3.1) (2025-06-28)
+
+
+### Bug Fixes
+
+* catch metadata generation errors ([c0ef8ff](https://github.com/Jnig/fastify-flux/commit/c0ef8ffa824edd98ad5df438b16a45abe7a132db))
+* **deps:** update dependency @types/lodash to v4.17.18 ([d88b5a1](https://github.com/Jnig/fastify-flux/commit/d88b5a1944943d8d11e62ccc7d6b782f8fa91ea8))
+* **deps:** update dependency @types/lodash to v4.17.19 ([fa073e7](https://github.com/Jnig/fastify-flux/commit/fa073e7e65e38bbe4ef4d182327b4a40971f9e68))
+* **deps:** update dependency swagger-typescript-api to v13.2.2 ([#87](https://github.com/Jnig/fastify-flux/issues/87)) ([0805fce](https://github.com/Jnig/fastify-flux/commit/0805fce900c7bf33f2ca8ce7e85be5a76b8f48f1))
+* **deps:** update dependency swagger-typescript-api to v13.2.3 ([c073ce2](https://github.com/Jnig/fastify-flux/commit/c073ce2423236a472b55612fddc12141a44586cd))
+* **deps:** update dependency swagger-typescript-api to v13.2.4 ([10cb00a](https://github.com/Jnig/fastify-flux/commit/10cb00a9a3f9e3f3352ac3f63ae8ca15f7714417))
+* **deps:** update dependency swagger-typescript-api to v13.2.5 ([e3c424b](https://github.com/Jnig/fastify-flux/commit/e3c424bde2cdcfb1140e673b413120f23f0584c5))
+* **deps:** update dependency swagger-typescript-api to v13.2.7 ([522fa17](https://github.com/Jnig/fastify-flux/commit/522fa17eac22460b65f45fa57b10f96185786626))
+* **deps:** update prisma monorepo to v6.10.0 ([6869953](https://github.com/Jnig/fastify-flux/commit/6869953460545cbbcdab06e3f7d29541bce404af))
+* **deps:** update prisma monorepo to v6.10.1 ([ca3ba58](https://github.com/Jnig/fastify-flux/commit/ca3ba587c7574441f1c2bcdc58ad2d94ec2d5563))
+
 ## [3.3.0](https://github.com/Jnig/fastify-flux/compare/v3.2.0...v3.3.0) (2025-06-11)
 
 
