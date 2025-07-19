@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
     "@types/jest": "29.5.14",
-    "@types/node": "24.0.14",
+    "@types/node": "24.0.15",
     "jest": "30.0.4",
     "ts-jest": "29.4.0"
   },
