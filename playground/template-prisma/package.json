@@ -27,8 +27,8 @@
   "devDependencies": {
     "@types/jest": "29.5.14",
     "@types/node": "24.2.0",
-    "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@typescript-eslint/parser": "8.38.0",
+    "@typescript-eslint/eslint-plugin": "8.39.0",
+    "@typescript-eslint/parser": "8.39.0",
     "axios": "1.11.0",
     "esbuild": "0.25.8",
     "eslint": "9.32.0",
