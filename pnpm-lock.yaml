@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.2.7
-        version: 13.2.7
+        specifier: 13.2.8
+        version: 13.2.8
       ts-morph:
         specifier: 26.0.0
         version: 26.0.0
@@ -478,12 +478,12 @@ packages:
       '@biomejs/wasm-web':
         optional: true
 
-  '@biomejs/js-api@1.0.0':
-    resolution: {integrity: sha512-69OfQ7+09AtiCIg+k+aU3rEsGit5o/SJWCS3BeBH/2nJYdJGi0cIx+ybka8i1EK69aNcZxYO1y1iAAEmYMq1HA==}
+  '@biomejs/js-api@2.0.3':
+    resolution: {integrity: sha512-fg4hGhg1LtohDqLdG9uggROlVsydcuFwZhPoUOTi9+bkvGMULDKL9dEP5iN6++CIA/AN0T20U82rLYuaxc+VDQ==}
     peerDependencies:
-      '@biomejs/wasm-bundler': ^2.0.0
-      '@biomejs/wasm-nodejs': ^2.0.0
-      '@biomejs/wasm-web': ^2.0.0
+      '@biomejs/wasm-bundler': ^2.1.1
+      '@biomejs/wasm-nodejs': ^2.1.1
+      '@biomejs/wasm-web': ^2.1.1
     peerDependenciesMeta:
       '@biomejs/wasm-bundler':
         optional: true
@@ -494,6 +494,9 @@ packages:
 
   '@biomejs/wasm-nodejs@2.0.5':
     resolution: {integrity: sha512-pihpBMylewgDdGFZHRkgmc3OajuGIJPXhvfYuKCNK/CWyJMrYEFmPKs8Iq1kY0sYMmGlTbD4K2udV03KYa+r0Q==}
+
+  '@biomejs/wasm-nodejs@2.1.4':
+    resolution: {integrity: sha512-BuvuOiXtTJg9w5+ApMXeJDD5H+XkIJSazIjPJeIxfkCqzVtCByLjCqPC6gbECbylRl9IhrZMWVIskTD6aJ9MzA==}
 
   '@cnakazawa/watch@1.0.4':
     resolution: {integrity: sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ==}
@@ -1455,14 +1458,6 @@ packages:
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
 
-  c12@3.0.4:
-    resolution: {integrity: sha512-t5FaZTYbbCtvxuZq9xxIruYydrAGsJ+8UdP0pZzMiK2xl/gNiSOy0OxhLzHUEEb0m1QXYqfzfvyIFEmz/g9lqg==}
-    peerDependencies:
-      magicast: ^0.3.5
-    peerDependenciesMeta:
-      magicast:
-        optional: true
-
   c12@3.1.0:
     resolution: {integrity: sha512-uWoS8OU1MEIsOv8p/5a82c3H31LsWVR5qiyXVfBNOzfffjUWtPnhAb4BYI2uG2HfGmZmFjCtui5XNWaps+iFuw==}
     peerDependencies:
@@ -1739,10 +1734,6 @@ packages:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
 
-  dotenv@16.5.0:
-    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
-    engines: {node: '>=12'}
-
   dotenv@16.6.1:
     resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
     engines: {node: '>=12'}
@@ -1909,9 +1900,6 @@ packages:
   expect@30.0.5:
     resolution: {integrity: sha512-P0te2pt+hHI5qLJkIR+iMvS+lYUZml8rKKsohVHAGY+uClp9XVbdyYNJOIjSRpHVp8s8YqxJCiHUkSYZGr8rtQ==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
-
-  exsolve@1.0.5:
-    resolution: {integrity: sha512-pz5dvkYYKQ1AHVrgOzBKWeP4u4FRb3a6DNK2ucr0OoNwYIU4QWsJ+NM36LLzORT+z845MzKHHhpXiUF5nvQoJg==}
 
   exsolve@1.0.7:
     resolution: {integrity: sha512-VO5fQUzZtI6C+vx4w/4BWJpg3s/5l+6pRQEHzFRM8WFi4XffSP1Z+4qi7GbjWbvRQEbdIco5mIMq+zX4rPuLrw==}
@@ -3068,9 +3056,6 @@ packages:
     resolution: {integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==}
     engines: {node: '>=8'}
 
-  pkg-types@2.1.0:
-    resolution: {integrity: sha512-wmJwA+8ihJixSoHKxZJRBQG1oY8Yr9pGLzRmSsNms0iNWyHHAlZCa7mmKiFR10YPZuz/2k169JiS/inOjBCZ2A==}
-
   pkg-types@2.2.0:
     resolution: {integrity: sha512-2SM/GZGAEkPp3KWORxQZns4M+WSeXbC2HEvmOIJe3Cmiv6ieAJvdVhDldtHqM5J1Y7MrR1XhkBT/rMlhh9FdqQ==}
 
@@ -3444,8 +3429,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.2.7:
-    resolution: {integrity: sha512-rfqqoRFpZJPl477M/snMJPM90EvI8WqhuUHSF5ecC2r/w376T29+QXNJFVPsJmbFu5rBc/8m3vhArtMctjONdw==}
+  swagger-typescript-api@13.2.8:
+    resolution: {integrity: sha512-TgC8cB2GwrQctiUrLW9cVcPkiH5/zGbUCD3Y5zjeeFAtcCBGxLlBp9Df/UK+ux/oQ2J8x3C5a4TOz+tAZ8jOkQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3919,11 +3904,13 @@ snapshots:
     optionalDependencies:
       '@biomejs/wasm-nodejs': 2.0.5
 
-  '@biomejs/js-api@1.0.0(@biomejs/wasm-nodejs@2.0.5)':
+  '@biomejs/js-api@2.0.3(@biomejs/wasm-nodejs@2.1.4)':
     optionalDependencies:
-      '@biomejs/wasm-nodejs': 2.0.5
+      '@biomejs/wasm-nodejs': 2.1.4
 
   '@biomejs/wasm-nodejs@2.0.5': {}
+
+  '@biomejs/wasm-nodejs@2.1.4': {}
 
   '@cnakazawa/watch@1.0.4':
     dependencies:
@@ -5078,21 +5065,6 @@ snapshots:
 
   buffer-from@1.1.2: {}
 
-  c12@3.0.4:
-    dependencies:
-      chokidar: 4.0.3
-      confbox: 0.2.2
-      defu: 6.1.4
-      dotenv: 16.5.0
-      exsolve: 1.0.5
-      giget: 2.0.0
-      jiti: 2.4.2
-      ohash: 2.0.11
-      pathe: 2.0.3
-      perfect-debounce: 1.0.0
-      pkg-types: 2.1.0
-      rc9: 2.1.2
-
   c12@3.1.0:
     dependencies:
       chokidar: 4.0.3
@@ -5326,8 +5298,6 @@ snapshots:
   dot-prop@5.3.0:
     dependencies:
       is-obj: 2.0.0
-
-  dotenv@16.5.0: {}
 
   dotenv@16.6.1: {}
 
@@ -5572,8 +5542,6 @@ snapshots:
       jest-message-util: 30.0.5
       jest-mock: 30.0.5
       jest-util: 30.0.5
-
-  exsolve@1.0.5: {}
 
   exsolve@1.0.7: {}
 
@@ -6769,7 +6737,7 @@ snapshots:
       citty: 0.1.6
       consola: 3.4.2
       pathe: 2.0.3
-      pkg-types: 2.1.0
+      pkg-types: 2.2.0
       tinyexec: 0.3.2
 
   oas-kit-common@1.0.8:
@@ -6970,12 +6938,6 @@ snapshots:
   pkg-dir@4.2.0:
     dependencies:
       find-up: 4.1.0
-
-  pkg-types@2.1.0:
-    dependencies:
-      confbox: 0.2.2
-      exsolve: 1.0.5
-      pathe: 2.0.3
 
   pkg-types@2.2.0:
     dependencies:
@@ -7326,7 +7288,7 @@ snapshots:
       '@biomejs/js-api': 0.8.0-beta.3(@biomejs/wasm-nodejs@2.0.5)
       '@biomejs/wasm-nodejs': 2.0.5
       '@types/swagger-schema-official': 2.0.25
-      c12: 3.0.4
+      c12: 3.1.0
       citty: 0.1.6
       consola: 3.4.2
       eta: 2.2.0
@@ -7342,12 +7304,12 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.2.7:
+  swagger-typescript-api@13.2.8:
     dependencies:
-      '@biomejs/js-api': 1.0.0(@biomejs/wasm-nodejs@2.0.5)
-      '@biomejs/wasm-nodejs': 2.0.5
+      '@biomejs/js-api': 2.0.3(@biomejs/wasm-nodejs@2.1.4)
+      '@biomejs/wasm-nodejs': 2.1.4
       '@types/swagger-schema-official': 2.0.25
-      c12: 3.0.4
+      c12: 3.1.0
       citty: 0.1.6
       consola: 3.4.2
       eta: 2.2.0
@@ -7356,7 +7318,7 @@ snapshots:
       nanoid: 5.1.5
       swagger-schema-official: 2.0.0-bab6bed
       swagger2openapi: 7.0.8
-      typescript: 5.8.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - '@biomejs/wasm-bundler'
       - '@biomejs/wasm-web'
