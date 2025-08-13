@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "8.39.1",
     "@typescript-eslint/parser": "8.39.1",
     "axios": "1.11.0",
-    "esbuild": "0.25.8",
+    "esbuild": "0.25.9",
     "eslint": "9.33.0",
     "fastify-flux-cli": "workspace:*",
     "jest": "30.0.5",
