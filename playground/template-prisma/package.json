@@ -19,7 +19,7 @@
   "dependencies": {
     "@fastify/swagger": "9.5.1",
     "@fastify/swagger-ui": "5.2.3",
-    "@prisma/client": "6.15.0",
+    "@prisma/client": "6.16.0",
     "fastify": "5.3.3",
     "fastify-flux": "workspace:*",
     "tsconfig-paths": "4.2.0"
@@ -35,7 +35,7 @@
     "fastify-flux-cli": "workspace:*",
     "jest": "30.0.5",
     "pino-pretty": "13.1.1",
-    "prisma": "6.15.0",
+    "prisma": "6.16.0",
     "ts-jest": "29.4.1",
     "typescript": "5.9.2"
   }
