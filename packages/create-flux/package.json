@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
     "@types/jest": "29.5.14",
-    "@types/node": "24.3.3",
+    "@types/node": "24.4.0",
     "jest": "30.0.5",
     "ts-jest": "29.4.1",
     "typescript": "5.9.2"
