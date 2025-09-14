@@ -30,8 +30,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       commander:
-        specifier: 14.0.0
-        version: 14.0.0
+        specifier: 14.0.1
+        version: 14.0.1
       esbuild:
         specifier: 0.25.9
         version: 0.25.9
@@ -122,8 +122,8 @@ importers:
         specifier: 5.6.2
         version: 5.6.2
       commander:
-        specifier: 14.0.0
-        version: 14.0.0
+        specifier: 14.0.1
+        version: 14.0.1
       enquirer:
         specifier: 2.4.1
         version: 2.4.1
@@ -1576,6 +1576,10 @@ packages:
 
   commander@14.0.0:
     resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+    engines: {node: '>=20'}
+
+  commander@14.0.1:
+    resolution: {integrity: sha512-2JkV3gUZUVrbNA+1sjBOYLsMZ5cEEl8GTFP2a4AVz5hvasAMCQ1D2l2le/cX+pV4N6ZU17zjUahLpIXRrnWL8A==}
     engines: {node: '>=20'}
 
   compare-func@2.0.0:
@@ -5162,6 +5166,8 @@ snapshots:
       delayed-stream: 1.0.0
 
   commander@14.0.0: {}
+
+  commander@14.0.1: {}
 
   compare-func@2.0.0:
     dependencies:
