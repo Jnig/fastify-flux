@@ -34,7 +34,7 @@
     "@types/jest": "29.5.14",
     "@types/node": "24.4.0",
     "jest": "30.0.5",
-    "ts-jest": "29.4.1"
+    "ts-jest": "29.4.2"
   },
   "peerDependencies": {
     "esbuild": "0.25.9"
