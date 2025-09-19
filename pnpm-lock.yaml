@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.2.11
-        version: 13.2.11
+        specifier: 13.2.13
+        version: 13.2.13
       ts-morph:
         specifier: 26.0.0
         version: 26.0.0
@@ -3429,8 +3429,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.2.11:
-    resolution: {integrity: sha512-X3logyxFnUFifzh2GUxnH0TfcvNmPvg8dIQ1/Rok/9gaj7ZW883llaVZUVnM7db7TruGPhiECTc26Qvzy5pDFQ==}
+  swagger-typescript-api@13.2.13:
+    resolution: {integrity: sha512-d4Ri5iOxCFB8VeTyosuzKnW8jtRBUFZC+XZthFiH78CwNrkMKAzyuSs0YGUZlHtm60VtkZBNxZkp71BHShJ8HQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3672,6 +3672,11 @@ packages:
 
   yaml@2.8.0:
     resolution: {integrity: sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
     engines: {node: '>= 14.6'}
     hasBin: true
 
@@ -5070,7 +5075,7 @@ snapshots:
       ohash: 2.0.11
       pathe: 2.0.3
       perfect-debounce: 1.0.0
-      pkg-types: 2.2.0
+      pkg-types: 2.3.0
       rc9: 2.1.2
 
   c12@3.2.0:
@@ -7299,21 +7304,23 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.2.11:
+  swagger-typescript-api@13.2.13:
     dependencies:
       '@biomejs/js-api': 3.0.0(@biomejs/wasm-nodejs@2.2.4)
       '@biomejs/wasm-nodejs': 2.2.4
+      '@types/lodash': 4.17.20
       '@types/swagger-schema-official': 2.0.25
       c12: 3.3.0
       citty: 0.1.6
       consola: 3.4.2
       eta: 4.0.1
-      js-yaml: 4.1.0
       lodash: 4.17.21
       nanoid: 5.1.5
+      openapi-types: 12.1.3
       swagger-schema-official: 2.0.0-bab6bed
       swagger2openapi: 7.0.8
       typescript: 5.9.2
+      yaml: 2.8.1
     transitivePeerDependencies:
       - '@biomejs/wasm-bundler'
       - '@biomejs/wasm-web'
@@ -7564,6 +7571,8 @@ snapshots:
   yaml@1.10.2: {}
 
   yaml@2.8.0: {}
+
+  yaml@2.8.1: {}
 
   yargs-parser@21.1.1: {}
 
