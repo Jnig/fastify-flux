@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: 19.8.1
-        version: 19.8.1(@types/node@24.5.2)(typescript@5.9.2)
+        version: 19.8.1(@types/node@24.5.2)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: 19.8.1
         version: 19.8.1
@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.2.13
-        version: 13.2.13
+        specifier: 13.2.15
+        version: 13.2.15
       ts-morph:
         specifier: 26.0.0
         version: 26.0.0
@@ -494,6 +494,9 @@ packages:
 
   '@biomejs/wasm-nodejs@2.2.4':
     resolution: {integrity: sha512-ExHAa8W9uyinDhvxhe9CXA6V9bHka3RIs9jKQWlzOz7/LEt3IcFA+fo0O+9RdU30q7lmoo83VqUJwWPTLXeWiA==}
+
+  '@biomejs/wasm-nodejs@2.2.5':
+    resolution: {integrity: sha512-p9BhDKyjyemt9aBOaqINrsTJSWiCYZu1asM5AxfMFxF9Fi3L3ZcIbzxe5OYa294oNllmmqJ+68GlZG/2fqF0dQ==}
 
   '@cnakazawa/watch@1.0.4':
     resolution: {integrity: sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ==}
@@ -2819,6 +2822,11 @@ packages:
     engines: {node: ^18 || >=20}
     hasBin: true
 
+  nanoid@5.1.6:
+    resolution: {integrity: sha512-c7+7RQ+dMB5dPwwCp4ee1/iV/q2P6aK1mTZcfr1BTuVlyW9hJYiMPybJCcnBlQtuSmTIWNeazm/zqNoZSSElBg==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+
   nanomatch@1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
     engines: {node: '>=0.10.0'}
@@ -3434,8 +3442,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.2.13:
-    resolution: {integrity: sha512-d4Ri5iOxCFB8VeTyosuzKnW8jtRBUFZC+XZthFiH78CwNrkMKAzyuSs0YGUZlHtm60VtkZBNxZkp71BHShJ8HQ==}
+  swagger-typescript-api@13.2.15:
+    resolution: {integrity: sha512-rdnPhAp989mJieOigCkicvQJzHYSORwC7eQGikdIiepIkfDm849va5uiJsNiAPxwzs5/9ReTvli02sCuO2u09Q==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -3566,6 +3574,11 @@ packages:
 
   typescript@5.9.2:
     resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3911,22 +3924,24 @@ snapshots:
     optionalDependencies:
       '@biomejs/wasm-nodejs': 2.2.4
 
-  '@biomejs/js-api@3.0.0(@biomejs/wasm-nodejs@2.2.4)':
+  '@biomejs/js-api@3.0.0(@biomejs/wasm-nodejs@2.2.5)':
     optionalDependencies:
-      '@biomejs/wasm-nodejs': 2.2.4
+      '@biomejs/wasm-nodejs': 2.2.5
 
   '@biomejs/wasm-nodejs@2.2.4': {}
+
+  '@biomejs/wasm-nodejs@2.2.5': {}
 
   '@cnakazawa/watch@1.0.4':
     dependencies:
       exec-sh: 0.3.6
       minimist: 1.2.8
 
-  '@commitlint/cli@19.8.1(@types/node@24.5.2)(typescript@5.9.2)':
+  '@commitlint/cli@19.8.1(@types/node@24.5.2)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 19.8.1
       '@commitlint/lint': 19.8.1
-      '@commitlint/load': 19.8.1(@types/node@24.5.2)(typescript@5.9.2)
+      '@commitlint/load': 19.8.1(@types/node@24.5.2)(typescript@5.9.3)
       '@commitlint/read': 19.8.1
       '@commitlint/types': 19.8.1
       tinyexec: 1.0.1
@@ -3973,15 +3988,15 @@ snapshots:
       '@commitlint/rules': 19.8.1
       '@commitlint/types': 19.8.1
 
-  '@commitlint/load@19.8.1(@types/node@24.5.2)(typescript@5.9.2)':
+  '@commitlint/load@19.8.1(@types/node@24.5.2)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 19.8.1
       '@commitlint/execute-rule': 19.8.1
       '@commitlint/resolve-extends': 19.8.1
       '@commitlint/types': 19.8.1
       chalk: 5.6.2
-      cosmiconfig: 9.0.0(typescript@5.9.2)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@24.5.2)(cosmiconfig@9.0.0(typescript@5.9.2))(typescript@5.9.2)
+      cosmiconfig: 9.0.0(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@24.5.2)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -5251,21 +5266,21 @@ snapshots:
 
   copy-descriptor@0.1.1: {}
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@24.5.2)(cosmiconfig@9.0.0(typescript@5.9.2))(typescript@5.9.2):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@24.5.2)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
       '@types/node': 24.5.2
-      cosmiconfig: 9.0.0(typescript@5.9.2)
+      cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.4.2
-      typescript: 5.9.2
+      typescript: 5.9.3
 
-  cosmiconfig@9.0.0(typescript@5.9.2):
+  cosmiconfig@9.0.0(typescript@5.9.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   cross-spawn@6.0.6:
     dependencies:
@@ -6702,6 +6717,8 @@ snapshots:
 
   nanoid@5.1.5: {}
 
+  nanoid@5.1.6: {}
+
   nanomatch@1.2.13:
     dependencies:
       arr-diff: 4.0.0
@@ -7311,10 +7328,10 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.2.13:
+  swagger-typescript-api@13.2.15:
     dependencies:
-      '@biomejs/js-api': 3.0.0(@biomejs/wasm-nodejs@2.2.4)
-      '@biomejs/wasm-nodejs': 2.2.4
+      '@biomejs/js-api': 3.0.0(@biomejs/wasm-nodejs@2.2.5)
+      '@biomejs/wasm-nodejs': 2.2.5
       '@types/lodash': 4.17.20
       '@types/swagger-schema-official': 2.0.25
       c12: 3.3.0
@@ -7322,11 +7339,11 @@ snapshots:
       consola: 3.4.2
       eta: 4.0.1
       lodash: 4.17.21
-      nanoid: 5.1.5
+      nanoid: 5.1.6
       openapi-types: 12.1.3
       swagger-schema-official: 2.0.0-bab6bed
       swagger2openapi: 7.0.8
-      typescript: 5.9.2
+      typescript: 5.9.3
       yaml: 2.8.1
     transitivePeerDependencies:
       - '@biomejs/wasm-bundler'
@@ -7456,6 +7473,8 @@ snapshots:
   typescript@5.8.3: {}
 
   typescript@5.9.2: {}
+
+  typescript@5.9.3: {}
 
   uglify-js@3.19.3:
     optional: true
