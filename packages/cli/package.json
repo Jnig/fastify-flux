@@ -27,7 +27,7 @@
     "source-map-support": "0.5.21",
     "swagger-typescript-api": "13.2.15",
     "ts-morph": "26.0.0",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "devDependencies": {
     "@types/fs-extra": "11.0.4",
