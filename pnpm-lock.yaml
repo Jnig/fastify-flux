@@ -104,8 +104,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0(esbuild@0.25.11)
       fastify:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.6.1
+        version: 5.6.1
       jest:
         specifier: 30.0.5
         version: 30.0.5(@types/node@24.7.2)
@@ -178,8 +178,8 @@ importers:
         specifier: 9.5.1
         version: 9.5.1
       fastify:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.6.1
+        version: 5.6.1
       fastify-flux:
         specifier: workspace:*
         version: link:../../packages/common
@@ -242,8 +242,8 @@ importers:
         specifier: 6.17.1
         version: 6.17.1(prisma@6.17.1(typescript@5.9.3))(typescript@5.9.3)
       fastify:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.6.1
+        version: 5.6.1
       fastify-flux:
         specifier: workspace:*
         version: link:../../packages/common
@@ -1997,8 +1997,8 @@ packages:
   fastify-plugin@5.1.0:
     resolution: {integrity: sha512-FAIDA8eovSt5qcDgcBvDuX/v0Cjz0ohGhENZ/wpc3y+oZCY2afZ9Baqql3g/lC+OHRnciQol4ww7tuthOb9idw==}
 
-  fastify@5.3.3:
-    resolution: {integrity: sha512-nCBiBCw9q6jPx+JJNVgO8JVnTXeUyrGcyTKPQikRkA/PanrFcOIo4R+ZnLeOLPZPGgzjomqfVarzE0kYx7qWiQ==}
+  fastify@5.6.1:
+    resolution: {integrity: sha512-WjjlOciBF0K8pDUPZoGPhqhKrQJ02I8DKaDIfO51EL0kbSMwQFl85cRwhOvmSDWoukNOdTo27gLN549pLCcH7Q==}
 
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
@@ -5687,7 +5687,7 @@ snapshots:
 
   fastify-plugin@5.1.0: {}
 
-  fastify@5.3.3:
+  fastify@5.6.1:
     dependencies:
       '@fastify/ajv-compiler': 4.0.2
       '@fastify/error': 4.2.0
@@ -5702,7 +5702,7 @@ snapshots:
       process-warning: 5.0.0
       rfdc: 1.4.1
       secure-json-parse: 4.0.0
-      semver: 7.7.2
+      semver: 7.7.3
       toad-cache: 3.7.0
 
   fastq@1.19.1:
