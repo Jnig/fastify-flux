@@ -22,7 +22,7 @@
     "execa": "9.6.0",
     "fast-glob": "3.3.3",
     "lodash": "4.17.21",
-    "p-map": "7.0.3",
+    "p-map": "7.0.4",
     "pidtree": "0.6.0",
     "source-map-support": "0.5.21",
     "swagger-typescript-api": "13.2.15",
