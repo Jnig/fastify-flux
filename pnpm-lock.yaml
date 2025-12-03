@@ -89,8 +89,8 @@ importers:
         version: 4.17.21
     devDependencies:
       '@fastify/swagger':
-        specifier: 9.5.1
-        version: 9.5.1
+        specifier: 9.6.1
+        version: 9.6.1
       '@fastify/swagger-ui':
         specifier: 5.2.3
         version: 5.2.3
@@ -175,8 +175,8 @@ importers:
   playground/integration-tests:
     dependencies:
       '@fastify/swagger':
-        specifier: 9.5.1
-        version: 9.5.1
+        specifier: 9.6.1
+        version: 9.6.1
       fastify:
         specifier: 5.3.3
         version: 5.3.3
@@ -233,8 +233,8 @@ importers:
   playground/template-prisma:
     dependencies:
       '@fastify/swagger':
-        specifier: 9.5.1
-        version: 9.5.1
+        specifier: 9.6.1
+        version: 9.6.1
       '@fastify/swagger-ui':
         specifier: 5.2.3
         version: 5.2.3
@@ -808,8 +808,8 @@ packages:
   '@fastify/swagger-ui@5.2.3':
     resolution: {integrity: sha512-e7ivEJi9EpFcxTONqICx4llbpB2jmlI+LI1NQ/mR7QGQnyDOqZybPK572zJtcdHZW4YyYTBHcP3a03f1pOh0SA==}
 
-  '@fastify/swagger@9.5.1':
-    resolution: {integrity: sha512-EGjYLA7vDmCPK7XViAYMF6y4+K3XUy5soVTVxsyXolNe/Svb4nFQxvtuQvvoQb2Gzc9pxiF3+ZQN/iZDHhKtTg==}
+  '@fastify/swagger@9.6.1':
+    resolution: {integrity: sha512-fKlpJqFMWoi4H3EdUkDaMteEYRCfQMEkK0HJJ0eaf4aRlKd8cbq0pVkOfXDXmtvMTXYcnx3E+l023eFDBsA1HA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4218,13 +4218,13 @@ snapshots:
       rfdc: 1.4.1
       yaml: 2.8.0
 
-  '@fastify/swagger@9.5.1':
+  '@fastify/swagger@9.6.1':
     dependencies:
       fastify-plugin: 5.1.0
       json-schema-resolver: 3.0.0
       openapi-types: 12.1.3
       rfdc: 1.4.1
-      yaml: 2.8.0
+      yaml: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
