@@ -3,6 +3,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "pnpm --filter './packages/*' build",
     "test": "pnpm -r test",
     "update-packages": "pnpm --recursive -i -L update",
     "publish": "pnpm -r publish --access public --no-git-checks"
@@ -12,8 +13,8 @@
   "private": true,
   "repository": "git@github.com:fluxapi/fluxapi.git",
   "devDependencies": {
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
+    "@commitlint/cli": "20.5.0",
+    "@commitlint/config-conventional": "20.5.0",
     "husky": "9.1.7"
   },
   "workspaces": [

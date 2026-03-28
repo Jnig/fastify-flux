@@ -1156,6 +1156,7 @@ exports[`schema 1`] = `
               },
             },
           },
+          "required": true,
         },
         "responses": {
           "200": {
