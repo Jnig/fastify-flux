@@ -34,7 +34,7 @@
     "templates/"
   ],
   "engines": {
-    "node": ">=20"
+    "node": "v25.8.2"
   },
   "version": "0.0.1"
 }
