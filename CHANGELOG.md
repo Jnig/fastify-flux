@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.5.0](https://github.com/Jnig/fastify-flux/compare/v4.4.0...v4.5.0) (2026-03-28)
+
+
+### Features
+
+* trigger release ([634e74e](https://github.com/Jnig/fastify-flux/commit/634e74e70438eaa6e0eecd18946e351708fff2f1))
+
 ## [4.4.0](https://github.com/Jnig/fastify-flux/compare/v4.3.0...v4.4.0) (2026-03-28)
 
 
