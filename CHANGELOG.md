@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.5.0](https://github.com/Jnig/fastify-flux/compare/v3.4.0...v3.5.0) (2026-03-28)
+
+
+### Features
+
+* change to node lts ([68c866d](https://github.com/Jnig/fastify-flux/commit/68c866d51a25f3765f198394ada7f0beed766c3c))
+
 ## [3.4.0](https://github.com/Jnig/fastify-flux/compare/v3.3.0...v3.4.0) (2026-03-28)
 
 
