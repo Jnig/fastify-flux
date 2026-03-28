@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.3.0](https://github.com/Jnig/fastify-flux/compare/v4.2.0...v4.3.0) (2026-03-28)
+
+
+### Features
+
+* remove registry url ([e474361](https://github.com/Jnig/fastify-flux/commit/e47436100609745ace0520e218a48bac2b24289b))
+
 ## [4.2.0](https://github.com/Jnig/fastify-flux/compare/v4.1.0...v4.2.0) (2026-03-28)
 
 
