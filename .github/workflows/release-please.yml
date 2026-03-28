@@ -32,5 +32,9 @@ jobs:
           ./bin/copy-templates.sh
           pnpm pkg set version=${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }} -ws
         if: ${{ steps.release.outputs.release_created }}
-      - run: pnpm -r publish --access public --no-git-checks --provenance
+      - name: Publish packages
+        run: |
+          for pkg in packages/*/; do
+            (cd "$pkg" && npm publish --access public --provenance)
+          done
         if: ${{ steps.release.outputs.release_created }}
