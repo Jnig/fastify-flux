@@ -281,4 +281,3 @@ fastify.addHook('onRequest', async (request, reply) => {
 The following frameworks were used as inspiration.
 
 [NestJS](https://github.com/nestjs/nest), [Ts.ED](https://github.com/tsedio/tsed), [tsoa](https://github.com/lukeautry/tsoa)
-
