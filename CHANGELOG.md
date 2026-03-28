@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0](https://github.com/Jnig/fastify-flux/compare/v4.1.0...v4.2.0) (2026-03-28)
+
+
+### Features
+
+* use npm for publish ([41ef6d2](https://github.com/Jnig/fastify-flux/commit/41ef6d262475e85bc940d08d94a7bcee01904892))
+
 ## [4.1.0](https://github.com/Jnig/fastify-flux/compare/v4.0.0...v4.1.0) (2026-03-28)
 
 
