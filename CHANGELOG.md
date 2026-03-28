@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/Jnig/fastify-flux/compare/v4.0.0...v4.1.0) (2026-03-28)
+
+
+### Features
+
+* use mpm trusted publish ([8da19bd](https://github.com/Jnig/fastify-flux/commit/8da19bd49e3fa7fb038d026de6addf813f27605c))
+
 ## [4.0.0](https://github.com/Jnig/fastify-flux/compare/v3.5.0...v4.0.0) (2026-03-28)
 
 
