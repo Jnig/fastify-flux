@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.6.0](https://github.com/Jnig/fastify-flux/compare/v4.5.0...v4.6.0) (2026-03-28)
+
+
+### Features
+
+* add repo to package.json ([7921f95](https://github.com/Jnig/fastify-flux/commit/7921f953525936518bbed9856e3a55528d8c4897))
+
 ## [4.5.0](https://github.com/Jnig/fastify-flux/compare/v4.4.0...v4.5.0) (2026-03-28)
 
 
