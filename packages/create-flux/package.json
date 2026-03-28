@@ -1,6 +1,11 @@
 {
   "name": "create-fastify-flux",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jnig/fastify-flux",
+    "directory": "packages/create-flux"
+  },
   "main": "./dist/index.js",
   "bin": {
     "create--fastify-flux": "./cli.js"

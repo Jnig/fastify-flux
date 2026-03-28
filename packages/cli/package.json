@@ -1,6 +1,11 @@
 {
   "name": "fastify-flux-cli",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jnig/fastify-flux",
+    "directory": "packages/cli"
+  },
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
   "bin": {

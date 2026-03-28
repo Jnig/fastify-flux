@@ -1,6 +1,11 @@
 {
   "name": "fastify-flux",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jnig/fastify-flux",
+    "directory": "packages/common"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": "./dist/index.js",
