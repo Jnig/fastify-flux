@@ -26,7 +26,7 @@
     "commander": "14.0.3",
     "execa": "9.6.1",
     "fast-glob": "3.3.3",
-    "lodash": "4.17.23",
+    "lodash": "4.18.1",
     "p-map": "7.0.4",
     "pidtree": "0.6.0",
     "source-map-support": "0.5.21",
