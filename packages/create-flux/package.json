@@ -39,7 +39,7 @@
     "templates/"
   ],
   "engines": {
-    "node": "v25.8.2"
+    "node": "25.9.0"
   },
   "version": "0.0.1"
 }
