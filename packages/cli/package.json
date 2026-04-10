@@ -30,7 +30,7 @@
     "p-map": "7.0.4",
     "pidtree": "0.6.0",
     "source-map-support": "0.5.21",
-    "swagger-typescript-api": "13.6.7",
+    "swagger-typescript-api": "13.6.8",
     "ts-morph": "27.0.2",
     "typescript": "6.0.2"
   },
