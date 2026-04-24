@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.6.10
-        version: 13.6.10(react@19.2.4)
+        specifier: 13.6.11
+        version: 13.6.11(react@19.2.4)
       ts-morph:
         specifier: 27.0.2
         version: 27.0.2
@@ -511,8 +511,8 @@ packages:
   '@biomejs/wasm-nodejs@2.4.10':
     resolution: {integrity: sha512-WG+5mniFUNery9qnByTR2fKkOVroZYbwiJby2B/o8X7/pVA/3dr1EJSCHOearjC26rgjaXXkfb6kmfHiO2cOhA==}
 
-  '@biomejs/wasm-nodejs@2.4.12':
-    resolution: {integrity: sha512-3SGczq2LKHJw9TYhJEmNwgBY767wSu+nRZVkp+oDiczYn2u7Xekb4smn/r3KJpaxGKkxxtTV4h6RTwBUKzf8Fw==}
+  '@biomejs/wasm-nodejs@2.4.13':
+    resolution: {integrity: sha512-BA64wwPmk5NUz+kP+jrHa8dnIjZSqeX6Q+Q9CC5skZ9c1AqkdS+3vR1QQUzqJ4btbxLPoYVSe1OiTYil7nr8YQ==}
 
   '@clack/core@0.5.0':
     resolution: {integrity: sha512-p3y0FIOwaYRUPRcMO7+dlmLh8PSRcrjuTndsiA0WAFbWES0mLZlrjVoBRZ9DzkPFJZG6KGkJmoEAY0ZcVWTkow==}
@@ -3814,8 +3814,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.6.10:
-    resolution: {integrity: sha512-X+DenKK2txtI0LdNcpmWddcZWiWaf6erIZ+m9Wz7vk/yMFmPJ9EljSuX+dnJQ9YuzjV1imaRCDKsHA4CG2wUZA==}
+  swagger-typescript-api@13.6.11:
+    resolution: {integrity: sha512-nzG2f677ERh8RgZfbTxiYharNepHUBIVFL9tHVnl/vcTFbSL5c4HWI3u567Jpx+BpN4YX0NfMadflHxL6y6NFA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -4090,8 +4090,8 @@ packages:
     resolution: {integrity: sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==}
     engines: {node: '>=18'}
 
-  yummies@7.18.0:
-    resolution: {integrity: sha512-fgldINrxPi20XJjIa1LOniyqHROm5HwDmmq0VZtQml4u3cMerm8H7H2BM8kMhHilgd8l7rg3mN4xt2apc2l/xA==}
+  yummies@7.19.2:
+    resolution: {integrity: sha512-3a8C0lsYP3c1sMsnQiPffS/X6hj1T0oIWOV/P6515ytGY5scAtcgaIg4mv8pe3856vyoTjagllvixdMxnitNUg==}
     peerDependencies:
       mobx: ^6.12.4
       react: ^18 || ^19
@@ -4326,13 +4326,13 @@ snapshots:
     optionalDependencies:
       '@biomejs/wasm-nodejs': 2.4.10
 
-  '@biomejs/js-api@4.0.0(@biomejs/wasm-nodejs@2.4.12)':
+  '@biomejs/js-api@4.0.0(@biomejs/wasm-nodejs@2.4.13)':
     optionalDependencies:
-      '@biomejs/wasm-nodejs': 2.4.12
+      '@biomejs/wasm-nodejs': 2.4.13
 
   '@biomejs/wasm-nodejs@2.4.10': {}
 
-  '@biomejs/wasm-nodejs@2.4.12': {}
+  '@biomejs/wasm-nodejs@2.4.13': {}
 
   '@clack/core@0.5.0':
     dependencies:
@@ -6497,7 +6497,7 @@ snapshots:
     dependencies:
       citty: 0.1.6
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.7
       node-fetch-native: 1.6.7
       nypm: 0.6.5
       pathe: 2.0.3
@@ -7666,7 +7666,7 @@ snapshots:
 
   rc9@2.1.2:
     dependencies:
-      defu: 6.1.4
+      defu: 6.1.7
       destr: 2.0.5
 
   rc9@3.0.1:
@@ -7973,13 +7973,13 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.6.10(react@19.2.4):
+  swagger-typescript-api@13.6.11(react@19.2.4):
     dependencies:
       '@apidevtools/swagger-parser': 12.1.0(openapi-types@12.1.3)
-      '@biomejs/js-api': 4.0.0(@biomejs/wasm-nodejs@2.4.12)
-      '@biomejs/wasm-nodejs': 2.4.12
+      '@biomejs/js-api': 4.0.0(@biomejs/wasm-nodejs@2.4.13)
+      '@biomejs/wasm-nodejs': 2.4.13
       '@types/swagger-schema-official': 2.0.25
-      c12: 3.3.3
+      c12: 3.3.4
       citty: 0.2.1
       consola: 3.4.2
       es-toolkit: 1.45.1
@@ -7991,7 +7991,7 @@ snapshots:
       type-fest: 5.5.0
       typescript: 6.0.3
       yaml: 2.8.3
-      yummies: 7.18.0(react@19.2.4)
+      yummies: 7.19.2(react@19.2.4)
     transitivePeerDependencies:
       - '@biomejs/wasm-bundler'
       - '@biomejs/wasm-web'
@@ -8277,7 +8277,7 @@ snapshots:
 
   yoctocolors@2.1.2: {}
 
-  yummies@7.18.0(react@19.2.4):
+  yummies@7.19.2(react@19.2.4):
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1
