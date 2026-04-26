@@ -54,8 +54,8 @@ importers:
         specifier: 0.5.21
         version: 0.5.21
       swagger-typescript-api:
-        specifier: 13.7.1
-        version: 13.7.1(react@19.2.4)
+        specifier: 13.7.2
+        version: 13.7.2(react@19.2.4)
       ts-morph:
         specifier: 27.0.2
         version: 27.0.2
@@ -3814,8 +3814,8 @@ packages:
     engines: {node: '>=20'}
     hasBin: true
 
-  swagger-typescript-api@13.7.1:
-    resolution: {integrity: sha512-CuRxMWjD6QqzDPQO9snTYLyN0FER3BK0PRDifCfgZlfqqOxwoet+9t3Q12zR8s2Vs8XEvKsaRKoMLedfMDUa/A==}
+  swagger-typescript-api@13.7.2:
+    resolution: {integrity: sha512-LQ6LJ6c7HM2/inzly0whDTwme3yAQa6VAHVLh+lBr6ZqDmKt6Zmdu8zFZM793qxX6Rm/WX5uu9GhjeC71KLUiA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -7973,7 +7973,7 @@ snapshots:
       - encoding
       - magicast
 
-  swagger-typescript-api@13.7.1(react@19.2.4):
+  swagger-typescript-api@13.7.2(react@19.2.4):
     dependencies:
       '@apidevtools/swagger-parser': 12.1.0(openapi-types@12.1.3)
       '@biomejs/js-api': 4.0.0(@biomejs/wasm-nodejs@2.4.13)
