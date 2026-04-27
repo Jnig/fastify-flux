@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.1](https://github.com/Jnig/fastify-flux/compare/v4.8.0...v4.8.1) (2026-04-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lodash to v4.18.1 ([6595682](https://github.com/Jnig/fastify-flux/commit/65956828cc8ec83386f4a57c171ac2c5454d27d7))
+* **deps:** update dependency swagger-typescript-api to v13.6.10 ([bcd3e04](https://github.com/Jnig/fastify-flux/commit/bcd3e04b7f9032bb0ad66847f2e442429d757196))
+* **deps:** update dependency swagger-typescript-api to v13.6.11 ([9e5a95e](https://github.com/Jnig/fastify-flux/commit/9e5a95e7e6a02dfa02d6720645af8dfb41bb830e))
+* **deps:** update dependency swagger-typescript-api to v13.6.6 ([21912db](https://github.com/Jnig/fastify-flux/commit/21912db8dfbf687ab97deef072cf6b4c5697e077))
+* **deps:** update dependency swagger-typescript-api to v13.6.7 ([ae3c4e6](https://github.com/Jnig/fastify-flux/commit/ae3c4e6a8956268ddba99abd1813b6688009c599))
+* **deps:** update dependency swagger-typescript-api to v13.6.8 ([a376114](https://github.com/Jnig/fastify-flux/commit/a376114604a4e6de582405763f432272f5273285))
+* **deps:** update dependency swagger-typescript-api to v13.7.0 ([c202b54](https://github.com/Jnig/fastify-flux/commit/c202b542f629becec470d5ab6f05ec7735da76ee))
+* **deps:** update dependency swagger-typescript-api to v13.7.1 ([c2ddb5e](https://github.com/Jnig/fastify-flux/commit/c2ddb5e287e01826b98d9880454880b2c609f136))
+* **deps:** update dependency swagger-typescript-api to v13.7.2 ([61ef04d](https://github.com/Jnig/fastify-flux/commit/61ef04da32581591d75295430d0154bcd4c7d7f3))
+* **deps:** update dependency typescript to v6.0.3 ([0156c22](https://github.com/Jnig/fastify-flux/commit/0156c228944c122f391b7b324c59a2120190926e))
+* **deps:** update prisma monorepo to v7.7.0 ([f8add35](https://github.com/Jnig/fastify-flux/commit/f8add355e5f4b4226c0395bdc7692bc89d145c21))
+* **deps:** update prisma monorepo to v7.8.0 ([3f08f5e](https://github.com/Jnig/fastify-flux/commit/3f08f5ea45c895c46aaf1904a77189e2d4e278df))
+
 ## [4.8.0](https://github.com/Jnig/fastify-flux/compare/v4.7.0...v4.8.0) (2026-03-28)
 
 
